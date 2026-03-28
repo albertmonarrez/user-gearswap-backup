@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Bunzi's Rod",
+    sub="Ammurapi Shield",
+    range="Dunna",
+    head="Null Masque",
+    body="Jhakri Robe +2",
+    hands="Nyame Gauntlets",
+    legs="Volte Brais",
+    feet="Geo. Sandals +1",
+    neck="Loricate Torque +1",
+    waist="Null Belt",
+    left_ear="Alabaster Earring",
+    right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+14','Damage taken-5%',}},
+    left_ring="Murky Ring",
+    right_ring="Defending Ring",
+    back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +13','Pet: Damage taken -2%',}},
+}

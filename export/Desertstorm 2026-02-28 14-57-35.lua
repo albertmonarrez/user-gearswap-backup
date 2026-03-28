@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Maxentius",
+    sub="Genbu's Shield",
+    range="Dunna",
+    head="Null Masque",
+    body="Azimuth Coat +2",
+    hands="Azimuth Gloves +2",
+    legs="Volte Brais",
+    feet="Geo. Sandals +1",
+    neck="Loricate Torque +1",
+    waist="Null Belt",
+    left_ear="Alabaster Earring",
+    right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+14','Damage taken-5%',}},
+    left_ring="Murky Ring",
+    right_ring="Defending Ring",
+    back="Nantosuelta's Cape",
+}

@@ -1,0 +1,16 @@
+sets.exported = {
+    main={ name="Crocea Mors", augments={'Path: C',}},
+    ammo="Homiliary",
+    head="Viti. Chapeau +4",
+    body="Lethargy Sayon +3",
+    hands="Leth. Ganth. +3",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet={ name="Merlinic Crackows", augments={'Crit.hit rate+1','"Mag.Atk.Bns."+12','"Refresh"+1','Accuracy+18 Attack+18','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+    neck="Null Loop",
+    waist="Windbuffet Belt +1",
+    left_ear="Sherida Earring",
+    right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Dbl.Atk."+3',}},
+    left_ring="Defending Ring",
+    right_ring="Chirich Ring +1",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},
+}
