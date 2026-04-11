@@ -23,7 +23,6 @@ function job_setup()
 
     state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
 
-    set_lockstyle()
     blue_magic_maps = {}
 
     -- Mappings for gear sets to use for various blue magic spells.
@@ -413,7 +412,7 @@ function init_gear_sets()
         neck = inv.null_loop,
         body = inv.hashishin_mintan,
         right_ring = inv.defending_ring,
-        waist = inv.platinum_moogle_belt,
+        waist = inv.null_belt,
         hands = inv.gletis_hands,
         left_ear = inv.alabaster_earring,
         legs = { name = "Carmine Cuisses +1", augments = { 'Accuracy+20', 'Attack+12', '"Dual Wield"+6', } },
@@ -807,8 +806,10 @@ function select_default_macro_book()
     set_macro_page(1, 3)
 end
 
-function set_lockstyle()
-    --8 is adhemer
-    --5 is empyrean
-    send_command('wait 4; input /lockstyleset 5')
+local function set_lockstyle()
+    local lockstyles = { '5', '13', '13' }
+    local lockstyle = lockstyles[math.random(#lockstyles)]
+    send_command(string.format('wait 4; input /lockstyleset %s', lockstyle))
 end
+
+windower.register_event('job change', set_lockstyle)

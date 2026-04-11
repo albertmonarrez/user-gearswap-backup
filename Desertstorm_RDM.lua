@@ -513,12 +513,9 @@ function init_gear_sets()
 	})
 
 	local treasure_hunter = {
-		-- head = "Wh. Rarab Cap +1",
-		head = inv.null_mask,
-		body = inv.lethargy_body,
-		ammo = "Per. Lucky Egg",
-		waist = "Chaac Belt",
-		feet = { name = "Merlinic Crackows", augments = { '"Repair" potency +1%', 'DEX+9', '"Treasure Hunter"+2', 'Mag. Acc.+20 "Mag.Atk.Bns."+20', } },
+		ammo = inv.perfect_lucky_egg,
+		waist = inv.chaac_belt,
+		ring2 = inv.hoxne_ring,
 	}
 	--Cure set
 	local cure_set = set_combine(pdt_set2, {

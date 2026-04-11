@@ -1,10 +1,9 @@
 local equipment = {
-    RAbullet   = "Chrono Bullet",
-    RAccbullet = "Chrono Bullet",
-    WSbullet   = "Chrono Bullet",
-    MAbullet   = "Orichalc. Bullet",
-    QDbullet   = "Hauksbok Bullet",
-
+    RAbullet               = "Chrono Bullet",
+    RAccbullet             = "Chrono Bullet",
+    WSbullet               = "Chrono Bullet",
+    MAbullet               = "Living Bullet",
+    QDbullet               = "Hauksbok Bullet",
 
     anchorite_head         = "Anch. Crown +3",
     anchorite_body         = "Anch. Cyclas +3",
@@ -69,6 +68,7 @@ local equipment = {
     mummu_head             = "Mummu Bonnet +2",
     Laksamas_tricorne      = "Laksa. Tricorne +4",
     bagua_galero           = "Bagua Galero",
+    geo_galero             = "Geo. Galero +2",
 
     carmine_mask           = "Carmine Mask",
     sakpatas_helm          = "Sakpata's Helm",
@@ -114,7 +114,7 @@ local equipment = {
     mummu_jacket                 = "Mummu Jacket +2",
     pillagers_vest               = "Pillager's Vest +3",
     Laksamas_frac                = "Laksa. Frac +3",
-    Lanun_frac                   = { name = "Lanun Frac +3", augments = { 'Enhances "Loaded Deck" effect', } },
+    Lanun_frac                   = { name = "Lanun Frac +4", augments = { 'Enhances "Loaded Deck" effect', } },
     dread_jupon                  = "Dread Jupon",
     rawhide_vest                 = { name = "Rawhide Vest", augments = { 'DEX+10', 'STR+7', 'INT+7', } },
     meghanda_body                = "Meg. Cuirie +2",
@@ -122,7 +122,7 @@ local equipment = {
     malignance_tabard            = "Malignance Tabard",
     chironic_body_phalanx        = { name = "Chironic Doublet", augments = { 'Pet: INT+9', 'Phalanx +2', 'Accuracy+13 Attack+13', 'Mag. Acc.+6 "Mag.Atk.Bns."+6', } },
     body_phalanx                 = { name = "Merlinic Jubbah", augments = { 'Pet: DEX+5', 'Weapon Skill Acc.+4', 'Phalanx +4', 'Accuracy+8 Attack+8', 'Mag. Acc.+16 "Mag.Atk.Bns."+16', } },
-    vitiation_tabard             = { name = "Viti. Tabard +3", augments = { 'Enhances "Chainspell" effect', } },
+    vitiation_tabard             = { name = "Viti. Tabard +4", augments = { 'Enhances "Chainspell" effect', } },
     oshosi_vest                  = "Oshosi Vest",
     Herc_MAB_vest                = { name = "Herculean Vest", augments = { 'Mag. Acc.+20 "Mag.Atk.Bns."+20', '"Mag.Atk.Bns."+15', } },
     atrophy_tabard               = "Atrophy Tabard +4",
@@ -146,7 +146,7 @@ local equipment = {
     azimuth_coat                 = "Azimuth Coat +2",
     gyve_doublet                 = "Gyve Doublet",
     bagua_tunic                  = "Bagua Tunic",
-    geomancy_tunic               = "Geomancy Tunic +1",
+    geomancy_tunic               = "Geomancy Tunic +2",
 
     --hands
     leyline_gloves               = { name = "Leyline Gloves", augments = { 'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3', } },
@@ -158,7 +158,7 @@ local equipment = {
     mummu_hands                  = "Mummu Wrists +2",
     carmine_gauntlets            = { name = "Carmine Fin. Ga.", augments = { 'Rng.Atk.+15', '"Mag.Atk.Bns."+10', '"Store TP"+5', } },
     hashishin_hands              = "Hashi. Bazu. +3",
-    vitiation_gloves             = { name = "Viti. Gloves +3", augments = { 'Enhancing Magic duration', } },
+    vitiation_gloves             = { name = "Viti. Gloves +4", augments = { 'Enhancing Magic duration', } },
     gazu_bracelets               = { name = "Gazu Bracelets +1", augments = { 'Path: A', } },
     ayanmo_hands                 = "Aya. Manopolas +2",
     atrophy_gloves               = "Atrophy Gloves +4",
@@ -171,9 +171,10 @@ local equipment = {
     nyame_hands                  = "Nyame Gauntlets",
     mpacas_gloves                = "Mpaca's Gloves",
     sakonji_kote                 = "Sakonji Kote +2",
-    lanun_hands                  = "Lanun Gants +3",
+    lanun_hands                  = "Lanun Gants +4",
     bagua_hands                  = "Bagua Mitaines",
     laksamas_hands               = "Lak. Gants +4",
+    geo_mitaines                 = "Geo. Mitaines +2",
 
     --legs
     carmine_legs                 = { name = "Carmine Cuisses +1", augments = { 'Accuracy+20', 'Attack+12', '"Dual Wield"+6', } },
@@ -211,8 +212,10 @@ local equipment = {
     vitiation_tights             = "Viti. Tights +1",
     phalanx_legs                 = { name = "Merlinic Shalwar", augments = { 'Pet: "Dbl. Atk."+1', 'Enmity-3', 'Phalanx +5', 'Accuracy+10 Attack+10', 'Mag. Acc.+9 "Mag.Atk.Bns."+9', } },
     gyve_trousers                = "Gyve Trousers",
-    bagua_pants                  = "Bagua Pants",
-    geomancy_pants               = "Geomancy Pants +1", --15%
+    bagua_pants                  = "Bagua Pants +3",
+    geomancy_pants               = "Geomancy Pants +2", --15%
+    volte_brais                  = "Volte Brais",
+    Lanun_trews                  = "Lanun Trews +1",
 
     --feet
     malignance_boots             = "Malignance Boots",
@@ -240,7 +243,7 @@ local equipment = {
     agoge_feet                   = { name = "Agoge Calligae +1", augments = { 'Enhances "Tomahawk" effect', } },
     boi_feet                     = "Boii Calligae +2",
     mpacas_boots                 = "Mpaca's Boots",
-    geo_sandals                  = "Geo. Sandals +1",
+    geo_sandals                  = "Geo. Sandals +3",
     hermes_sandals               = "Hermes' Sandals",
     pummler_feet                 = "Pumm. Calligae +3",
     merlinc_fastcast_feet        = { name = "Merlinic Crackows", augments = { '"Fast Cast"+5', 'INT+15', '"Mag.Atk.Bns."+4', } },
@@ -253,7 +256,7 @@ local equipment = {
     telchine_feet_regen          = { name = "Telchine Pigaches", augments = { '"Regen" potency+3', } },
     Laksamas_boots               = "Laksa. Bottes +4",
     rawhide_boots_waltz          = "Rawhide Boots",
-    bagua_sandals                = "Bagua Sandals",
+    bagua_sandals                = "Bagua Sandals +1",
     azimuth_feet                 = "Azimuth Gaiters +2",
 
     --neck pieces
@@ -320,6 +323,7 @@ local equipment = {
     fotia_belt                   = "Fotia Belt",
     aasklepian_belt              = "Asklepian Belt",
     acuity_belt                  = "Acuity Belt +1",
+    isa_belt                     = "Isa Belt",
 
     --back
     COR_TP_Cape                  = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', '"Store TP"+10', } },
@@ -354,7 +358,7 @@ local equipment = {
     MNK_CRT_CAPE                 = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', } },
     MNK_DA_STR_CAPE              = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'System: 1 ID: 640 Val: 4', } },
     argocham_mantle              = "Argocham. Mantle",
-    GEO_CAPE                     = "Nantosuelta's Cape",
+    GEO_CAPE                     = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
     lifestream_cape              = { name = "Lifestream Cape", augments = { 'Geomancy Skill +10', 'Indi. eff. dur. +13', 'Pet: Damage taken -2%', } },
 
     -- earrings
@@ -391,7 +395,7 @@ local equipment = {
     static_earring               = "Static Earring",
     lugalbanda_earring           = "Lugalbanda Earring",
     mendicants_earring           = "Mendicant's earring",
-    skulkers_earring             = { name = "Skulk. Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', '"Store TP"+3', } },
+    skulkers_earring             = { name = "Skulk. Earring +2", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+20', 'Mag. Acc.+20', '"Store TP"+8', 'DEX+15 AGI+15', } },
     kasuga_earring               = "Kasuga Earring +1",
     bhikku_earring               = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4', } },
     regal_earring                = "Regal Earring",
@@ -435,6 +439,7 @@ local equipment = {
     mallquis_ring                = "Mallquis Ring",
     murky_ring                   = "Murky Ring",
     asklepian_ring               = "Asklepian Ring",
+    hoxne_ring                   = "Hoxne Ring",
 
     --weapons
     naegling                     = "Naegling",
@@ -461,6 +466,8 @@ local equipment = {
     enki_strap                   = "Enki Strap",
     genbus_shield                = "Genbu's Shield",
     fomalhaut                    = "Fomalhaut",
+    death_penalty                = "Death Penalty",
+    solstice                     = { name = "Solstice", augments = { 'INT+15', '"Mag.Atk.Bns."+10', '"Refresh"+1', } },
 
     --ammo
     oshashs_treastise            = "Oshasha's Treatise",

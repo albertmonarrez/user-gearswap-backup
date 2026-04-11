@@ -142,8 +142,11 @@ AddCommas       = true --[true/false]  Adds commas to damage numbers.
 --		Bolster, Widened Compass, Blaze of Glory, Collimated Fervor, Concentric Pulse, Convert, Dark Arts, Dematerialize, Divine Seal, Ecliptic Attrition, Elemental Seal, Entrust, Full Circle, Lasting Emanation, Life Cycle, Light Arts, Mending Halation, Radial Arcana, Sublimation, Theurgic Focus
 -- The "_sh" column allows you to change the name displayed if you would like, leave blank otherwise.
 -- NOTE: Names will automatically be truncated to 10 characters to fit correctly.
+local function set_lockstyle()
+	send_command('wait 4; input /lockstyleset 31')
+end
 
-sub             = {
+sub   = {
 	--GEO/WHM
 	WHM = {
 		Abil01 = "Radial Arcana",
@@ -225,7 +228,7 @@ sub             = {
 --             COLOR VALUES              --
 -------------------------------------------
 
-color           = {
+color = {
 	-- ELEMENTS --
 	Light   = { r = 255, g = 248, b = 220 },
 	Fire    = { r = 255, g = 0, b = 0 },
@@ -272,14 +275,14 @@ color           = {
 function get_sets()
 	-- Idle (Movement Speed, Refresh, Regen, Damage Taken-, Enmity-)
 	-- Used when you do NOT have a Luopan bubble out.
-	sets.idle = {
+	sets.idle              = {
 		main = "Idris",
 		sub = inv.genbus_shield,
 		range = inv.dunna,
 		head = inv.null_mask,
 		body = inv.azimuth_coat,
 		hands = inv.nyame_hands,
-		legs = "Volte Brais",
+		legs = inv.volte_brais,
 		feet = inv.geo_sandals,
 		neck = inv.loricate_torque,
 		waist = inv.null_belt,
@@ -294,28 +297,28 @@ function get_sets()
 	-- Used when you DO have a Luopan bubble out.
 	-- Combines with Idle set, only necessary to set the slots with specific desired stats
 	-- NOTE: Lupoan has a native Pet DT-50%. Dunna has Pet DT-5%. Overall Pet DT cap is 87.5%. Idris and Geo. Mitaines will cap Pet DT for your Luopan allowing you to focus on Pet Regen.
-	sets.idle_luopan = set_combine(sets.idle, {
+	sets.idle_luopan       = set_combine(sets.idle, {
 		-- main = "Idris",
 		sub = inv.genbus_shield,
 		range = inv.dunna,
 		head = inv.azimuth_hood,
 		body = inv.azimuth_coat,
-		-- hands = "Geo. Mitaines +4",
-		-- feet = "Bagua Sandals +4",
-		waist = "Isa Belt",
-		back = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
+		hands = inv.geo_mitaines,
+		feet = inv.bagua_sandals,
+		waist = inv.isa_belt,
+		back = inv.GEO_CAPE,
 	})
 
 	-- Movement Speed
 	-- Automatically equips while in town, and while moving outside of town.
 	-- NOTE: To disable, leave this set empty and instead include your movement speed gear in the Idle set above.
-	sets.movement_speed = {
+	sets.movement_speed    = {
 		feet = inv.geo_sandals,
 	}
 
 	-- DT Override (Damage Taken-, Magic Evasion)
 	-- Will override all other gear sets but still inherit unused slots from them
-	sets.dt_override = {
+	sets.dt_override       = {
 		head = inv.azimuth_hood,
 		body = inv.nyame_mail,
 		hands = inv.azimuth_gloves,
@@ -325,7 +328,7 @@ function get_sets()
 
 	-- Oh Shit
 	-- Full DT- and everything you've got with Absorbs or Annuls Damage
-	sets.oh_shit = {
+	sets.oh_shit           = {
 		head = inv.azimuth_hood,
 		body = inv.nyame_mail,
 		hands = inv.azimuth_gloves,
@@ -339,12 +342,12 @@ function get_sets()
 	}
 
 	-- Rest
-	sets.rest = {
+	sets.rest              = {
 		waist = "Austerity Belt",
 	}
 
 	-- DPS (Accuracy, Double/Triple Attack, DEX, Store TP, Attack)
-	sets.melee = {
+	sets.melee             = {
 		head = inv.null_mask,
 		body = inv.azimuth_coat,
 		hands = inv.gazu_bracelets,
@@ -352,7 +355,7 @@ function get_sets()
 		feet = inv.azimuth_feet,
 		neck = inv.null_loop,
 		waist = inv.windbuffet_belt,
-		left_ear = inv.mache_earring_p1,
+		left_ear = inv.alabaster_earring,
 		right_ear = inv.dedition_earring,
 		left_ring = inv.petrov_ring,
 		right_ring = inv.chirich_ring,
@@ -360,7 +363,7 @@ function get_sets()
 	}
 
 	-- Weapon Skill - Basic (STR, Weapon Skill Damage, Attack, Double/Triple Attack)
-	sets.weapon_skill = {
+	sets.weapon_skill      = {
 		head = inv.nyame_helm,
 		body = inv.nyame_mail,
 		hands = inv.nyame_legs,
@@ -376,45 +379,47 @@ function get_sets()
 	}
 
 	-- Exudation (combines with Weapon Skill set above)
-	sets["Exudation"] = set_combine(sets.weapon_skill, {
+	sets["Exudation"]      = set_combine(sets.weapon_skill, {
 		neck = inv.fotia_gorget,
 		waist = inv.fotia_belt,
 	})
 
 	-- Black Halo (combines with Weapon Skill set above)
-	sets["Black Halo"] = set_combine(sets.weapon_skill, {
+	sets["Black Halo"]     = set_combine(sets.weapon_skill, {
 
 	})
 
 	-- Hexa Strike (combines with Weapon Skill set above)
-	sets["Hexa Strike"] = set_combine(sets.weapon_skill, {
+	sets["Hexa Strike"]    = set_combine(sets.weapon_skill, {
 		neck = inv.fotia_gorget,
 		waist = inv.fotia_belt,
 	})
 
 	-- Cataclysm (combines with Weapon Skill set above)
-	sets["Cataclysm"] = set_combine(sets.weapon_skill, {
+	sets["Cataclysm"]      = set_combine(sets.weapon_skill, {
 		head = inv.pixie_hairpin,
-		body = inv.assimilator_body,
-		hands = inv.azimuth_gloves,
-		legs = inv.azimuth_tights,
-		feet = inv.azimuth_feet,
+		hands = inv.jhakri_cuffs,
 		neck = inv.baetyl_pendant,
-		waist = inv.acuity_belt,
+		waist = inv.orpheus_sash,
 		left_ear = inv.malignance_earring,
-		right_ear = inv.regal_earring,
-		left_ring = inv.acrchon_ring,
-		right_ring = inv.metamorph_ring,
+		back = inv.argocham_mantle,
+	})
+
+	sets['Aeolian Edge']   = set_combine(sets.weapon_skill, {
+		hands = inv.jhakri_cuffs,
+		neck = inv.baetyl_pendant,
+		waist = inv.orpheus_sash,
+		left_ear = inv.malignance_earring,
 		back = inv.argocham_mantle,
 	})
 
 	-- Hachirin-no-obi
-	sets.hachirin_no_obi = {
+	sets.hachirin_no_obi   = {
 		waist = inv.hachirin_no_obi,
 	}
 
 	-- Fast Cast (cap is 80%)
-	sets.fast_cast = {
+	sets.fast_cast         = {
 		sub = inv.genbus_shield,
 		head = inv.amalric_coif,                                                                                                                         --11%
 		body = inv.merlinic_fastcast_body,                                                                                                               --13%
@@ -432,8 +437,8 @@ function get_sets()
 
 	-- Indicolure (Geomancy+, 900 Geomancy Skill+Handbell Skill, Indicolure duration+, Azimuth set bonus)
 	-- NOTE: You only need a combined skill of 900 between Geomancy skill and Handbell skill to cap your potency, anything over 900 is wasted)
-	sets.indicolure = {
-		main = "Idris",
+	sets.indicolure        = {
+		main = inv.solstice,
 		sub = inv.genbus_shield,
 		range = inv.dunna,
 		head = inv.azimuth_hood,
@@ -447,7 +452,7 @@ function get_sets()
 	-- Geocolure (Geomancy+, 900 Geomancy Skill+Handbell Skill, Lupoan duration+ (Bagua Charm), Azimuth set bonus)
 	-- NOTE: You only need a combined skill of 900 between Geomancy skill and Handbell skill to cap your potency, anything over 900 is wasted)
 	-- NOTE: Geocolure spells don't get any bonus at mid-cast except from the "Lupoan duration" augment on Bagua Charm. Luopan duration specifically reduces the native perpetuation cost "poison" on the Luopan and is only applied to the Luopan at time of cast (ie midcast).
-	sets.geocolure = {
+	sets.geocolure         = {
 		main = "Idris",
 		sub = inv.genbus_shield,
 		range = inv.dunna,
@@ -460,13 +465,13 @@ function get_sets()
 	}
 
 	-- Entrust (900 Geomancy Skill+Handbell Skill, Indicolure duration+, Azimuth set bonus)
-	-- NOTE: Entrusted spells DO NOT receive and Geomancy+ bonus.
-	sets.entrust = set_combine(sets.indicolure, {
+	-- NOTE: Entrusted spells DO NOT receive Geomancy+ bonus.
+	sets.entrust           = set_combine(sets.indicolure, {
 		main = "Gada",
 	})
 
 	-- Elemental Spells (Magic Attack Bonus, Magic Damage, INT, Magic Accuracy)
-	sets.elemental = {
+	sets.elemental         = {
 		main = inv.bunzi_rod,
 		sub = inv.ammurapi_shield,
 		head = inv.azimuth_hood,
@@ -481,18 +486,20 @@ function get_sets()
 		left_ring = inv.metamorph_ring,
 		right_ring = inv.freke_ring,
 		back = inv.argocham_mantle,
+		ammo = inv.ghastly_tathlum,
 	}
 
 	-- Magic Burst (Magic Burst Damage)
 	-- Combines with Elemental Spells set, only necessary to set the slots with specific desired stats
-	sets.magic_burst = {
+	sets.magic_burst       = {
 		head = inv.ea_hat,
+		neck = inv.mizu_kubikazri,
 		waist = inv.acuity_belt,
 		left_ring = inv.mujin_band,
 	}
 
 	-- Magic Accuracy (Magic Accuracy)
-	sets.magic_accuracy = {
+	sets.magic_accuracy    = {
 		main = "Idris",
 		sub = inv.ammurapi_shield,
 		head = inv.azimuth_hood,
@@ -510,22 +517,22 @@ function get_sets()
 	}
 
 	-- Buff (Conserve MP)
-	sets.buff = {
+	sets.buff              = {
 		head = inv.vanya_hood,
 		body = inv.gyve_doublet,
 		hands = "Shrieker's Cuffs",
 		legs = "Vanya Slops",
 		feet = inv.merlinc_fastcast_feet,
-		neck = "Reti Pendant",
-		waist = "Austerity Belt",
-		left_ear = "Calamitous Earring",
+		-- neck = "Reti Pendant",
+		-- waist = "Austerity Belt",
+		-- left_ear = "Calamitous Earring",
 		right_ear = inv.mendicants_earring,
-		back = "Solemnity Cape",
+		-- back = "Solemnity Cape",
 	}
 
 	-- Healing (Cure Potency, Healing Magic Skill)
 	-- NOTE: Cure Potency cap is 50%
-	sets.healing = {
+	sets.healing           = {
 		head = inv.vanya_hood, --10
 		body = "Vrikodara Jupon", --13
 		hands = inv.telchine_gloves_regen,
@@ -541,8 +548,8 @@ function get_sets()
 
 	-- Aspir/Drain (Aspir/Drain, Dark Magic Skill)
 	-- Combines with Magic Accuracy set, only necessary to set the slots with specific desired stats
-	sets.aspir_drain = set_combine(sets.magic_accuracy, {
-		head = "Bagua Galero +4",
+	sets.aspir_drain       = set_combine(sets.magic_accuracy, {
+		head = inv.bagua_galero,
 		feet = "Agwu's Pigaches",
 		neck = "Erra Pendant",
 		waist = "Fucho-no-obi",
@@ -551,19 +558,19 @@ function get_sets()
 
 	-- Enfeeble (Enfeebling Magic Skill)
 	-- Combines with Magic Accuracy set, only necessary to set the slots with specific desired stats
-	sets.enfeeble = set_combine(sets.magic_accuracy, {
+	sets.enfeeble          = set_combine(sets.magic_accuracy, {
 		right_ring = inv.kishar_ring,
 	})
 
 	-- Refresh (Refresh augmenting gear, not Refresh+)
-	sets.refresh = {
+	sets.refresh           = {
 		head = inv.amalric_coif,
 		back = "Grapevine Cape",
 		waist = inv.gishdubar_sash,
 	}
 
 	-- Cursna (Cursna, Healing Magic)
-	sets.cursna = {
+	sets.cursna            = {
 		head = inv.vanya_hood,
 		body = "Vanya Robe",
 		hands = "Vanya Cuffs",
@@ -575,7 +582,7 @@ function get_sets()
 	}
 
 	-- Impact (Twilight/Crepuscular Cloak)
-	sets.impact = {
+	sets.impact            = {
 		head = empty,
 		body = "Twilight Cloak",
 		hands = "Geo. Mitaines +4", --temp for Bumba
@@ -584,50 +591,50 @@ function get_sets()
 	}
 
 	-- Dispelga (Daybreak)
-	sets.dispelga = {
+	sets.dispelga          = {
 		main = inv.daybreak,
 	}
 
 	-- Enhancing Magic (Enhancing Magic Skill)
-	sets.enhancing = set_combine(sets.buff, {
+	sets.enhancing         = set_combine(sets.buff, {
 
 	})
 
 	-- Phalanx (Phalanx+)
-	sets.phalanx = set_combine(sets.enhancing, {
+	sets.phalanx           = set_combine(sets.enhancing, {
 
 	})
 
 	-- Aquaveil (Aquaveil+)
-	sets.aquaveil = set_combine(sets.enhancing, {
+	sets.aquaveil          = set_combine(sets.enhancing, {
 
 	})
 
 	-- Holy Water (Holy Water+)
-	sets.holy_water = {
+	sets.holy_water        = {
 		neck = "Nicander's Necklace",
 		ring1 = "Blenmot's Ring +1",
 		ring2 = "Blenmot's Ring +1",
 	}
 
 	-- Bolster (Enhances Bolster gear)
-	sets.bolster = {
+	sets.bolster           = {
 		body = inv.bagua_tunic,
 	}
 
 	-- Full Circle (Enhances Curative Recantation gear)
-	sets.full_circle = {
+	sets.full_circle       = {
 		head = inv.azimuth_hood,
 		hands = inv.bagua_hands,
 	}
 
 	-- Radial Arcana (Enhances Radial Arcana gear)
-	sets.radial_arcana = {
+	sets.radial_arcana     = {
 		feet = inv.bagua_sandals,
 	}
 
 	-- Mending Halation (Enhances Mending Halation gear)
-	sets.mending_halation = {
+	sets.mending_halation  = {
 		legs = inv.bagua_pants,
 	}
 
@@ -637,38 +644,38 @@ function get_sets()
 	}
 
 	-- Life Cycle (Enhances Life Cycle gear)
-	sets.life_cycle = {
+	sets.life_cycle        = {
 		body = inv.geomancy_tunic,
 		back = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
 	}
 
 	-- Default Town Gear (Put all your fancy-pants gear in here you want to showboat around town in. Does not lockstyle this gear, only equips)
-	sets.town = set_combine(sets.idle, {
+	sets.town              = set_combine(sets.idle, {
 		main = "Idris",
 	})
 
 	-- Adoulin Town Gear
-	sets.adoulin = set_combine(sets.town, {
+	sets.adoulin           = set_combine(sets.town, {
 		body = "Councilor's Garb",
 	})
 
 	-- Bastok Town Gear
-	sets.bastok = set_combine(sets.town, {
+	sets.bastok            = set_combine(sets.town, {
 		--body="Republic Aketon", --Note: only increases your speed if you are a citizen of Bastok
 	})
 
 	-- San d'Oria Town Gear
-	sets.sandoria = set_combine(sets.town, {
+	sets.sandoria          = set_combine(sets.town, {
 		--body="Kingdom Aketon", --Note: only increases your speed if you are a citizen of San d'Oria
 	})
 
 	-- Windurst Town Gear
-	sets.windurst = set_combine(sets.town, {
+	sets.windurst          = set_combine(sets.town, {
 		--body="Federation Aketon", --Note: only increases your speed if you are a citizen of Windurst
 	})
 
 	-- Unity Trust Gear
-	sets.unity = {
+	sets.unity             = {
 		body = "Sylvie Unity Shirt",
 	}
 end
@@ -2646,6 +2653,9 @@ windower.register_event('tp change', function()
 		NotiCountdown = NotiDelay
 	end
 end)
+windower.register_event('job change', function()
+	set_lockstyle()
+end)
 
 -------------------------------------------
 --              HEARTBEAT                --
@@ -3438,7 +3448,7 @@ windower.register_event('zone change', function()
 	--Clear any debuffs
 	send_command('gs c ClearDebuffs')
 
-	--Unlock Transport spells
+	--Unlock Transport spellsP
 	transport_locked = true
 	transport_lock_timestamp = 0
 end)

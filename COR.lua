@@ -254,7 +254,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    -- sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +3" }
+    sets.precast.JA['Snake Eye'] = { legs = inv.Lanun_trews }
     sets.precast.JA['Wild Card'] = { feet = inv.Lanun_bottes }
     sets.precast.JA['Random Deal'] = { body = inv.Lanun_frac }
 
@@ -608,7 +608,7 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-        head = "Meghanada Visor +2",
+        head = inv.meghanda_head,
         body = inv.meghanda_body,
         hands = inv.Chasseurs_hands,
         --legs="Darraigner's Brais",
@@ -631,7 +631,7 @@ function init_gear_sets()
     }                              --27
 
     sets.TripleShotCritical = {
-        head = "Meghanada Visor +2",
+        head = inv.meghanda_head,
         body = "Nisroch Jerkin",
         legs = inv.oshosi_legs,
         feet = "Ikenga's Clogs",
@@ -669,7 +669,6 @@ function init_gear_sets()
         legs = inv.carmine_legs,
         feet = inv.malignance_boots,
         neck = inv.null_loop,
-        -- neck = inv.commodore_charm,
         waist = inv.reiki_yotai,
         left_ear = inv.alabaster_earring,
         right_ear = inv.dedition_earring,
@@ -690,19 +689,6 @@ function init_gear_sets()
         -- back = "Moonlight Cape",       --6/6
         waist = inv.platinum_moogle_belt, --3/3
     })
-
-    -- sets.idle.Town = set_combine(sets.idle, {
-    --     ammo = inv.MAbullet,
-    --     head = "Lanun Tricorne +3",
-    --     body = "Oshosi Vest +1",
-    --     hands = "Chasseur's Gants +3",
-    --     legs = "Chas. Culottes +3",
-    --     feet = "Lanun Bottes +3",
-    --     neck = "Comm. Charm +2",
-    --     ear1 = "Crep. Earring",
-    --     ear2 = "Telos Earring",
-    --     waist = "Skrymir Cord +1",
-    -- })
 
 
     ------------------------------------------------------------------------------------------------
@@ -725,6 +711,7 @@ function init_gear_sets()
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     local tp_set = {
+        ammo = inv.RAbullet,
         head = inv.malignance_chapeau,
         body = inv.malignance_tabard,
         hands = inv.Adhemar_A_hands,
@@ -1032,11 +1019,11 @@ function init_gear_sets()
     }
 
     sets.engaged.NyameHybrid = {
-        head = "Nyame Helm",        --7/7
-        body = "Nyame Mail",        --9/9
-        hands = "Nyame Gauntlets",  --7/7
-        legs = "Chas. Culottes +3", --12/12
-        feet = "Nyame Sollerets",   --7/7
+        head = "Nyame Helm",       --7/7
+        body = "Nyame Mail",       --9/9
+        hands = "Nyame Gauntlets", --7/7
+        legs = inv.Chasseurs_legs, --12/12
+        feet = "Nyame Sollerets",  --7/7
     }
 
     sets.engaged.Malignance = set_combine(sets.engaged, sets.engaged.MalignanceHybrid)
@@ -1241,6 +1228,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
                 -- Target distance under 1.7 yalms.
             elseif spell.target.distance < (1.7 + spell.target.model_size) then
                 equip({ waist = inv.orpheus_sash })
+
                 -- Matching day and weather.
             elseif spell.element == world.day_element and spell.element == world.weather_element then
                 equip({ waist = "Hachirin-no-Obi" })
@@ -1284,7 +1272,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             end
         end
     elseif spell.action_type == 'Ranged Attack' then
-        if buffactive['Triple Shot'] and not state.RangedMode.value == 'HighAcc' then
+        if buffactive['triple shot'] and state.RangedMode.value ~= 'HighAcc' then
+            print('triple shot active equip sets')
             equip(sets.TripleShot)
             if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
                 equip(sets.TripleShotCritical)
@@ -1769,7 +1758,7 @@ function check_weaponset()
     if state.OffenseMode.value == 'LowAcc' or state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
         equip(sets[state.WeaponSet.current].Acc)
     else
-        -- equip(sets[state.Gun.current])
+        equip(sets[state.Gun.current])
         equip(sets[state.WeaponSet.current])
     end
     if (player.sub_job ~= 'NIN' and player.sub_job ~= 'DNC') then
