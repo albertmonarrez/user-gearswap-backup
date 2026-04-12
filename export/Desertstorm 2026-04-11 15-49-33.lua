@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Naegling",
+    sub="Blurred Shield +1",
+    ammo="Coiste Bodhar",
+    head="Null Masque",
+    body="Boii Lorica +3",
+    hands="Agoge Mufflers",
+    legs="Pumm. Cuisses +3",
+    feet="Hermes' Sandals",
+    neck="Null Loop",
+    waist="Sailfi Belt +1",
+    left_ear="Schere Earring",
+    right_ear={ name="Boii Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Chirich Ring +1",
+    back="Null Shawl",
+}

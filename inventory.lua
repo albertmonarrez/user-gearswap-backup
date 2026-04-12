@@ -175,6 +175,7 @@ local equipment = {
     bagua_hands                  = "Bagua Mitaines",
     laksamas_hands               = "Lak. Gants +4",
     geo_mitaines                 = "Geo. Mitaines +2",
+    agoge_hands                  = "Agoge Mufflers",
 
     --legs
     carmine_legs                 = { name = "Carmine Cuisses +1", augments = { 'Accuracy+20', 'Attack+12', '"Dual Wield"+6', } },
@@ -240,7 +241,7 @@ local equipment = {
     taeon_dw_feet                = { name = "Taeon Boots", augments = { 'Accuracy+25', '"Dual Wield"+5', 'DEX+10', } },
     thereoid_greaves             = "Thereoid Greaves",
     sulevias_feet                = "Sulev. Leggings +2",
-    agoge_feet                   = { name = "Agoge Calligae +1", augments = { 'Enhances "Tomahawk" effect', } },
+    agoge_feet                   = { name = "Agoge Calligae +2", augments = { 'Enhances "Tomahawk" effect', } },
     boi_feet                     = "Boii Calligae +2",
     mpacas_boots                 = "Mpaca's Boots",
     geo_sandals                  = "Geo. Sandals +3",
@@ -256,7 +257,7 @@ local equipment = {
     telchine_feet_regen          = { name = "Telchine Pigaches", augments = { '"Regen" potency+3', } },
     Laksamas_boots               = "Laksa. Bottes +4",
     rawhide_boots_waltz          = "Rawhide Boots",
-    bagua_sandals                = "Bagua Sandals +1",
+    bagua_sandals                = "Bagua Sandals +2",
     azimuth_feet                 = "Azimuth Gaiters +2",
 
     --neck pieces
@@ -360,6 +361,7 @@ local equipment = {
     argocham_mantle              = "Argocham. Mantle",
     GEO_CAPE                     = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
     lifestream_cape              = { name = "Lifestream Cape", augments = { 'Geomancy Skill +10', 'Indi. eff. dur. +13', 'Pet: Damage taken -2%', } },
+    GEO_MAB_CAPE                 = { name = "Nantosuelta's Cape", augments = { 'INT+8', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10', } },
 
     -- earrings
     suppanomimi                  = "Suppanomimi",

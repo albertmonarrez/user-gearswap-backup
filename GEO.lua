@@ -485,7 +485,7 @@ function get_sets()
 		right_ear = inv.regal_earring,
 		left_ring = inv.metamorph_ring,
 		right_ring = inv.freke_ring,
-		back = inv.argocham_mantle,
+		back = inv.GEO_MAB_CAPE,
 		ammo = inv.ghastly_tathlum,
 	}
 
