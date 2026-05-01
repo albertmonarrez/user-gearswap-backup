@@ -461,7 +461,7 @@ function get_sets()
 		hands = inv.azimuth_gloves,
 		legs = inv.azimuth_tights,
 		feet = inv.azimuth_feet,
-		neck = "Bagua Charm +2",
+		neck = inv.bagua_charm,
 	}
 
 	-- Entrust (900 Geomancy Skill+Handbell Skill, Indicolure duration+, Azimuth set bonus)

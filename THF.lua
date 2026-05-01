@@ -46,8 +46,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Mod')
-    state.HybridMode:options('Normal', 'Evasion', 'PDT')
+    state.OffenseMode:options('Normal')
+    state.HybridMode:options('Normal', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
@@ -101,21 +101,23 @@ function init_gear_sets()
             hands = inv.gletis_hands,
             legs = inv.gletis_legs,
             feet = inv.pillagers_feet,
+            ring_1 = inv.murky_ring,
         })
 
     sets.TreasureHunter = {
-        head = "Wh. Rarab Cap +1",
+        -- head = "Wh. Rarab Cap +1",
         hands = { name = "Plun. Armlets +1", augments = { 'Enhances "Perfect Dodge" effect', } },
-        ammo = "Per. Lucky Egg",
+        ammo = inv.perfect_lucky_egg,
         feet = "Skulk. Poulaines +1",
         waist = "Chaac Belt",
+        right_ring = inv.hoxne_ring,
     }
     sets.ExtraRegen = { head = "Ocelomeh Headpiece +1" }
     sets.Kiting = { feet = "Skadi's Jambeaux +1" }
 
     sets.buff['Sneak Attack'] = {
         hands = { name = "Plun. Armlets +1", augments = { 'Enhances "Perfect Dodge" effect', } },
-        ammo = "Per. Lucky Egg",
+        -- ammo = "Per. Lucky Egg",
         -- feet = "Skulk. Poulaines +1",
     }
 
@@ -224,12 +226,12 @@ function init_gear_sets()
         back = inv.THF_WS_crit_cape,
     }
     local evisceration = {
-        ammo = "Yetshila",
+        ammo = inv.yetshila,
         head = inv.blistering_sallet,
-        hands = inv.mummu_hands,
-        body = inv.pillagers_vest,
-        legs = "Gleti's Breeches",
-        feet = inv.mummu_feet,
+        hands = inv.gletis_hands,
+        body = inv.gletis_body,
+        legs = inv.gletis_legs,
+        feet = inv.gletis_feet,
         neck = inv.fotia_gorget,
         waist = inv.fotia_belt,
         left_ear = inv.sherida_earring,
@@ -240,18 +242,18 @@ function init_gear_sets()
     }
     local rudras_storm = {
         ammo = inv.oshashs_treastise,
-        head = inv.Herc_WS_head,
-        body = inv.mummu_jacket,
-        hands = inv.meghan_golves,
-        legs = inv.mummu_kecks,
-        feet = inv.mummu_feet,
+        head = inv.nyame_helm,
+        body = inv.nyame_mail,
+        hands = inv.nyame_hands,
+        legs = inv.nyame_legs,
+        feet = inv.nyame_feet,
         neck = "Caro Necklace",
         waist = inv.grunfeld_rope,
         left_ear = inv.moonshade_earring,
         right_ear = inv.odr_earring,
-        left_ring = inv.ilabrat_ring,
+        left_ring = inv.epaminondas_ring,
         right_ring = inv.corneilias_ring,
-        back = inv.THF_WS_crit_cape,
+        back = inv.alabaster_mantle,
     }
 
 
@@ -351,7 +353,7 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
         ammo = "Ghastly Tathlum +1",
-        head = inv.Herc_MAB_head,
+        head = inv.nyame_helm,
         body = inv.nyame_mail,
         hands = inv.nyame_hands,
         legs = inv.nyame_legs,
@@ -362,7 +364,7 @@ function init_gear_sets()
         right_ear = { name = "Moonshade Earring", augments = { 'Accuracy+4', 'TP Bonus +250', } },
         left_ring = inv.dingir_ring,
         right_ring = inv.corneilias_ring,
-        back = "Toro Cape",
+        back = inv.alabaster_mantle,
     }
 
     sets.precast.WS['Aeolian Edge'].TH = sets.precast.WS['Aeolian Edge']
@@ -456,17 +458,13 @@ function init_gear_sets()
         feet = inv.malignance_boots
     }
 
-    sets.defense.PDT = {
-        ammo = inv.staunch_tathlum,
-        head = inv.null_mask,
-        hands = inv.malignance_gloves,
+    sets.defense.PDT = set_combine(tp_set, {
         body = inv.malignance_tabard,
+        hands = inv.malignance_gloves,
         legs = inv.malignance_tights,
         feet = inv.malignance_boots,
-        left_ear = "Eabani earring",
-        neck = inv.null_loop,
-        left_ring = inv.gelat_ring_pdt,
-    }
+        left_ear = inv.alabaster_earring
+    })
 
     sets.defense.MDT = idle_set
 
@@ -542,35 +540,20 @@ function init_gear_sets()
         feet = "Qaaxo Leggings"
     }
 
-    sets.engaged.PDT = {
-        ammo = "Thew Bomblet",
-        head = "Felistris Mask",
-        neck = { name = "Loricate Torque +1", augments = { 'Path: A', } },
-        ear1 = "Dudgeon Earring",
-        ear2 = "Heartseeker Earring",
-        body = "Iuitl Vest",
-        hands = "Pillager's Armlets +1",
-        ring1 = "Defending Ring",
-        ring2 = "Epona's Ring",
-        back = "Iximulew Cape",
-        waist = "Patentia Sash",
-        legs = "Iuitl Tights",
-        feet = "Qaaxo Leggings"
-    }
-    sets.engaged.Acc.PDT = {
-        ammo = "Honed Tathlum",
-        head = "Whirlpool Mask",
-        neck = { name = "Loricate Torque +1", augments = { 'Path: A', } },
-        ear1 = "Dudgeon Earring",
-        ear2 = "Heartseeker Earring",
-        body = "Iuitl Vest",
-        hands = "Pillager's Armlets +1",
-        ring1 = "Defending Ring",
-        ring2 = "Epona's Ring",
-        waist = "Hurch'lan Sash",
-        legs = "Iuitl Tights",
-        feet = "Qaaxo Leggings"
-    }
+    sets.engaged.PDT = set_combine(tp_set, {
+        body = inv.malignance_tabard,
+        hands = inv.malignance_gloves,
+        legs = inv.malignance_tights,
+        feet = inv.malignance_boots,
+        left_ear = inv.alabaster_earring
+    })
+    sets.engaged.Acc.PDT = set_combine(tp_set, {
+        body = inv.malignance_tabard,
+        hands = inv.malignance_gloves,
+        legs = inv.malignance_tights,
+        feet = inv.malignance_boots,
+        left_ear = inv.alabaster_earring
+    })
 end
 
 -------------------------------------------------------------------------------------------------------------------

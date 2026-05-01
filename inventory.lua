@@ -113,7 +113,7 @@ local equipment = {
     Adhemar_A_body               = { name = "Adhemar Jacket +1", augments = { 'DEX+12', 'AGI+12', 'Accuracy+20', } },
     mummu_jacket                 = "Mummu Jacket +2",
     pillagers_vest               = "Pillager's Vest +3",
-    Laksamas_frac                = "Laksa. Frac +3",
+    Laksamas_frac                = "Laksa. Frac +4",
     Lanun_frac                   = { name = "Lanun Frac +4", augments = { 'Enhances "Loaded Deck" effect', } },
     dread_jupon                  = "Dread Jupon",
     rawhide_vest                 = { name = "Rawhide Vest", augments = { 'DEX+10', 'STR+7', 'INT+7', } },
@@ -174,7 +174,7 @@ local equipment = {
     lanun_hands                  = "Lanun Gants +4",
     bagua_hands                  = "Bagua Mitaines",
     laksamas_hands               = "Lak. Gants +4",
-    geo_mitaines                 = "Geo. Mitaines +2",
+    geo_mitaines                 = "Geo. Mitaines +3",
     agoge_hands                  = "Agoge Mufflers",
 
     --legs
@@ -257,7 +257,7 @@ local equipment = {
     telchine_feet_regen          = { name = "Telchine Pigaches", augments = { '"Regen" potency+3', } },
     Laksamas_boots               = "Laksa. Bottes +4",
     rawhide_boots_waltz          = "Rawhide Boots",
-    bagua_sandals                = "Bagua Sandals +2",
+    bagua_sandals                = "Bagua Sandals +3",
     azimuth_feet                 = "Azimuth Gaiters +2",
 
     --neck pieces
@@ -294,6 +294,7 @@ local equipment = {
     sroda_necklace               = "Sroda necklace",
     unmoving_collar              = "Unmoving Collar +1",
     quanpur_necklace             = "Quanpur Necklace",
+    bagua_charm                  = "Bagua Charm +2",
 
     --waist
     platinum_moogle_belt         = "Plat. Mog. Belt",
@@ -362,6 +363,8 @@ local equipment = {
     GEO_CAPE                     = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
     lifestream_cape              = { name = "Lifestream Cape", augments = { 'Geomancy Skill +10', 'Indi. eff. dur. +13', 'Pet: Damage taken -2%', } },
     GEO_MAB_CAPE                 = { name = "Nantosuelta's Cape", augments = { 'INT+8', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10', } },
+    alabaster_mantle             = "Alabaster Mantle",
+    shadow_mantle                = "Shadow Mantle",
 
     -- earrings
     suppanomimi                  = "Suppanomimi",
@@ -460,7 +463,7 @@ local equipment = {
     sakpatas_sword               = "Sakpata's Sword",
     forfend_p1                   = "Forfend +1",
     bunzi_rod                    = "Bunzi's Rod",
-    colada_phalanx               = { name = "Colada", augments = { 'MND+7', 'DEX+9', 'Phalanx +3', } },
+    colada_phalanx               = { name = "Colada", augments = { 'AGI+5', '"Occult Acumen"+7', 'Phalanx +2', } },
     molybdosis                   = "Molybdosis",
     ammurapi_shield              = "Ammurapi Shield",
     culminus                     = 'Culminus',

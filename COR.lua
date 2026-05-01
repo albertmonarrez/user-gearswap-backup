@@ -1273,7 +1273,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         end
     elseif spell.action_type == 'Ranged Attack' then
         if buffactive['triple shot'] and state.RangedMode.value ~= 'HighAcc' then
-            print('triple shot active equip sets')
+            -- print('triple shot active equip sets')
             equip(sets.TripleShot)
             if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
                 equip(sets.TripleShotCritical)

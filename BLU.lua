@@ -227,7 +227,7 @@ function init_gear_sets()
         waist = "Chaac Belt",
         head = "Wh. Rarab Cap +1",
         right_ring = inv.defending_ring,
-        left_ring = inv.stikini_ring,
+        left_ring = inv.hoxne_ring,
         back = inv.null_shawl
     }
     -- Precast Sets

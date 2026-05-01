@@ -507,7 +507,7 @@ function get_sets()
 		right_ear = "Ran Earring",
 		left_ring = inv.defending_ring,
 		right_ring = inv.acrchon_ring,
-		back = "Null Shawl"
+		back = inv.shadow_mantle
 	}
 
 	-- Weapon Skill - Basic (STR, DEX, Multi-hit, Crit, Attack)
@@ -711,7 +711,7 @@ function get_sets()
 	sets.perfect_counter = { head = inv.bhikku_crown }
 
 	-- Impetus (Equipped during duration of Impetus)
-	sets.impetus = { body = inv.bhikku_body }
+	sets.impetus = { body = inv.bhikku_body, feet = inv.malignance_boots }
 
 	-- Hundred Fists
 	sets.hundred_fists = { legs = inv.hesychast_hose }
