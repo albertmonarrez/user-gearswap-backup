@@ -83,13 +83,13 @@ See the very bottom of this file for /BLU spell suggestions
 --                OPTIONS                --
 -------------------------------------------
 
-Book             = '3'   --[1-20/Off]	Sets your Macro book to any number from 1 to 20 (or Off) on file load.
+Book             = 15    --[1-20/Off]	Sets your Macro book to any number from 1 to 20 (or Off) on file load.
 SubBLUPage       =
-'1'                      --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing BLU.
+	1                    --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing BLU.
 SubWARPage       =
-'3'                      --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing WAR.
+	1                    --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing WAR.
 SubSCHPage       =
-'1'                      --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing SCH.
+	1                    --[1-10/Off]	Sets your Macro page to any number from 1 to 10 (or Off) on file load or subjob change when subbing SCH.
 Chat             = 'p'   --[s/p/l/l2/Off]Sets your Default chat mode (say, party, linkshell, linkshell2, or Off) on file load.
 InvTimer         = true  --[true/false]	Displays a timer for Invincible in echo.
 IntTimer         = true  --[true/false]	Displays a timer for Intervene in echo.
@@ -100,13 +100,13 @@ UseEcho          = 'R'   --[E/R/Off]		Automatically uses an (E)cho Drop or (R)em
 AutoMajesty      = true  --[true/false]	Automatically activates and keeps Majesty active.
 AutoDefender     = true  --[true/false]	Automatically activates and keeps Defender active.
 AutoDEmblem      = true  --[true/false]	Automatically activates Divine Emblem before a Flash when Divine Emblem is up.
-UseMaxHP         = true  --[true/false]	Equips your Max HP gear set when you cure yourself at or near full HP%.
+UseMaxHP         = false --[true/false]	Equips your Max HP gear set when you cure yourself at or near full HP%.
 AutoSentinel     = true  --[true/false]	Attempts to activate Sentinel when your HP gets critically low.
 AutoSubCharge    = true  --[true/false]	Automatically attempts to keep Sublimation charging.
 
 -- Heads Up Display --
-HUDposX          = 100  --	X position for the HUD. 0 is left of the window, increasing this number will move it to the right.
-HUDposY          = 100  --	Y position for the HUD. 0 is top of the window, increasing this number will move it downward.
+HUDposX          = 805  --	X position for the HUD. 0 is left of the window, increasing this number will move it to the right.
+HUDposY          = 820  --	Y position for the HUD. 0 is top of the window, increasing this number will move it downward.
 FontSize         = 10.5 --	Adjust the font size. Changing this may require you to adjust the Spacers below as well.
 LineSpacer       = 17   --	Space in pixels between each Line of the HUD.
 ColumnSpacer     = 95   --	Space in pixels between each Column of the HUD.
@@ -157,7 +157,7 @@ ModeBind         = '^g' --Sets the keyboard shortcut you would like to cycle bet
 WCBind           = '^h' --Sets the keyboard shortcut you would like to activate the Weapon Cycle. CTRL+H (^h) is default.
 --    ^ = CTRL    ! = ALT    @ = WIN    # = APPS    ~ = SHIFT
 AutoMajWindow    = 60   --Time in seconds left before Majesty wears off that AutoMajesty will activate after a cure/protect.
-KeepTPThreshold  = 250  --Main/Sub slots in specific sets will not equip when TP is above this number (set to 3000 to always switch).
+KeepTPThreshold  = 300  --Main/Sub slots in specific sets will not equip when TP is above this number (set to 3000 to always switch).
 MaxHPThreshold   = 75   --If your HP% is above this number when you cure yourself, your Max HP gear set will activate.
 --Once it is activated, going below this will deactivate it.
 LowHPThreshold   = 1000 --Below this number is considered Low HP.
@@ -285,8 +285,9 @@ color            = {
 -- These are the Main/Sub combos that the Weapon Cycle goes through. Add more pairs on new lines as needed
 -- NOTE: if a slot should be empty, use `empty` with no quotation marks. ie: {"Fruit Punches", empty},
 WeaponCycle      = {
-	{ "Burtgang",         "Duban" },
-	{ "Malignance Sword", "Aegis" },
+	{ "Excalibur",  "Duban" },
+	{ inv.naegling, inv.machaera_p2 },
+	-- { "Malignance Sword", "Aegis" },
 	--{"Main Slot", "Sub Slot"},
 }
 
@@ -305,26 +306,31 @@ TankMDTTrigger   = {
 	["Aegis"] = true,
 }
 
+local function set_lockstyle()
+	send_command('wait 4; input /lockstyleset 18')
+end
+
 -------------------------------------------
 --               GEAR SETS               --
 -------------------------------------------
 
 function get_sets()
+	set_lockstyle()
 	-- Tank (Damage Taken-, Magic Evasion, Enmity+, VIT, Defense)
 	sets.tank = {
 		ammo = inv.staunch_tathlum, --3 DT
-		head = "Chev. Armet +3", --11 DT
+		head = inv.chevalier_head, --11 DT
 		body = inv.sakpatas_body, --10 DT
-		hands = "Chev. Gauntlets +3", --11 DT
-		legs = "Chev. Cuisses +3", --13 DT
-		feet = "Chev. Sabatons +3",
+		hands = inv.chevalier_hands, --11 DT
+		legs = inv.chevalier_legs, --13 DT
+		feet = inv.chevalier_feet,
 		neck = inv.unmoving_collar,
 		waist = inv.platinum_moogle_belt, --3 DT
-		left_ear = inv.odnowa_earring,
-		right_ear = inv.alabaster_earring,
-		left_ring = inv.defending_ring, --5 DT
-		right_ring = inv.murky_ring,
-		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Mag. Evasion+15', } },
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.odnowa_earring,
+		left_ring = inv.murky_ring, --5 DT
+		right_ring = inv.defending_ring,
+		back = inv.PLD_TANK_BACK,
 
 	}
 
@@ -336,30 +342,30 @@ function get_sets()
 		hands = inv.sakpatas_hands,
 		legs = inv.sakpatas_legs,
 		feet = inv.sakpatas_feet,
-		neck = "Moonlight Necklace",
+		neck = inv.moonbeam_necklace,
 		waist = inv.aasklepian_belt,
 		left_ear = inv.eabani_earring,
 		right_ear = inv.chevaliers_earring,
 		left_ring = "Shadow Ring",
 		right_ring = "Apeile Ring +1",
-		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Mag. Evasion+15', } },
+		back = inv.PLD_TANK_BACK,
 	}
 
 	-- MAX HP (HP-focused tank gear, inherits any leftover slots from the Tank set above)
 	-- NOTE: This set is only used when the "UseMaxHP" option is set to true.
 	sets.max_hp = {
 		ammo = "Egoist's Tathlum",
-		head = "Souv. Schaller +1",
-		body = "Rev. Surcoat +4",
-		hands = "Souv. Handsch. +1",
-		legs = "Rev. Breeches +4",
+		head = inv.souveran_head,
+		body = inv.reverence_body,
+		hands = inv.souveran_hands,
+		legs = inv.reverence_legs,
 		feet = "Souveran Schuhs +1",
-		neck = "Unmoving Collar +1",
-		waist = "Plat. Mog. Belt",
+		neck = inv.unmoving_collar,
+		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
-		right_ear = "Odnowa Earring +1",
+		right_ear = inv.odnowa_earring,
 		left_ring = "Moonlight Ring",
-		right_ring = "Gelatinous Ring +1",
+		right_ring = inv.gelat_ring_pdt,
 		back = "Moonlight Cape",
 	}
 
@@ -367,16 +373,16 @@ function get_sets()
 	-- NOTE: This set is only used when the "UseMaxHP" option is set to true.
 	sets.max_hp_sird = {
 		ammo = inv.staunch_tathlum, --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD
-		body = "Chev. Cuirass +3", --20 SIRD
-		hands = "Souv. Handsch. +1",
-		legs = "Founder's Hose", --30 SIRD
+		head = inv.souveran_head, --20 SIRD
+		body = inv.chevalier_body, --20 SIRD
+		hands = inv.souveran_hands,
+		legs = inv.founders_hose, --30 SIRD
 		feet = "Souveran Schuhs +1",
 		neck = inv.unmoving_collar,
 		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
 		right_ear = "Knightly Earring", --9 SIRD
-		left_ring = "Moonlight Ring",
+		left_ring = inv.murky_ring,
 		right_ring = "Evanescence Ring", --5 SIRD
 		back = "Moonlight Cape",
 	}
@@ -384,46 +390,46 @@ function get_sets()
 	-- DPS (DPS-focused gear, inherits any leftover slots from the Tank set above)
 	sets.dps = set_combine(sets.tank, {
 		ammo = inv.coiste_bodhar,
-		head = "Sakpata's Helm",
-		body = "Sakpata's Plate",
-		hands = "Sakpata's Gauntlets",
-		legs = "Sakpata's Cuisses",
-		feet = "Sakpata's Leggings",
-		neck = "Null Loop",
-		waist = "Sailfi Belt +1",
-		left_ear = "Brutal Earring",
-		right_ear = "Cessance Earring",
-		left_ring = "Hetairoi Ring",
-		right_ring = "Petrov Ring",
-		back = "Null Shawl",
+		head = inv.hjarrandi_helm,
+		body = inv.sakpatas_body,
+		hands = inv.sakpatas_hands,
+		legs = inv.sakpatas_legs,
+		feet = inv.sakpatas_feet,
+		neck = inv.null_loop,
+		waist = inv.sailfi_belt,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.dedition_earring,
+		left_ring = inv.crepuscular_ring,
+		right_ring = inv.chirich_ring,
+		back = inv.null_shawl,
 	})
 
 	-- Oh Shit
 	-- Full DT- and everything you've got with Absorbs or Annuls Damage
 	sets.oh_shit = {
-		head = "Chev. Armet +3",
-		body = "Chev. Cuirass +3",
-		hands = "Chev. Gauntlets +3",
-		legs = "Chev. Cuisses +3",
-		feet = "Chev. Sabatons +3",
+		head = inv.chevalier_head,
+		body = inv.chevalier_body,
+		hands = inv.chevalier_hands,
+		legs = inv.chevalier_legs,
+		feet = inv.chevalier_feet,
 		neck = inv.warders_charm,
 		left_ring = "Shadow Ring",
-		back = "Shadow Mantle"
+		back = inv.shadow_mantle
 	}
 
 	-- Idle (Refresh, not Kiting)
 	-- NOTE: Combines with the Tank set above
 	sets.idle = set_combine(sets.tank, {
 		ammo = inv.homiliary,
-		head = { name = "Odyssean Helm", augments = { 'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20', 'Magic dmg. taken -2%', '"Refresh"+2', 'Accuracy+15 Attack+15', 'Mag. Acc.+1 "Mag.Atk.Bns."+1', } },
-		body = "Crepuscular Mail",
-		hands = "Regal Gauntlets",
-		feet = "Odyssean Greaves",
-		neck = "Coatl Gorget +1",
+		head = inv.null_mask,
+		-- body = "Crepuscular Mail",
+		-- hands = "Regal Gauntlets",
+		feet = inv.chevalier_feet,
+		neck = inv.coatl_gorget,
 		waist = inv.platinum_moogle_belt,
-		left_ring = "Stikini Ring +1",
-		right_ring = "Stikini Ring +1",
-		back = "Moonlight Cape",
+		-- left_ring = inv.stikini_ring,
+		-- right_ring = inv.stikini_ring2,
+		-- back = "Moonlight Cape",
 	})
 
 	-- Movement Speed
@@ -442,16 +448,16 @@ function get_sets()
 	sets.fast_cast = {
 		ammo = inv.sapience_orb, --2
 		head = inv.carmine_mask, --14
-		body = "Rev. Surcoat +4", --10
+		body = inv.reverence_body, --10
 		hands = inv.leyline_gloves, --5+1
-		legs = "Rev. Breeches +4",
-		feet = "Chev. Sabatons +3", --8
-		neck = inv.unmoving_collar,
+		legs = inv.enif_cosciales,
+		feet = inv.chevalier_feet, --8
+		neck = inv.baetyl_pendant,
 		waist = inv.platinum_moogle_belt,
-		left_ear = "Tuisto Earring",
-		right_ear = inv.alabaster_earring,
-		left_ring = inv.murky_ring,
-		right_ring = inv.defending_ring,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.loquacious_earring,
+		left_ring = inv.kishar_ring,
+		right_ring = inv.weatherspoon_ring,
 		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Fast Cast"+10', 'Phys. dmg. taken-10%', } }, --10
 	}
 
@@ -463,39 +469,39 @@ function get_sets()
 
 	-- Enmity (full Enmity+ for spells/abilities)
 	sets.enmity = {
-		ammo = "Sapience Orb",
+		ammo = inv.sapience_orb,
 		head = "Loess Barbuta +1",
 		body = "Souv. Cuirass +1",
-		hands = "Souv. Handsch. +1",
+		hands = inv.souveran_hands,
 		legs = "Cab. Breeches +4",
-		feet = "Chev. Sabatons +3",
-		neck = "Moonlight Necklace",
-		waist = "Plat. Mog. Belt",
+		feet = inv.chevalier_feet,
+		neck = inv.moonbeam_necklace,
+		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
-		right_ear = "Odnowa Earring +1",
-		left_ring = "Apeile Ring +1",
-		right_ring = "Defending Ring",
-		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Mag. Evasion+15', } },
+		right_ear = inv.odnowa_earring,
+		left_ring = inv.murky_ring,
+		right_ring = "Apeile Ring +1",
+		back = inv.PLD_TANK_BACK,
 	}
 
 	-- Enmity Spells (Fast Cast, will not be used to cast faster but instead to help reduce recast)
 	-- Combines with Enmity set
 	-- Flash, Holy, Banish, BLU spells use this.
 	sets.enmity_spells = set_combine(sets.enmity, {
-		head = "Chev. Armet +3",
+		head = inv.chevalier_head,
 	})
 
 	-- Enmity Spells with SIRD (102%+ SIRD (92% + 10% from merits), Fast Cast, will not be used to cast faster but instead to help reduce recast)
 	-- Combines with Enmity set
 	-- Flash, Holy, Banish, BLU spells use this.
 	sets.enmity_spells_sird = set_combine(sets.enmity, {
-		ammo = "Staunch Tathlum +1", --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD
+		ammo = inv.staunch_tathlum, --11 SIRD
+		head = inv.souveran_head, --20 SIRD
 		body = inv.sakpatas_body,
 		hands = inv.sakpatas_hands,
-		legs = "Founder's Hose", --30 SIRD
+		legs = inv.founders_hose, --30 SIRD
 		feet = "Souveran Schuhs +1",
-		neck = "Moonlight Necklace", --15 SIRD
+		neck = inv.moonbeam_necklace, --15 SIRD
 		waist = inv.platinum_moogle_belt,
 		left_ear = "Knightly Earring", --9 SIRD
 		right_ear = inv.odnowa_earring,
@@ -507,36 +513,36 @@ function get_sets()
 	-- Healing (Cure Potency, HP+, Enmity)
 	-- NOTE: Cure Potency cap is 50%, Cure Potency Received cap is 30%
 	sets.healing = {
-		ammo = "Sapience Orb",
+		ammo = inv.sapience_orb,
 		head = "Loess Barbuta +1",
 		body = "Souv. Cuirass +1", --11 CP		15 CPR
 		hands = "Souv. Handsch. +1", --			15 CPR (over cap, but still used for the HP)
 		legs = "Souv. Diechlings +1", --8 CP		23 CPR
-		feet = "Chev. Sabatons +3",
+		feet = inv.chevalier_feet,
 		neck = "Phalaina Locket", --4 CP		 4 CPR
-		waist = "Plat. Mog. Belt",
+		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
-		right_ear = "Chev. Earring +2", --10 CP
+		right_ear = inv.chevaliers_earring, --10 CP
 		left_ring = "Moonlight Ring",
-		right_ring = "Defending Ring",
+		right_ring = inv.defending_ring,
 		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Cure" potency +10%', 'Spell interruption rate down-10%', } }, --10 CP
 	}
 
 	-- Healing with SIRD (102%+ SIRD (92% + 10% from merits), Cure Potency, HP+, Enmity)
 	-- NOTE: Cure Potency cap is 50%, Cure Potency Received cap is 30%
 	sets.healing_sird = {
-		ammo = "Staunch Tathlum +1", --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD				15 CPR
+		ammo = inv.staunch_tathlum, --11 SIRD
+		head = inv.souveran_head, --20 SIRD				15 CPR
 		body = "Souv. Cuirass +1", --			11 CP		15 CPR
 		hands = "Regal Gauntlets", --10 SIRD
-		legs = "Founder's Hose", --30 SIRD
+		legs = inv.founders_hose, --30 SIRD
 		feet = "Odyssean Greaves", --20 SIRD	7 CP
-		neck = "Unmoving Collar +1",
-		waist = "Plat. Mog. Belt",
-		left_ear = "Mendi. Earring", --			5 CP
-		right_ear = "Chev. Earring +2", --			10 CP
+		neck = inv.unmoving_collar,
+		waist = inv.platinum_moogle_belt,
+		left_ear = "Mendi. Earring",  --			5 CP
+		right_ear = inv.chevaliers_earring, --			10 CP
 		left_ring = "Moonlight Ring",
-		right_ring = "Defending Ring",
+		right_ring = inv.defending_ring,
 		back = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Cure" potency +10%', 'Spell interruption rate down-10%', } }, --10 SIRD, 10 CP
 	}
 
@@ -548,12 +554,12 @@ function get_sets()
 
 	-- Enlight with SIRD (102%+ SIRD (92% + 10% from merits), Divine Magic Skill)
 	sets.enlight_sird = {
-		ammo = "Staunch Tathlum +1", --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD
-		body = "Chev. Cuirass +3", --20 SIRD
-		legs = "Founder's Hose", --30 SIRD
+		ammo = inv.staunch_tathlum, --11 SIRD
+		head = inv.souveran_head, --20 SIRD
+		body = inv.chevalier_body, --20 SIRD
+		legs = inv.founders_hose, --30 SIRD
 		feet = "Souveran Schuhs +1",
-		neck = "Moonlight Necklace", --15 SIRD
+		neck = inv.moonbeam_necklace, --15 SIRD
 		left_ring = "Stikini Ring +1",
 		right_ring = "Stikini Ring +1",
 	}
@@ -561,32 +567,39 @@ function get_sets()
 	-- Phalanx (Phalanx+, Enhancing Magic+, Enhancing Magic Duration)
 	sets.phalanx = {
 		main = inv.sakpatas_sword,
+		sub = inv.priwen,
 		head = { name = "Odyssean Helm", augments = { 'AGI+15', 'Accuracy+8', 'Phalanx +4', 'Accuracy+10 Attack+10', 'Mag. Acc.+20 "Mag.Atk.Bns."+20', } },
-		body = "Odyssean Chestplate",
-		hands = "Souv. Handsch. +1",
+		neck = inv.incanters_torque,
+		body = inv.odyssean_chest_phalanx,
+		hands = inv.souveran_hands,
 		legs = inv.sakpatas_legs,
 		feet = "Souveran Schuhs +1",
-		left_ring = "Stikini Ring +1",
-		right_ring = "Stikini Ring +1",
-		back = "Weard Mantle",
+		waist = inv.olympus_sash,
+		left_ring = inv.stikini_ring2,
+		right_ring = inv.stikini_ring,
+		left_ear = inv.mimir_earring,
+		right_ear = inv.andoaa_earring,
+		back = inv.PLD_PHALANX_BACK,
+		ammo = inv.staunch_tathlum
 	}
 
 	-- Phalanx with SIRD (102%+ SIRD (92% + 10% from merits), Phalanx+, Enhancing Magic+, Enhancing Magic Duration)
 	-- NOTE: Main and Sub slots will only equip if your TP is under the number set as the KeepTPThreshold in the Advanced Options section.
 	sets.phalanx_sird = {
-		main = "Sakpata's Sword",
-		ammo = "Staunch Tathlum +1", --11 SIRD
+		main = inv.sakpatas_sword,
+		sub = inv.priwen,
+		ammo = inv.staunch_tathlum, --11 SIRD
 		head = "Souv. Schaller +1", --20 SIRD
-		body = "Odyssean Chestplate",
-		hands = "Regal Gauntlets", --10 SIRD
-		legs = "Founder's Hose",  --30 SIRD
+		body = inv.odyssean_chest_phalanx,
+		hands = inv.souveran_hands, --10 SIRD
+		legs = inv.founders_hose, --30 SIRD
 		feet = "Souveran Schuhs +1",
-		neck = "Moonlight Necklace", --15 SIRD
-		waist = "Plat. Mog. Belt",
+		neck = inv.moonbeam_necklace, --15 SIRD
+		waist = inv.audumbla_sash,
 		right_ear = "Knightly Earring", --9 SIRD
-		left_ring = "Defending Ring",
-		right_ring = "Stikini Ring +1",
-		back = "Weard Mantle",
+		left_ring = inv.murky_ring,
+		right_ring = inv.stikini_ring,
+		back = inv.PLD_PHALANX_BACK,
 	}
 
 	-- Enhancing Magic (Enhancing Magic Duration, Enhancing Magic Skill)
@@ -595,40 +608,39 @@ function get_sets()
 	sets.enhancing = {
 		body = "Shab. Cuirass +1",
 		hands = "Regal Gauntlets",
-		legs = "Rev. Breeches +4",
-		legs = "Carmine Cuisses +1",
-		neck = "Incanter's Torque",
-		left_ear = "Mimir Earring",
-		right_ear = "Andoaa Earring",
-		left_ring = "Stikini Ring +1",
-		right_ring = "Stikini Ring +1",
+		legs = inv.reverence_legs,
+		neck = inv.incanters_torque,
+		left_ear = inv.mimir_earring,
+		right_ear = inv.andoaa_earring,
+		left_ring = inv.stikini_ring,
+		right_ring = inv.stikini_ring2,
 	}
 
 	-- Enhancing Magic with SIRD (102%+ SIRD (92% + 10% from merits), Enhancing Magic Duration, Enhancing Magic Skill)
 	-- Crusade, Reprisal, Protect, and Shell use this.
 	-- NOTE: Main and Sub slots will only equip if your TP is under the number set as the KeepTPThreshold in the Advanced Option section.
 	sets.enhancing_sird = {
-		ammo = "Staunch Tathlum +1", --11 SIRD
+		ammo = inv.staunch_tathlum, --11 SIRD
 		head = "Loess Barbuta +1",
 		body = "Shab. Cuirass +1",
 		hands = "Regal Gauntlets", --10 SIRD
-		legs = "Founder's Hose",  --30 SIRD
-		feet = "Odyssean Greaves", --20 SIRD
-		neck = "Moonlight Necklace", --15 SIRD
+		legs = inv.founders_hose, --30 SIRD
+		feet = inv.odyssean_feet, --20 SIRD
+		neck = inv.moonbeam_necklace, --15 SIRD
 		left_ear = "Tuisto Earring",
 		right_ear = "Knightly Earring", --9 SIRD
-		left_ring = "Moonlight Ring",
-		right_ring = "Defending Ring",
-		back = "Moonlight Cape",
+		left_ring = inv.murky_ring,
+		right_ring = inv.defending_ring,
+		back = inv.PLD_TANK_BACK,
 	}
 
 	-- Raise (102%+ SIRD (92% + 10% from merits), Conserve MP)
 	sets.raise = {
-		ammo = "Staunch Tathlum +1", --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD
-		legs = "Founder's Hose", --30 SIRD
-		feet = "Odyssean Greaves", --20 SIRD
-		neck = "Moonlight Necklace", --15 SIRD
+		ammo = inv.staunch_tathlum, --11 SIRD
+		head = inv.souveran_head, --20 SIRD
+		legs = inv.founders_hose, --30 SIRD
+		feet = inv.odyssean_feet, --20 SIRD
+		neck = inv.moonbeam_necklace, --15 SIRD
 	}
 
 	-- Cursna (Cursna+, Healing Magic)
@@ -647,48 +659,67 @@ function get_sets()
 
 	-- Weapon Skill - Basic (STR, Weapon Skill Damage, Attack, Double/Triple Attack)
 	sets.weapon_skill = {
-		ammo = "Coiste Bodhar",
-		head = "Nyame Helm",
-		body = "Nyame Mail",
-		hands = "Nyame Gauntlets",
-		legs = "Nyame Flanchard",
-		feet = "Nyame Sollerets",
-		neck = "Unmoving Collar +1",
+		ammo = inv.oshashs_treastise,
+		head = inv.nyame_helm,
+		body = inv.nyame_mail,
+		hands = inv.odyssean_gauntlets,
+		legs = inv.nyame_legs,
+		feet = inv.nyame_feet,
+		neck = inv.republican_medal,
 		waist = inv.sailfi_belt,
-		left_ear = "Moonshade Earring",
-		right_ear = "Thrud Earring",
+		left_ear = inv.ishvara,
+		right_ear = inv.thrud_earring,
 		left_ring = inv.corneilias_ring,
 		right_ring = inv.epaminondas_ring,
-		back = "Moonlight Cape",
+		back = inv.PLD_WS_BACK,
 	}
+	sets['Holy'] = {
+		ammo = inv.ghastly_tathlum,
+		head = inv.nyame_helm,
+		body = inv.nyame_mail,
+		hands = inv.nyame_hands,
+		legs = inv.nyame_legs,
+		feet = inv.nyame_feet,
+		neck = inv.baetyl_pendant,
+		waist = inv.orpheus_sash,
+		left_ear = inv.friomisi_earring,
+		right_ear = inv.static_earring,
+		left_ring = inv.mujin_band,
+		right_ring = inv.epaminondas_ring,
+		back = inv.argocham_mantle,
+
+	}
+	sets['Holy II'] = sets['Holy']
 
 	-- Savage Blade (50% STR, 50% MND mod)
 	-- Combines with Weapon Skill set, only necessary to set the slots with specific desired stats
 	sets["Savage Blade"] = set_combine(sets.weapon_skill, {
+		left_ear = inv.moonshade_earring,
 
 	})
 
 	-- Sanguine Blade (Dark Magical, 50% STR, 50% MND mod)
 	-- Combines with Weapon Skill set, only necessary to set the slots with specific desired stats
 	sets["Sanguine Blade"] = set_combine(sets.weapon_skill, {
-		ammo = "Coiste Bodhar",
-		head = "Pixie Hairpin +1",
-		waist = "Eschan Stone",
-		right_ear = "Friomisi Earring",
+		head = inv.pixie_hairpin,
+		waist = inv.orpheus_sash,
+		left_ear = inv.friomisi_earring,
+		hands = inv.nyame_hands,
+		neck = inv.baetyl_pendant,
 	})
 
 	-- Requiescat (~80% MND mod)
 	-- Combines with Weapon Skill set, only necessary to set the slots with specific desired stats
 	sets["Requiescat"] = set_combine(sets.weapon_skill, {
-		waist = "Fotia Belt",
+		waist = inv.fotia_belt,
 	})
 
 	-- Chant du Cygne (80% DEX mod)
 	-- Combines with Weapon Skill set, only necessary to set the slots with specific desired stats
 	sets["Chant du Cyne"] = set_combine(sets.weapon_skill, {
-		waist = "Fotia Belt",
-		right_ear = "Mache Earring +1",
-		left_ring = "Hetairoi Ring",
+		waist = inv.fotia_belt,
+		right_ear = inv.mache_earring_p1,
+		left_ring = inv.begrudging_ring,
 	})
 
 	-- Atonement (Fotia Neck/Belt)
@@ -716,7 +747,7 @@ function get_sets()
 
 	-- Holy Circle (Enhances Holy Circle gear)
 	sets.holy_circle = set_combine(sets.enmity, {
-		feet = "Rev. Leggings +3",
+		feet = inv.reverence_feet,
 	})
 
 	-- Shield Bash (Enhances Shield Bash gear)
@@ -751,7 +782,7 @@ function get_sets()
 
 	-- Divine Emblem (Enhances Divine Emblem gear)
 	sets.divine_emblem = {
-		feet = "Chev. Sabatons +3",
+		feet = inv.chevalier_feet,
 	}
 
 	-- Default Town Gear (Put all your fancy-pants gear in here you want to showboat around town in. Does not lockstyle this gear, only equips)
@@ -1718,6 +1749,20 @@ local function formatAMTime(input)
 	return am_time_minute .. ':' .. am_time_second
 end
 
+local function colorWeaponsText(AM)
+	if not ShowTPMeter then
+		local c = { r = 255, g = 255, b = 255 }
+		if AM == 1 then
+			c = color.AM1
+		elseif AM == 2 then
+			c = color.AM2
+		elseif AM == 3 then
+			c = color.AM3
+		end
+		hud_weapons:color(c.r, c.g, c.b)
+	end
+end
+
 local function itemMatch(item_num)
 	local locations = { "inventory", "wardrobe", "wardrobe2", "wardrobe3", "wardrobe4", "wardrobe5", "wardrobe6",
 		"wardrobe7", "wardrobe8" }
@@ -2449,7 +2494,6 @@ function precast(spell)
 				return
 			end
 		elseif player.sub_job == 'RUN' and windower.ffxi.get_spell_recasts()[840] and windower.ffxi.get_spell_recasts()[840] < 120 then
-			print('test')
 			send_command('input /ma "Foil" <me>')
 			cancel_spell()
 			return
@@ -2472,7 +2516,6 @@ function midcast(spell)
 		not buffactive['Aquaveil']
 	local use_mainsub = player.tp <= KeepTPThreshold and
 		not (buffactive['Aftermath: Lv.1'] or buffactive['Aftermath: Lv.2'] or buffactive['Aftermath: Lv.3'] or buffactive['Aftermath'])
-
 	if string.find(spell.english, 'Cur') and spell.type == "WhiteMagic" then
 		if use_sird then
 			if player.hpp >= MaxHPThreshold and spell.target.type == 'SELF' and UseMaxHP then
@@ -2489,9 +2532,6 @@ function midcast(spell)
 		end
 	elseif spell.english == 'Raise' then
 		equip(sets.raise)
-	elseif spell.english == 'Flash' or string.find(spell.english, 'Holy') or string.find(spell.english, 'Banish') or spell.type == "BlueMagic" then
-		local base_set = use_sird and sets.enmity_spells_sird or sets.enmity_spells
-		equip(base_set)
 	elseif string.find(spell.english, 'Enlight') then
 		local base_set = use_sird and sets.enlight_sird or sets.enlight
 		equip(base_set)
@@ -2509,7 +2549,9 @@ function midcast(spell)
 	elseif spell.type == 'Trust' then
 		equip(sets.unity)
 	elseif spell.action_type == 'Magic' then
-		if use_sird then
+		if sets[spell.english] then
+			equip(sets[spell.english])
+		elseif use_sird then
 			equip(sets.enmity_spells_sird)
 		else
 			equip(sets.enmity_spells)
@@ -2806,19 +2848,6 @@ windower.register_event('prerender', function()
 
 		--Aftermath checks
 		if SwitchingWeapons == 0 then
-			local function colorWeaponsText(AM)
-				if not ShowTPMeter then
-					local c = { r = 255, g = 255, b = 255 }
-					if AM == 1 then
-						c = color.AM1
-					elseif AM == 2 then
-						c = color.AM2
-					elseif AM == 3 then
-						c = color.AM3
-					end
-					hud_weapons:color(c.r, c.g, c.b)
-				end
-			end
 			if player.equipment.main == 'Caliburnus' or player.equipment.main == 'Helheim' then
 				if buffactive['Aftermath: Lv.1'] then
 					if currentAfterMath ~= 'PrimeAM1' or primeNum ~= currentPrimeNum or currentAMTimer ~= AMTimer then
@@ -3870,6 +3899,12 @@ windower.register_event('prerender', function()
 	end
 end)
 
+
+
+windower.register_event('job change', function()
+	set_lockstyle()
+end)
+
 -------------------------------------------
 --             ZONE CHANGE               --
 -------------------------------------------
@@ -4005,58 +4040,64 @@ end)
 -------------------------------------------
 
 windower.register_event('action', function(act)
-	if notifications.Damage then
-		--Weapon Skills and Skillchains:
-		if act.category == 3 and act.actor_id == player.id then
-			--Weapon Skill misses:
-			if act.targets[1].actions[1].message == 188 then
-				hud_noti_shdw:text('«« ' .. weaponskills[act.param].english .. ' Missed »»')
-				hud_noti:text('«« ' .. weaponskills[act.param].english .. ' Missed »»')
-				hud_noti:color(0, 255, 255)
-				--Weapon Skill gets blinked:
-			elseif act.targets[1].actions[1].message == 31 then
-				hud_noti_shdw:text('«« ' .. weaponskills[act.param].english .. ' Blinked »»')
-				hud_noti:text('«« ' .. weaponskills[act.param].english .. ' Blinked »»')
-				hud_noti:color(0, 255, 255)
-				--Weapon Skill lands and creates a Skillchain:
-			elseif act.targets[1].actions[1].message == 185 and act.targets[1].actions[1].has_add_effect then
-				hud_noti_shdw:text(weaponskills[act.param].english ..
-					': ' ..
-					addCommas(act.targets[1].actions[1].param) ..
-					' (' ..
-					sc[act.targets[1].actions[1].add_effect_animation] ..
-					': ' .. addCommas(act.targets[1].actions[1].add_effect_param) .. ')')
-				hud_noti:text(weaponskills[act.param].english ..
-					': ' ..
-					addCommas(act.targets[1].actions[1].param) ..
-					' (' ..
-					sc[act.targets[1].actions[1].add_effect_animation] ..
-					': ' .. addCommas(act.targets[1].actions[1].add_effect_param) .. ')')
-				hud_noti:color(0, 255, 255)
-				--Weapon Skill lands but no Skillchain:
-			elseif act.targets[1].actions[1].message == 185 then
-				hud_noti_shdw:text(weaponskills[act.param].english .. ': ' .. addCommas(act.targets[1].actions[1].param))
-				hud_noti:text(weaponskills[act.param].english .. ': ' .. addCommas(act.targets[1].actions[1].param))
-				hud_noti:color(0, 255, 255)
-			end
-			NotiCountdown = -1
-			--Magic Bursts (magic):
-		elseif (act.category == 4 and act.targets[1].actions[1].message == 252) and act.actor_id == player.id then
-			hud_noti_shdw:text('Magic Burst! ' ..
-				spells[act.param].english .. ': ' .. addCommas(act.targets[1].actions[1].param))
-			hud_noti:text('Magic Burst! ' .. spells[act.param].english ..
-				': ' .. addCommas(act.targets[1].actions[1].param))
+	if not notifications.Damage then return end
+	if act.target_count == 0 then return end
+	local first_target = act.targets[1]
+	if first_target.action_count == 0 then return end
+	local first_action = first_target.actions[1]
+
+	--Weapon Skills and Skillchains:
+	if act.category == 3 and act.actor_id == player.id then
+		local ws = weaponskills[act.param]
+		if not ws then return end
+		--Weapon Skill misses:
+		if first_action.message == 188 then
+			hud_noti_shdw:text('«« ' .. ws.english .. ' Missed »»')
+			hud_noti:text('«« ' .. ws.english .. ' Missed »»')
 			hud_noti:color(0, 255, 255)
-			NotiCountdown = -1
-			--Magic Busts (lunge/swipe):
-		elseif (act.category == 15 and act.targets[1].actions[1].message == 110 and act.targets[1].actions[1].unknown == 4) and act.actor_id == player.id then
-			hud_noti_shdw:text('Magic Burst! ' ..
-				jobabilities[act.param].english .. ': ' .. addCommas(act.targets[1].actions[1].param))
-			hud_noti:text('Magic Burst! ' ..
-				jobabilities[act.param].english .. ': ' .. addCommas(act.targets[1].actions[1].param))
+			--Weapon Skill gets blinked:
+		elseif first_action.message == 31 then
+			hud_noti_shdw:text('«« ' .. ws.english .. ' Blinked »»')
+			hud_noti:text('«« ' .. ws.english .. ' Blinked »»')
 			hud_noti:color(0, 255, 255)
-			NotiCountdown = -1
+			--Weapon Skill lands and creates a Skillchain:
+		elseif first_action.message == 185 and first_action.has_add_effect then
+			hud_noti_shdw:text(ws.english ..
+				': ' ..
+				addCommas(first_action.param) ..
+				' (' ..
+				sc[first_action.add_effect_animation] ..
+				': ' .. addCommas(first_action.add_effect_param) .. ')')
+			hud_noti:text(ws.english ..
+				': ' ..
+				addCommas(first_action.param) ..
+				' (' ..
+				sc[first_action.add_effect_animation] ..
+				': ' .. addCommas(first_action.add_effect_param) .. ')')
+			hud_noti:color(0, 255, 255)
+			--Weapon Skill lands but no Skillchain:
+		elseif first_action.message == 185 then
+			hud_noti_shdw:text(ws.english .. ': ' .. addCommas(first_action.param))
+			hud_noti:text(ws.english .. ': ' .. addCommas(first_action.param))
+			hud_noti:color(0, 255, 255)
 		end
+		NotiCountdown = -1
+		--Magic Bursts (magic):
+	elseif act.category == 4 and first_action.message == 252 and act.actor_id == player.id then
+		local sp = spells[act.param]
+		if not sp then return end
+		hud_noti_shdw:text('Magic Burst! ' .. sp.english .. ': ' .. addCommas(first_action.param))
+		hud_noti:text('Magic Burst! ' .. sp.english .. ': ' .. addCommas(first_action.param))
+		hud_noti:color(0, 255, 255)
+		NotiCountdown = -1
+		--Magic Busts (lunge/swipe):
+	elseif act.category == 15 and first_action.message == 110 and first_action.unknown == 4 and act.actor_id == player.id then
+		local ja = jobabilities[act.param]
+		if not ja then return end
+		hud_noti_shdw:text('Magic Burst! ' .. ja.english .. ': ' .. addCommas(first_action.param))
+		hud_noti:text('Magic Burst! ' .. ja.english .. ': ' .. addCommas(first_action.param))
+		hud_noti:color(0, 255, 255)
+		NotiCountdown = -1
 	end
 end)
 

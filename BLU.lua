@@ -268,6 +268,7 @@ function init_gear_sets()
         waist = "Emphatikos Rope",
         legs = assimilator_legs,
         left_ear = inv.halasz_earring,
+        left_ring = inv.murky_ring,
         feet = { name = "Psycloth Boots", augments = { 'Mag. Acc.+10', 'Spell interruption rate down +15%', 'MND+7', } },
     }
     --physical blue spells
@@ -512,10 +513,10 @@ function init_gear_sets()
         body = inv.hashishin_mintan,
         hands = inv.hashishin_hands,
         legs = inv.hashishin_legs,
-        feet = inv.malignance_boots,
+        feet = inv.hashishin_feet,
         neck = inv.null_loop,
         waist = inv.null_belt,
-        left_ear = inv.njordr_earring,
+        left_ear = inv.alabaster_earring,
         right_ear = inv.hashishin_earring,
         left_ring = inv.stikini_ring2,
         right_ring = inv.metamorph_ring,
@@ -605,7 +606,9 @@ function init_gear_sets()
     sets.midcast['Dream Flower'].TH = set_combine(sets.midcast['Dream Flower'], treasure_hunter)
     sets.midcast['Cruel Joke'] = magic_accuracy
     sets.midcast['Tenebral Crush'] = set_combine(nuke_set, { head = inv.pixie_hairpin, left_ring = inv.acrchon_ring })
-
+    sets.midcast['Silent Storm'] = magic_accuracy
+    sets.midcast['Reaving Wind'] = magic_accuracy
+    sets.midcast['Feather Tickle'] = magic_accuracy
 
 
     -- Breath Spells --
