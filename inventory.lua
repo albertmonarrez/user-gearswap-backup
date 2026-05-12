@@ -61,7 +61,7 @@ local equipment = {
     amalric_coif           = "Amalric Coif +1",
     vanya_hood             = { name = "Vanya Hood", augments = { 'MND+10', 'Spell interruption rate down +15%', '"Conserve MP"+6', } },
     nyame_helm             = "Nyame Helm",
-    atrophy_chapeau        = "Atro. Chapeau +3",
+    atrophy_chapeau        = "Atro. Chapeau +4",
     mpacas_head            = "Mpaca's Cap",
     wakido_kabuto          = "Wakido Kabuto +3",
     ryuo_somen             = { name = "Ryuo Somen", augments = { 'HP+50', '"Store TP"+4', '"Subtle Blow"+7', } },
