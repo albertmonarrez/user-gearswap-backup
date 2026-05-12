@@ -63,7 +63,7 @@ local equipment = {
     nyame_helm             = "Nyame Helm",
     atrophy_chapeau        = "Atro. Chapeau +4",
     mpacas_head            = "Mpaca's Cap",
-    wakido_kabuto          = "Wakido Kabuto +3",
+    wakido_kabuto          = "Wakido Kabuto +4",
     ryuo_somen             = { name = "Ryuo Somen", augments = { 'HP+50', '"Store TP"+4', '"Subtle Blow"+7', } },
     mummu_head             = "Mummu Bonnet +2",
     Laksamas_tricorne      = "Laksa. Tricorne +4",
