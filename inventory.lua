@@ -278,6 +278,7 @@ local equipment = {
     bagua_sandals                = "Bagua Sandals +3",
     azimuth_feet                 = "Azimuth Gaiters +2",
     odyssean_feet                = { name = "Odyssean Greaves", augments = { '"Mag.Atk.Bns."+22', 'Phys. dmg. taken -2%', 'DEX+7', 'Accuracy+2', } },
+    souveran_feet                = { name = "Souveran Schuhs +1", augments = { 'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%', } },
 
     --neck pieces
     elite_royal_collar           = "Elite Royal Collar",
@@ -316,6 +317,7 @@ local equipment = {
     bagua_charm                  = "Bagua Charm +2",
     moonbeam_necklace            = "Moonbeam Necklace",
     coatl_gorget                 = "Coatl Gorget +1",
+    nicanders_necklace           = "Nicander's Necklace",
 
     --waist
     platinum_moogle_belt         = "Plat. Mog. Belt",
@@ -410,7 +412,7 @@ local equipment = {
     lugra_earring                = { name = "Lugra Earring +1", augments = { 'Path: A', } },
     brutal_earring               = "Brutal Earring",
     eabani_earring               = "Eabani Earring",
-    lethargy_earring             = { name = "Leth. Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', '"Dbl.Atk."+3', } },
+    lethargy_earring             = { name = "Leth. Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', '"Dbl.Atk."+4', } },
     snorta_earring               = "Snotra Earring",
     mache_earring_p1             = "Mache Earring +1",
     boii_earring                 = { name = "Boii Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', 'Crit.hit rate+4', } },

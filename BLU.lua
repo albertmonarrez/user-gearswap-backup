@@ -563,6 +563,10 @@ function init_gear_sets()
     sets.precast.WS['Red Lotus Blade'] = sanguine_blade
     sets.precast.WS['Seraph Blade'] = sanguine_blade
 
+    sets.precast['Holy Water'] = {
+        neck = inv.nicanders_necklace,
+    }
+
 
     -- Midcast Sets
     sets.midcast.FastRecast = fast_cast_set

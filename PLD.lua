@@ -359,7 +359,7 @@ function get_sets()
 		body = inv.reverence_body,
 		hands = inv.souveran_hands,
 		legs = inv.reverence_legs,
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		neck = inv.unmoving_collar,
 		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
@@ -377,7 +377,7 @@ function get_sets()
 		body = inv.chevalier_body, --20 SIRD
 		hands = inv.souveran_hands,
 		legs = inv.founders_hose, --30 SIRD
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		neck = inv.unmoving_collar,
 		waist = inv.platinum_moogle_belt,
 		left_ear = "Tuisto Earring",
@@ -500,7 +500,7 @@ function get_sets()
 		body = inv.sakpatas_body,
 		hands = inv.sakpatas_hands,
 		legs = inv.founders_hose, --30 SIRD
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		neck = inv.moonbeam_necklace, --15 SIRD
 		waist = inv.platinum_moogle_belt,
 		left_ear = "Knightly Earring", --9 SIRD
@@ -539,7 +539,7 @@ function get_sets()
 		feet = "Odyssean Greaves", --20 SIRD	7 CP
 		neck = inv.unmoving_collar,
 		waist = inv.platinum_moogle_belt,
-		left_ear = "Mendi. Earring",  --			5 CP
+		left_ear = inv.mendicants_earring, --			5 CP
 		right_ear = inv.chevaliers_earring, --			10 CP
 		left_ring = "Moonlight Ring",
 		right_ring = inv.defending_ring,
@@ -558,7 +558,7 @@ function get_sets()
 		head = inv.souveran_head, --20 SIRD
 		body = inv.chevalier_body, --20 SIRD
 		legs = inv.founders_hose, --30 SIRD
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		neck = inv.moonbeam_necklace, --15 SIRD
 		left_ring = "Stikini Ring +1",
 		right_ring = "Stikini Ring +1",
@@ -573,7 +573,7 @@ function get_sets()
 		body = inv.odyssean_chest_phalanx,
 		hands = inv.souveran_hands,
 		legs = inv.sakpatas_legs,
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		waist = inv.olympus_sash,
 		left_ring = inv.stikini_ring2,
 		right_ring = inv.stikini_ring,
@@ -589,11 +589,11 @@ function get_sets()
 		main = inv.sakpatas_sword,
 		sub = inv.priwen,
 		ammo = inv.staunch_tathlum, --11 SIRD
-		head = "Souv. Schaller +1", --20 SIRD
+		head = inv.souveran_head, --20 SIRD
 		body = inv.odyssean_chest_phalanx,
 		hands = inv.souveran_hands, --10 SIRD
 		legs = inv.founders_hose, --30 SIRD
-		feet = "Souveran Schuhs +1",
+		feet = inv.souveran_feet,
 		neck = inv.moonbeam_necklace, --15 SIRD
 		waist = inv.audumbla_sash,
 		right_ear = "Knightly Earring", --9 SIRD
@@ -645,14 +645,14 @@ function get_sets()
 
 	-- Cursna (Cursna+, Healing Magic)
 	sets.cursna = {
-		neck = "Nicander's Necklace",
+		neck = inv.nicanders_necklace,
 		ring1 = "Haoma's Ring",
 		ring2 = "Haoma's Ring",
 	}
 
 	-- Holy Water (Holy Water+)
 	sets.holy_water = {
-		neck = "Nicander's Necklace",
+		neck = inv.nicanders_necklace,
 		ring1 = "Blenmot's Ring +1",
 		ring2 = "Blenmot's Ring +1",
 	}
