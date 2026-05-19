@@ -485,7 +485,7 @@ function init_gear_sets()
         head = inv.malignance_chapeau,
         neck = inv.mirage_stole,
         body = inv.hashishin_mintan,
-        back = inv.null_shawl,
+        back = inv.BLU_TP_Cape,
         hands = inv.malignance_gloves,
         legs = inv.malignance_tights,
         feet = inv.malignance_boots,

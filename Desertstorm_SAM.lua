@@ -490,7 +490,7 @@ function get_sets()
         body = inv.kasuga_body,
         hands = inv.tatenashi_hands,
         legs = inv.kasuga_legs,
-        feet = "Tatena. Sune. +1",
+        feet = inv.tatenashi_feet,
         neck = inv.sams_nodowa,
         waist = "Ioskeha Belt +1",
         left_ear = "Schere Earring",
@@ -604,7 +604,7 @@ function get_sets()
     -- Tachi: Jinpu (Magic Attack Bonus, Weapon Skill Damage, STR, Attack, Double/Triple Attack)
     sets["Tachi: Jinpu"] = set_combine(sets.weapon_skill, {
         head = inv.nyame_helm,
-        hands = inv.kasuga_hands,
+        hands = inv.nyame_hands,
         body = inv.nyame_mail,
         legs = inv.nyame_legs,
         feet = inv.nyame_feet,
@@ -636,7 +636,7 @@ function get_sets()
 
     -- Tachi: Kagero - High Buff (Magic Attack Bonus, Weapon Skill Damage, STR, Attack, Double/Triple Attack, PDL)
     sets["Tachi: Kagero"].high_buff = set_combine(sets.weapon_skill, {
-        -- body = "Sakonji Domaru +4",
+        body = inv.sakonji_body,
         waist = "Orpheus's Sash",
         -- right_ring = "Regal Ring",
         -- back = { name = "Smertrios's Mantle", augments = { 'STR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%', } },
@@ -827,7 +827,7 @@ function get_sets()
 
     -- Meikyo Shisui
     sets.meikyo_shisui = {
-        feet = "Sak. Sune-Ate +3",
+        feet = "Sak. Sune-Ate +4",
     }
 
     -- Steps

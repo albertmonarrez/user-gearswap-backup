@@ -422,7 +422,7 @@ function init_gear_sets()
         ammo = inv.MAbullet,
         head = inv.nyame_helm,
         body = inv.Lanun_frac,
-        hands = inv.Chasseurs_hands,
+        hands = inv.nyame_hands,
         legs = inv.nyame_legs,
         feet = inv.Lanun_bottes,
         neck = inv.commodore_charm,
