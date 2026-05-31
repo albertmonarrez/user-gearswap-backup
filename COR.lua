@@ -661,7 +661,7 @@ function init_gear_sets()
     sets.resting = {}
 
     sets.idle = {
-        range = inv.fomalhaut,
+        range = inv.death_penalty,
         ammo = inv.RAccbullet,
         head = inv.null_mask,
         body = inv.malignance_tabard,

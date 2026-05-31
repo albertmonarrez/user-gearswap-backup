@@ -125,7 +125,7 @@ local equipment = {
     Adhemar_A_head               = { name = "Adhemar Bonnet +1", augments = { 'DEX+12', 'AGI+12', 'Accuracy+20', } },
     Adhemar_A_body               = { name = "Adhemar Jacket +1", augments = { 'DEX+12', 'AGI+12', 'Accuracy+20', } },
     mummu_jacket                 = "Mummu Jacket +2",
-    pillagers_vest               = "Pillager's Vest +3",
+    pillagers_vest               = "Pillager's Vest +4",
     Laksamas_frac                = "Laksa. Frac +4",
     Lanun_frac                   = { name = "Lanun Frac +4", augments = { 'Enhances "Loaded Deck" effect', } },
     dread_jupon                  = "Dread Jupon",
