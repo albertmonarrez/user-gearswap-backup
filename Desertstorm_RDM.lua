@@ -47,7 +47,7 @@ local naegling_machaera = {
 }
 local kaja_malevolance = {
 	main = inv.levante_dagger,
-	sub = { name = "Malevolence", augments = { 'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3', } },
+	sub = inv.malevolence,
 }
 local crocea_levante = {
 	main = inv.crocea_mors,
@@ -59,7 +59,7 @@ local friomisi_set = { left_ear = inv.regal_earring, neck = inv.baetyl_pendant }
 function user_setup()
 	state.OffenseMode:options('None', 'Normal')
 	state.HybridMode:options('Normal', 'Acc', 'High Acc', 'AccWar')
-	state.CastingMode:options('Normal', 'Burst')
+	state.CastingMode:options('Normal', 'Burst', 'Resistant')
 	state.IdleMode:options('Normal', 'PDT', 'MDT')
 
 
@@ -120,8 +120,8 @@ function init_gear_sets()
 		feet = inv.vitiation_boots,
 		neck = inv.sibyl_scarf,
 		waist = inv.orpheus_sash,
-		left_ear = inv.malignance_earring,
-		right_ear = inv.regal_earring,
+		left_ear = inv.regal_earring,
+		right_ear = inv.malignance_earring,
 		left_ring = inv.freke_ring,
 		right_ring = inv.metamorph_ring,
 		back = inv.RDM_MAB_Cape,
@@ -154,8 +154,8 @@ function init_gear_sets()
 		legs = inv.atrophy_tights,
 		feet = inv.vitiation_boots,
 		waist = inv.null_belt,
-		left_ear = inv.snorta_earring,
-		right_ear = inv.regal_earring,
+		left_ear = inv.regal_earring,
+		right_ear = inv.snorta_earring,
 		left_ring = inv.kishar_ring,
 		right_ring = inv.stikini_ring,
 		back = mind_cape,
@@ -163,11 +163,13 @@ function init_gear_sets()
 	local enfeeble_potency = set_combine(enfeebling_set, { body = inv.lethargy_body })
 	local max_enfeebling_acc = set_combine(enfeebling_set,
 		{
-			ammo = '',
-			range = inv.ullr,
+			-- ammo = '',
+			-- range = inv.ullr,
+			head = inv.atrophy_chapeau,
+			right_ear = inv.alabaster_earring,
 			back = inv.null_shawl,
 			left_ring = inv.stikini_ring2,
-			neck = inv.null_shawl
+			neck = inv.null_loop
 		})
 	local enfeebling_acc = set_combine(enfeebling_set, { back = inv.null_shawl, left_ring = inv.stikini_ring2, })
 
@@ -234,14 +236,14 @@ function init_gear_sets()
 	local tenzen = set_combine(crocea_levante, tp_set, {
 		head = inv.umuthi_hat,
 		hands = inv.ayanmo_hands,
-		body = inv.ayanmo_corazza,
+		body = inv.sworn_platemail,
 		-- back = inv.RDM_ENHANCHING_DURATION_CAPE,
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
 		legs = inv.vitiation_tights,
 		left_ring = inv.metamorph_ring,
-		left_ear = inv.alabaster_earring,
-		right_ear = inv.suppanomimi,
+		right_ear = inv.alabaster_earring,
+		left_ear = inv.suppanomimi,
 		ammo = inv.sroda_tathlum
 
 	})
@@ -270,8 +272,8 @@ function init_gear_sets()
 		legs = inv.malignance_tights,
 		left_ring = inv.stikini_ring,
 		right_ring = inv.stikini_ring2,
-		left_ear = inv.alabaster_earring,
-		right_ear = inv.suppanomimi,
+		right_ear = inv.alabaster_earring,
+		left_ear = inv.suppanomimi,
 		feet = inv.taeon_dw_feet,
 		ammo = inv.sroda_tathlum,
 	})
