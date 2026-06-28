@@ -266,15 +266,15 @@ function init_gear_sets()
 		sub = "Qutrub Knife",
 		head = inv.umuthi_hat,
 		hands = inv.ayanmo_hands,
-		body = inv.ayanmo_corazza,
+		body = inv.sworn_platemail,
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
-		legs = inv.malignance_tights,
-		left_ring = inv.stikini_ring,
+		legs = inv.vitiation_tights,
+		left_ring = inv.murky_ring,
 		right_ring = inv.stikini_ring2,
 		right_ear = inv.alabaster_earring,
 		left_ear = inv.suppanomimi,
-		feet = inv.taeon_dw_feet,
+		feet = inv.malignance_boots,
 		ammo = inv.sroda_tathlum,
 	})
 
@@ -583,7 +583,6 @@ function init_gear_sets()
 		back = inv.oretan_cape,
 	}
 
-
 	sets.accuracy = accuracy_set
 	sets.high_accuracy = high_accuracy
 	sets.war_acc = war_accuracy
@@ -664,7 +663,6 @@ function init_gear_sets()
 	sets.midcast['Gain-CHR'] = max_enhancing
 	sets.midcast['Inundation'] = set_combine(enfeebling_set, treasure_hunter)
 
-
 	sets.midcast['Enfeebling Magic'] = enfeebling_set
 	sets.midcast['Enfeebling Magic'].Resistant = max_enfeebling_acc
 	sets.midcast['Temper'] = max_enhancing
@@ -730,7 +728,6 @@ function init_gear_sets()
 	}
 
 	sets.buff.Saboteur = { hands = lethargy_hands }
-
 
 	-- Sets to return to when not performing an action.
 

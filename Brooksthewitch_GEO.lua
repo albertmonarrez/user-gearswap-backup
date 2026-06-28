@@ -1,3 +1,4 @@
+local socket = require('socket')
 ---@diagnostic disable: undefined-global
 -- Original: Motenten / Modified: Arislan
 -- GearSwap Lua for GEO
@@ -65,6 +66,10 @@ function init_gear_sets()
     local gear = require('Brooksthewitch_Gear')
     sets.pet = {}
 
+    sets.MoveSpeed = {
+        feet = gear.Geomancy_Sandals,
+    }
+
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Precast Sets ------------------------------------------
@@ -83,7 +88,7 @@ function init_gear_sets()
         --ring1="",
         --ring2="",
         back = gear.Nantosuelta_Cape_FC,
-        --legs="",
+        legs = gear.Geomancy_Pants,
         feet = gear.Merl_Crackows_FC,
     }
 
@@ -329,7 +334,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Jhakri_Coronal,
-        --neck="",
+        neck = gear.Mizu_Kubikazari,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Sortiarius_Earring,
         body = gear.Jhakri_Robe,
@@ -343,7 +348,7 @@ function init_gear_sets()
     }
 
     -- Magic Burst
-    sets.midcast['Elemental Magic'].MB = {
+    sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
         --main="",
         --sub="",
         --range="",
@@ -360,7 +365,7 @@ function init_gear_sets()
         --waist="",
         --legs="",
         --feet="",
-    }
+    })
 
 
     ------------------------------------------------------------------------------------------------
@@ -374,7 +379,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         --head="",
-        neck = gear.Loricate_torque,
+        neck = gear.Nodens_Gorget,
         ear1 = gear.Alabaster_Earring,
         --ear2="",
         body = gear.Vanya_Robe,
@@ -574,8 +579,8 @@ function init_gear_sets()
         neck = gear.Bagua_Charm,
         --ear1="",
         --ear2="",
-        --body="",
-        hands = gear.Bagua_Tunic,
+        body = gear.Bagua_Tunic,
+        -- hands = gear.Bagua_Mitaines,
         ring1 = gear.Murky_Ring,
         --ring2="",
         --back="",
@@ -585,13 +590,13 @@ function init_gear_sets()
     }
 
     -- Geo- spells
-    sets.midcast.Geo = {
+    sets.midcast.Geo = set_combine(sets.midcast['Geomancy'], {
         --main="",
         --sub="",
         --range="",
         --ammo="",
         --head="",
-        neck = gear.Bagua_Charm,
+        -- neck = gear.Bagua_Charm,
         --ear1="",
         --ear2="",
         --body="",
@@ -602,7 +607,7 @@ function init_gear_sets()
         --waist="",
         --legs="",
         --feet="",
-    }
+    })
 
     -- Indi- spells
     sets.midcast.Indi = {
@@ -740,6 +745,13 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+    if spell.english:startswith('Indi-') then
+        equip(sets.midcast.Indi)
+        eventArgs.handled = true
+    elseif spell.english:startswith('Geo-') then
+        equip(sets.midcast.Geo)
+        eventArgs.handled = true
+    end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
@@ -780,12 +792,8 @@ end
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
-function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_rings()
-    check_moving()
-end
 
-function check_rings()
+local function check_rings()
     if no_swap_gear:contains(player.equipment.ring1) then
         disable('ring1')
     else
@@ -798,9 +806,36 @@ function check_rings()
     end
 end
 
-function check_moving()
-    -- Movement gear logic can go here
+function job_handle_equipping_gear(playerStatus, eventArgs)
+    check_rings()
 end
+
+local move_x = nil
+local move_y = nil
+local is_moving = false
+local last_move_poll = 0
+
+local function check_moving()
+    local now = socket.gettime()
+    if now - last_move_poll < 0.3 then return end
+    last_move_poll = now
+
+    local mob = windower.ffxi.get_mob_by_target('me')
+    if not mob then return end
+
+    local nx, ny = mob.x, mob.y
+    if (move_x ~= nx or move_y ~= ny) and mob.status ~= 1 then
+        move_x = nx
+        move_y = ny
+        is_moving = true
+        equip(sets.MoveSpeed)
+    elseif is_moving then
+        is_moving = false
+        handle_equipping_gear(player.status)
+    end
+end
+
+windower.register_event('prerender', check_moving)
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.

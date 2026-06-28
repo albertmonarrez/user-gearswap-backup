@@ -79,8 +79,8 @@ function init_gear_sets()
         --ear1="",
         ear2 = gear.Loquac_Earring,
         body = gear.Inyanga_Jubbah,
-        --hands="",
-        --ring1="",
+        hands = gear.Gende_Gages,
+        ring1 = gear.Kishar_Ring,
         --ring2="",
         back = gear.Intarabus_Cape_FC,
         --waist="",
@@ -501,7 +501,7 @@ function init_gear_sets()
         --head="",
         --body="",
         --hands="",
-        --legs="",
+        legs = gear.Fili_Rhingrave,
         --feet="",
     })
 
@@ -581,6 +581,7 @@ function init_gear_sets()
         legs = gear.Vanya_Slops,
         feet = gear.Vanya_Clogs,
     }
+    sets.midcast.Curaga = sets.midcast.Cure
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -595,8 +596,8 @@ function init_gear_sets()
         --hands="",
         --ring1="",
         --ring2="",
-        --back="",
-        --waist="",
+        back = gear.Intarabus_Cape_WS,
+        waist = gear.Sailfi_Belt,
         --legs="",
         --feet="",
     }
@@ -615,7 +616,7 @@ function init_gear_sets()
         hands = gear.WN_Mittens,
         --ring1="",
         --ring2="",
-        --back="",
+        back = gear.Alabaster_Mantle,
         --waist="",
         legs = gear.WN_Braccae,
         feet = gear.WN_Clomps,

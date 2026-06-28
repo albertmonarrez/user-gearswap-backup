@@ -640,7 +640,7 @@ function get_sets()
 	sets['Earth Crusher'] = {
 		ammo = inv.oshashs_treastise,
 		head = inv.nyame_helm,
-		body = inv.bhikku_body,
+		body = inv.nyame_mail,
 		hands = inv.nyame_hands,
 		legs = inv.nyame_legs,
 		feet = inv.nyame_feet,
@@ -670,7 +670,18 @@ function get_sets()
 	}
 
 	-- Cataclysm (Dark Elem. MAB, INT, Magic Damage, WSD)
-	sets["Cataclysm"] = set_combine(sets.weapon_skill, {})
+	sets["Cataclysm"] = set_combine(sets.weapon_skill, {
+		head = inv.pixie_hairpin,
+		body = inv.nyame_mail,
+		neck = inv.sibyl_scarf,
+		waist = inv.orpheus_sash,
+		left_ear = inv.moonshade_earring,
+		right_ear = inv.friomisi_earring,
+		left_ring = inv.epaminondas_ring,
+		right_ring = inv.corneilias_ring,
+		back = inv.alabaster_mantle
+
+	})
 
 	-- Fast Cast (cap is 80%)
 	sets.fast_cast = {}
