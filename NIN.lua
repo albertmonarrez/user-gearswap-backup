@@ -194,7 +194,7 @@ function init_gear_sets()
 
     -- Enmity set
     sets.Enmity = {
-        ammo = "Sapience Orb",       --2
+        -- ammo = "Sapience Orb",       --2
         body = "Emet Harness +1",    --10
         hands = "Kurys Gloves",      --9
         feet = "Mochi. Kyahan +3",   --8
@@ -394,7 +394,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = sets.precast.FC
 
     sets.midcast.SpellInterrupt = {
-        ammo = "Staunch Tathlum",       --11
+        -- ammo = "Staunch Tathlum",       --11
         body = gear.Taeon_Phalanx_body, --10
         hands = "Rawhide Gloves",       --15
         legs = gear.Taeon_Phalanx_legs, --10

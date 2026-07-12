@@ -345,7 +345,7 @@ function init_gear_sets()
         neck = inv.iskur_gorget,
         ear1 = inv.crepus_earring,
         ear2 = inv.enervating_earrng,
-        ring1 = inv.cacoethic_ring,
+        ring1 = inv.chirich_ring,
         ring2 = inv.crepuscular_ring,
         back = inv.COR_TP_Cape,
         waist = inv.yemaya_belt,

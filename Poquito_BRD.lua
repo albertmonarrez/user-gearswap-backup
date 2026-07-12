@@ -83,9 +83,9 @@ function init_gear_sets()
         ring1 = gear.Kishar_Ring,
         --ring2="",
         back = gear.Intarabus_Cape_FC,
-        --waist="",
+        waist = gear.Embla_Sash,
         legs = gear.Aya_Cosciales,
-        --feet="",
+        feet = gear.Fili_Cothurnes,
     }
 
     -- Song precast
@@ -129,7 +129,7 @@ function init_gear_sets()
         --ring2="",
         --back="",
         --waist="",
-        --legs="",
+        legs = gear.Bihu_Cannions,
         --feet="",
     }
 
@@ -150,7 +150,7 @@ function init_gear_sets()
         --back="",
         --waist="",
         --legs="",
-        --feet="",
+        feet = gear.Bihu_Slippers,
     }
 
     -- Troubadour
@@ -163,7 +163,7 @@ function init_gear_sets()
         --neck="",
         --ear1="",
         --ear2="",
-        --body="",
+        body = gear.Bihu_Jstcorps,
         --hands="",
         --ring1="",
         --ring2="",
@@ -229,18 +229,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Inyanga_Tiara,
+        head = gear.Fili_Calot,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
-        --ear2="",
+        ear2 = gear.Eabani_Earring,
         body = gear.WN_Kaftan,
-        hands = gear.WN_Mittens,
+        hands = gear.Fili_Manchettes,
         ring1 = gear.Murky_Ring,
-        --ring2="",
+        ring2 = gear.Shneddick_Ring,
         back = gear.Intarabus_Cape_DT,
-        --waist="",
-        legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        waist = gear.Flume_Belt,
+        legs = gear.Assid_Pants,
+        feet = gear.Fili_Cothurnes,
     }
 
     -- Idle DT
@@ -469,13 +469,13 @@ function init_gear_sets()
         ear1 = gear.Alabaster_Earring,
         --ear2="",
         body = gear.Fili_Hongreline,
-        --hands="",
+        hands = gear.Fili_Manchettes,
         ring1 = gear.Murky_Ring,
         --ring2="",
         back = gear.Intarabus_Cape_DT,
         --waist="",
         legs = gear.Inyanga_Shalwar,
-        --feet="",
+        feet = gear.Brioso_Slippers,
     }
 
     -- Song duration (extends base with duration-specific slots)
@@ -489,7 +489,7 @@ function init_gear_sets()
 
     -- Paeon (HP regen)
     sets.midcast.Paeon = set_combine(sets.midcast.Singing, {
-        --head="",
+        head = gear.Brioso_Roundlet,
         --body="",
         --hands="",
         --legs="",
@@ -549,14 +549,22 @@ function init_gear_sets()
         --legs="",
         --feet="",
     })
-
-    -- Lullaby (sleep/enfeeble)
-    sets.midcast.Lullaby = set_combine(sets.midcast.Singing, {
+    sets.midcast.Sherzo = set_combine(sets.midcast.Singing, {
         --head="",
         --body="",
         --hands="",
         --legs="",
-        --feet="",
+        feet = gear.Fili_Cothurnes,
+    })
+
+    -- Lullaby (sleep/enfeeble)
+    sets.midcast.Lullaby = set_combine(sets.midcast.Singing, {
+        head = gear.Brioso_Roundlet,
+        body = gear.Brioso_Just,
+        hands = gear.Inyanga_Dastanas,
+        waist = gear.Harfners_Sash,
+        legs = gear.Inyanga_Shalwar,
+        feet = gear.Brioso_Slippers,
     })
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Healing Sets ------------------------------------------
@@ -577,7 +585,7 @@ function init_gear_sets()
         ring1 = gear.Murky_Ring,
         --ring2="",
         back = gear.Intarabus_Cape_DT,
-        --waist="",
+        waist = gear.Flume_Belt,
         legs = gear.Vanya_Slops,
         feet = gear.Vanya_Clogs,
     }
@@ -592,7 +600,7 @@ function init_gear_sets()
         --neck="",
         --ear1="",
         --ear2="",
-        --body="",
+        body = gear.Bihu_Jstcorps,
         --hands="",
         --ring1="",
         --ring2="",

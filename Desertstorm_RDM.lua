@@ -199,12 +199,12 @@ function init_gear_sets()
 		legs = inv.malignance_tights,
 		feet = inv.malignance_boots,
 		neck = inv.anu_torque,
-		waist = inv.windbuffet_belt,
+		waist = inv.reiki_yotai,
 		left_ear = inv.sherida_earring,
 		right_ear = inv.dedition_earring,
 		left_ring = inv.crepuscular_ring,
 		right_ring = inv.chirich_ring,
-		back = inv.RDM_DW_Cape,
+		back = inv.RDM_STORE_TP_Cape,
 		-- back = inv.null_shawl,
 
 	}

@@ -87,6 +87,7 @@ function init_gear_sets()
         --hands="",
         --ring1="",
         --ring2="",
+        waist = gear.Embla_Sash,
         back = gear.Nantosuelta_Cape_FC,
         legs = gear.Geomancy_Pants,
         feet = gear.Merl_Crackows_FC,
@@ -445,18 +446,19 @@ function init_gear_sets()
     -- Default idle
     sets.idle = {
         --main="",
+        sub = gear.Genmei_Shield,
         range = gear.Dunna,
-        head = gear.Jhakri_Coronal,
+        head = gear.Azimuth_Hood,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Domin_Earring,
+        ear2 = gear.Azimuth_Earring,
         body = gear.Jhakri_Robe,
-        hands = gear.MG_Gloves,
+        hands = gear.Azimuth_Gloves,
         ring1 = gear.Murky_Ring,
         --ring2="",
         back = gear.Nantosuelta_Cape_Pet,
-        legs = gear.MGF_Chausses,
-        feet = gear.MGF_Ledelsens,
+        legs = gear.Assid_Pants,
+        feet = gear.Azimuth_Gaiters,
     }
 
     -- Idle DT
@@ -595,18 +597,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        --head="",
-        -- neck = gear.Bagua_Charm,
+        head = gear.Azimuth_Hood,
+        neck = gear.Bagua_Charm,
         --ear1="",
         --ear2="",
         --body="",
-        --hands="",
+        hands = gear.Geomancy_Mitaines,
         --ring1="",
         --ring2="",
-        --back="",
+        back = gear.Nantosuelta_Cape_Pet,
         --waist="",
         --legs="",
-        --feet="",
+        feet = gear.Bagua_Sandals,
     })
 
     -- Indi- spells
@@ -615,10 +617,10 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        --head="",
-        --neck="",
+        head = gear.Azimuth_Hood,
+        neck = gear.Bagua_Charm,
         --ear1="",
-        --ear2="",
+        ear2 = gear.Azimuth_Earring,
         --body="",
         hands = gear.Geomancy_Mitaines,
         --ring1="",
@@ -626,7 +628,7 @@ function init_gear_sets()
         --back="",
         --waist="",
         legs = gear.Bagua_Pants,
-        --feet="",
+        feet = gear.Azimuth_Gaiters,
     }
 
 
@@ -645,13 +647,13 @@ function init_gear_sets()
         --ear1="",
         --ear2="",
         --body="",
-        --hands="",
+        hands = gear.Geomancy_Mitaines,
         --ring1="",
         --ring2="",
         --back="",
         --waist="",
         --legs="",
-        --feet="",
+        feet = gear.Geomancy_Sandals,
     }
 
     ------------------------------------------------------------------------------------------------

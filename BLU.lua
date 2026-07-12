@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, unused-local
 local inv = require('inventory')
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -563,10 +564,13 @@ function init_gear_sets()
     sets.precast.WS['Red Lotus Blade'] = sanguine_blade
     sets.precast.WS['Seraph Blade'] = sanguine_blade
 
-    sets.precast['Holy Water'] = {
+    -- Holy Water (Holy Water+)
+    sets.precast.Item = {}
+    sets.precast.Item['Holy Water'] = {
         neck = inv.nicanders_necklace,
+        ring1 = "Blenmot's Ring",
+        ring2 = "Blenmot's Ring",
     }
-
 
     -- Midcast Sets
     sets.midcast.FastRecast = fast_cast_set
@@ -701,8 +705,6 @@ function init_gear_sets()
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
-
-
     sets.self_healing = cure_set
 end
 

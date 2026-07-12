@@ -422,20 +422,20 @@ color.abil.notfound.b    = 125
 -- These are the Main/Sub combos that the Weapon Cycle goes through. Add more pairs on new lines as needed
 -- NOTE: if a slot should be empty, use `empty` with no quotation marks. ie: {"Fruit Punches", empty},
 WeaponCycle              = {
-    { "Kusanagi",           "Utu Grip" },
-    { "Masamune",           "Utu Grip" },
-    { "Dojikiri Yasutsuna", "Utu Grip" },
-    { "Amanomurakumo",      "Utu Grip" },
-    { "Soboro Sukehiro",    "Utu Grip" },
-    { "Shining One",        "Utu Grip" },
+    { "Kusanagi",    "Utu Grip" },
+    -- { "Masamune",           "Utu Grip" },
+    -- { "Dojikiri Yasutsuna", "Utu Grip" },
+    -- { "Amanomurakumo",      "Utu Grip" },
+    -- { "Soboro Sukehiro", "Utu Grip" },
+    { "Shining One", "Utu Grip" },
     --{"Main Slot", "Sub Slot"},
 }
 
 -- These are the Main/Sub combos that get added to the Weapon Cycle while in Abyssea for Procs. Add more pairs on new lines as needed
 -- NOTE: if a slot should be empty, use `empty` with no quotation marks. ie: {"Fruit Punches", empty},
 AbysseaProcCycle         = {
-    { "Excalipoor II",      empty },
-    { "Yagyu Shortblade",   empty },
+    { "Excalipoor II",      nil },
+    { "Yagyu Shortblade",   nil },
     { "Melon Slicer",       "Flanged Grip" },
     { "Sha Wujing's Lance", "Flanged Grip" },
     --{"Main Slot", "Sub Slot"},
@@ -467,15 +467,15 @@ function get_sets()
 
     -- Hasso Mode 2 (Example: Hasso+, with a focus on Multi-Attack, Zanshin, and Store TP, with enough DT to survive higher end content)
     sets.hasso.Mode2 = set_combine(sets.hasso.Mode1, {
-        ammo = "Coiste Bodhar",
+        ammo = inv.coiste_bodhar,
         head = inv.kasuga_head,
         body = inv.kasuga_body,
-        hands = inv.mpacas_gloves,
+        hands = inv.tatenashi_hands,
         legs = inv.kasuga_legs,
         feet = inv.tatenashi_feet,
         neck = inv.sams_nodowa,
         waist = inv.sailfi_belt,
-        left_ear = "Schere Earring",
+        left_ear = inv.alabaster_earring,
         right_ear = inv.kasuga_earring,
         left_ring = inv.chirich_ring,
         right_ring = inv.niqmaddu_ring,
@@ -491,13 +491,13 @@ function get_sets()
         hands = inv.tatenashi_hands,
         legs = inv.kasuga_legs,
         feet = inv.tatenashi_feet,
-        neck = inv.sams_nodowa,
-        waist = "Ioskeha Belt +1",
-        left_ear = "Schere Earring",
-        right_ear = "Kasuga Earring +2",
-        left_ring = "Hetairoi Ring",
+        neck = inv.null_loop,
+        waist = inv.null_belt,
+        left_ear = inv.alabaster_earring,
+        right_ear = inv.kasuga_earring,
+        left_ring = inv.chirich_ring,
         right_ring = "Niqmaddu Ring",
-        back = "Null Shawl",
+        back = inv.null_shawl,
     })
 
     -- Hasso Mode 4 (Example: Hasso+, with a focus on Subtle Blow, then filling in the rest with Multi-Attack, Zanshin, Store TP, and DT)
@@ -524,13 +524,13 @@ function get_sets()
         head = inv.kasuga_head,
         body = inv.mpacas_body,
         hands = inv.mpacas_gloves,
-        legs = inv.mpacas_legs,
+        legs = inv.sakonji_legs,
         feet = inv.mpacas_boots,
         neck = inv.sams_nodowa,
         waist = inv.sailfi_belt,
-        left_ear = inv.schere_earring,
+        left_ear = inv.alabaster_earring,
         right_ear = inv.kasuga_earring,
-        left_ring = inv.defending_ring,
+        left_ring = inv.murky_ring,
         right_ring = inv.niqmaddu_ring,
         back = inv.SAM_TP_CAPE_DT,
     })
@@ -543,7 +543,7 @@ function get_sets()
         feet = "Danzo Sune-ate",
         neck = inv.null_loop,
         waist = inv.sailfi_belt,
-        left_ring = inv.defending_ring,
+        left_ring = inv.murky_ring,
     })
 
     -- Oh Shit
@@ -555,7 +555,7 @@ function get_sets()
         feet = inv.nyame_feet,
         neck = inv.warders_charm,
         waist = inv.platinum_moogle_belt,
-        left_ring = inv.defending_ring,
+        left_ring = inv.murky_ring,
         right_ring = inv.acrchon_ring,
         ammo = inv.staunch_tathlum,
         back = "Shadow Mantle",
@@ -576,6 +576,10 @@ function get_sets()
         left_ring = inv.corneilias_ring,
         right_ring = inv.epaminondas_ring,
         back = inv.SAM_WS_CAPE,
+    }
+    sets.weapon_skill_full_tp = {
+        head = inv.nyame_helm,
+        right_ear = inv.kasuga_earring,
     }
 
     -- Weapon Skill - Accuracy (WS Accuracy, Accuracy)
@@ -706,7 +710,7 @@ function get_sets()
     -- Combines with Weapon Skill set, only necessary to set the slots with specific desired stats
     sets["Tachi: Mumei"] = set_combine(sets.weapon_skill, {
         body = inv.sakonji_body,
-        left_ring = inv.epaminondas_ring,
+        -- left_ring = inv.epaminondas_ring,
     })
 
     -- Tachi: Mumei - High Buff (STR, DEX, PDL)
@@ -827,7 +831,7 @@ function get_sets()
 
     -- Meikyo Shisui
     sets.meikyo_shisui = {
-        feet = "Sak. Sune-Ate +4",
+        feet = inv.sakonji_feet,
     }
 
     -- Steps
@@ -2390,6 +2394,9 @@ function precast(spell)
             player_tp = player.tp
             TP_Window_Open = true
             primeAMUpdate(player_tp)
+        end
+        if player.tp >= 2800 then
+            equip(sets.weapon_skill_full_tp)
         end
     elseif spell.english == 'Meditate' and Meditate.recast < 2 then
         equip(sets.meditate)
