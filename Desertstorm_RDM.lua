@@ -171,7 +171,8 @@ function init_gear_sets()
 			left_ring = inv.stikini_ring2,
 			neck = inv.null_loop
 		})
-	local enfeebling_acc = set_combine(enfeebling_set, { back = inv.null_shawl, left_ring = inv.stikini_ring2, })
+	local enfeebling_acc = set_combine(enfeebling_set, { back = inv.null_shawl, left_ring = inv.stikini_ring2,	right_ear = inv.alabaster_earring,
+ })
 
 	-- Fastcast set
 	local fast_cast_set = {
