@@ -11,6 +11,7 @@ return {
     Knobkierrie        = "Knobkierrie",
     Ginsen             = "Ginsen",
     Relic_Horn         = "Relic Horn",
+    Linos              = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+4', 'Quadruple Attack +2', } },
 
     -- Sub
     Kali               = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -25,7 +26,7 @@ return {
     -- Head
     Fili_Calot         = "Fili Calot +2",
     Inyanga_Tiara      = "Inyanga Tiara +2",
-    Aya_Zucchetto      = "Aya. Zucchetto +1",
+    Aya_Zucchetto      = "Aya. Zucchetto +2",
     Vanya_Hood         = { name = "Vanya Hood", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Tema_Headband      = "Tema. Headband",
     Merl_Hood          = "Merlinic Hood",
@@ -39,7 +40,7 @@ return {
     GMoogle_Masque     = "G. Moogle Masque",
 
     -- Neck
-    Moonbow_Whistle    = "Moonbow Whistle",
+    Moonbow_Whistle    = "Mnbw. Whistle +1",
     Aoidos_Matinee     = "Aoidos' Matinee",
     Bards_Charm        = { name = "Bard's Charm +1", augments = { 'Path: A', } },
     Loricate_torque    = "Loricate Torque +1",
@@ -66,10 +67,10 @@ return {
     -- Body
     Fili_Hongreline    = "Fili Hongreline +1",
     Inyanga_Jubbah     = "Inyanga Jubbah +2",
-    Ayanmo_Corazza     = "Ayanmo Corazza +1",
+    Ayanmo_Corazza     = "Ayanmo Corazza +2",
     Vanya_Robe         = { name = "Vanya Robe", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Merl_Jubbah        = "Merlinic Jubbah",
-    Bihu_Jstcorps      = { name = "Bihu Jstcorps. +3", augments = { 'Enhances "Troubadour" effect', } },
+    Bihu_Jstcorps      = { name = "Bihu Just. +4", augments = { 'Enhances "Troubadour" effect', } },
     Brioso_Just        = "Brioso Justau. +2",
     WN_Kaftan          = "WN Kaftan +1",
     Terminal_Plate     = "Terminal Plate",
@@ -160,4 +161,21 @@ return {
     Melee_Gaiters      = "Melee Gaiters",
     Abyss_Sollerets    = "Abyss Sollerets",
     Sprinters_Shoes    = "Sprinter's Shoes",
+    Battlecast_gaiters = "Battlecast Gaiters",
+
+    -- Weapons
+    Lembing            = "Lembing",
+
+    -- Waist
+    Sroda_Belt         = "Sroda Belt",
+
+    -- Back
+    Null_Shawl         = "Null Shawl",
+
+    -- Body
+    Councilor_Garb     = "Councilor's Garb",
+
+    -- Hands
+    Councilor_Cuffs    = "Councilor's Cuffs",
+
 }

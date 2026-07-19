@@ -7,6 +7,7 @@ return {
     Trial_Wand           = "Trial Wand",
     Kaja_Rod             = "Kaja Rod",
     Tokko_Sword          = "Tokko Sword",
+    Malignance_Pole      = "Malignance Pole",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -14,6 +15,7 @@ return {
     Matre_Bell           = "Matre Bell",
     Yamarang             = "Yamarang",
     Knobkierrie          = "Knobkierrie",
+    Ginsen               = "Ginsen",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -33,7 +35,7 @@ return {
     Azimuth_Hood         = "Azimuth Hood +2",
     Sukeroku_Hachi       = "Sukeroku Hachi.",
     Jhakri_Coronal       = "Jhakri Coronal +2",
-    Aya_Zucchetto        = "Aya. Zucchetto",
+    Aya_Zucchetto        = "Aya. Zucchetto +2",
     Orvail_Corona        = "Orvail Corona +1",
     Tema_Headband        = "Tema. Headband",
     Decennial_Tiara      = "Decennial Tiara",
@@ -51,6 +53,7 @@ return {
     Loricate_torque      = "Loricate Torque +1",
     Quanpur_Necklace     = "Quanpur Necklace",
     Mizu_Kubikazari      = "Mizu. Kubikazari",
+    Nicander_Necklace    = "Nicander's Necklace",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -87,6 +90,7 @@ return {
     Decennial_Dress      = "Decennial Dress",
     Goblin_Suit          = "Goblin Suit",
     GMoogle_Suit         = "G. Moogle Suit",
+    Gyve_Doublet         = "Gyve Doublet",
 
     -- Hands
     Bagua_Mitaines       = { name = "Bagua Mitaines", augments = { 'Enhances "Curative Recantation" effect', } },
@@ -132,9 +136,10 @@ return {
     Flume_Belt           = "Flume Belt",
     Sailfi_Belt          = "Sailfi Belt +1",
     Embla_Sash           = "Embla Sash",
+    Isa_Belt             = "Isa Belt",
 
     -- Legs
-    Bagua_Pants          = { name = "Bagua Pants +3", augments = { 'Enhances "Mending Halation" effect', } },
+    Bagua_Pants          = { name = "Bagua Pants +4", augments = { 'Enhances "Mending Halation" effect', } },
     Vanya_Slops          = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Pants       = "Geo. Pants +1",
     Jhakri_Slops         = "Jhakri Slops +2",
@@ -149,11 +154,13 @@ return {
     Sorcerer_Tonban      = "Sorcerer's Tonban",
     Wyrm_Brais           = "Wyrm Brais",
     Estqr_Fuseau         = "Estqr. Fuseau +1",
+    Aya_Cosciales        = "Aya. Cosciales +1",
+    Azimuth_Tights       = "Azimuth Tights +1",
 
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
     Merl_Crackows_Pet    = { name = "Merlinic Crackows", augments = { 'Pet: Attack+21 Pet: Rng.Atk.+21', 'INT+3', '"Refresh"+1', } },
-    Bagua_Sandals        = { name = "Bagua Sandals +3", augments = { 'Enhances "Radial Arcana" effect', } },
+    Bagua_Sandals        = { name = "Bagua Sandals +4", augments = { 'Enhances "Radial Arcana" effect', } },
     Vanya_Clogs          = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Sandals     = "Geo. Sandals +3",
     Aya_Gambieras        = "Aya. Gambieras",
@@ -164,4 +171,7 @@ return {
     Azimuth_Gaiters      = "Azimuth Gaiters +2",
     Temachtiani_Boots    = "Temachtiani Boots",
     Sprinters_Shoes      = "Sprinter's Shoes",
+    Comm_Bottes          = "Comm. Bottes",
+    Melee_Gaiters        = "Melee Gaiters",
+    Abyss_Sollerets      = "Abyss Sollerets",
 }

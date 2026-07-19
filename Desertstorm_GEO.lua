@@ -302,6 +302,7 @@ function get_sets()
 		sub = inv.genbus_shield,
 		range = inv.dunna,
 		head = inv.azimuth_hood,
+		neck = inv.bagua_charm,
 		body = inv.azimuth_coat,
 		hands = inv.geo_mitaines,
 		feet = inv.bagua_sandals,
@@ -348,7 +349,7 @@ function get_sets()
 
 	-- DPS (Accuracy, Double/Triple Attack, DEX, Store TP, Attack)
 	sets.melee             = {
-		head = inv.null_mask,
+		head = inv.ischkur_turban,
 		body = inv.azimuth_coat,
 		hands = inv.gazu_bracelets,
 		legs = inv.jhakri_slops,
@@ -493,7 +494,8 @@ function get_sets()
 	-- Combines with Elemental Spells set, only necessary to set the slots with specific desired stats
 	sets.magic_burst       = {
 		head = inv.ea_hat,
-		neck = inv.mizu_kubikazri,
+		neck = inv.sibyl_scarf,
+		hands = inv.agwus_gages,
 		waist = inv.acuity_belt,
 		left_ring = inv.mujin_band,
 	}

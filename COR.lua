@@ -337,7 +337,7 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {
         ammo = inv.RAbullet,
-        head = inv.malignance_chapeau,
+        head = inv.ischkur_turban,
         body = inv.malignance_tabard,
         hands = inv.malignance_gloves,
         legs = inv.Chasseurs_legs,

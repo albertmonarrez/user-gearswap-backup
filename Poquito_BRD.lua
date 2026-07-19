@@ -22,8 +22,9 @@ function job_setup()
     state.Buff['Nightingale'] = buffactive['Nightingale'] or false
     state.Buff['Troubadour'] = buffactive['Troubadour'] or false
 
-    no_swap_gear = S { "Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-        "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring" }
+    -- no_swap_gear = S { "Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
+    --     "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring" }
+    no_swap_gear = S {}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -227,7 +228,7 @@ function init_gear_sets()
     sets.idle = {
         --main="",
         --sub="",
-        --range="",
+        range = gear.Miracle_Cheer,
         --ammo="",
         head = gear.Fili_Calot,
         neck = gear.Loricate_torque,
@@ -292,20 +293,20 @@ function init_gear_sets()
     sets.engaged = {
         --main="",
         --sub="",
-        --range="",
+        range = gear.Linos,
         --ammo="",
         head = gear.Aya_Zucchetto,
-        neck = gear.Loricate_torque,
+        neck = gear.Bards_Charm,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Brutal_Earring,
         body = gear.Ayanmo_Corazza,
         hands = gear.WN_Mittens,
         ring1 = gear.Murky_Ring,
         --ring2="",
-        --back="",
+        back = gear.Null_Shawl,
         waist = gear.Sailfi_Belt,
         legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        feet = gear.Battlecast_gaiters,
     }
 
     -- Store TP focus
@@ -462,7 +463,7 @@ function init_gear_sets()
     sets.midcast.Singing = {
         --main="",
         --sub="",
-        --range="",
+        range = gear.Miracle_Cheer,
         --ammo="",
         head = gear.Fili_Calot,
         neck = gear.Moonbow_Whistle,

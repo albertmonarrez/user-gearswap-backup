@@ -163,16 +163,19 @@ function init_gear_sets()
 	local enfeeble_potency = set_combine(enfeebling_set, { body = inv.lethargy_body })
 	local max_enfeebling_acc = set_combine(enfeebling_set,
 		{
-			-- ammo = '',
-			-- range = inv.ullr,
+			ammo = '',
+			main = inv.crocea_mors,
+			sub = inv.daybreak,
+			range = inv.ullr,
 			head = inv.atrophy_chapeau,
 			right_ear = inv.alabaster_earring,
 			back = inv.null_shawl,
 			left_ring = inv.stikini_ring2,
 			neck = inv.null_loop
 		})
-	local enfeebling_acc = set_combine(enfeebling_set, { back = inv.null_shawl, left_ring = inv.stikini_ring2,	right_ear = inv.alabaster_earring,
- })
+	local enfeebling_acc = set_combine(enfeebling_set,
+		{ back = inv.null_shawl, left_ring = inv.stikini_ring2, right_ear = inv.alabaster_earring,
+		})
 
 	-- Fastcast set
 	local fast_cast_set = {
@@ -238,7 +241,7 @@ function init_gear_sets()
 		head = inv.umuthi_hat,
 		hands = inv.ayanmo_hands,
 		body = inv.sworn_platemail,
-		-- back = inv.RDM_ENHANCHING_DURATION_CAPE,
+		back = inv.RDM_DW_Cape,
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
 		legs = inv.vitiation_tights,
@@ -265,18 +268,21 @@ function init_gear_sets()
 	local tp_0_dmg_daggers = set_combine(tp_set, {
 		main = "Ethereal Dagger",
 		sub = "Qutrub Knife",
-		head = inv.umuthi_hat,
+		-- head = inv.umuthi_hat,
+		head = inv.atrophy_chapeau,
 		hands = inv.ayanmo_hands,
 		body = inv.sworn_platemail,
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
-		legs = inv.vitiation_tights,
+		-- legs = inv.vitiation_tights,
+		legs = inv.atrophy_tights,
 		left_ring = inv.murky_ring,
-		right_ring = inv.stikini_ring2,
+		right_ring = inv.defending_ring,
 		right_ear = inv.alabaster_earring,
 		left_ear = inv.suppanomimi,
 		feet = inv.malignance_boots,
 		ammo = inv.sroda_tathlum,
+		back = inv.RDM_DW_Cape,
 	})
 
 	-- Base Weaponskill set
@@ -704,6 +710,7 @@ function init_gear_sets()
 	sets.midcast['Paralyze II'].Resistant = max_enfeebling_acc
 	sets.midcast['Gravity II'].Resistant = max_enfeebling_acc
 	sets.midcast['Silence'] = enfeebling_acc
+	sets.midcast['Silence'].Resistant = max_enfeebling_acc
 
 	sets.midcast['Dispel'] = enfeebling_acc
 	sets.midcast['Frazzle'] = set_combine(enfeebling_acc, { neck = inv.null_loop })

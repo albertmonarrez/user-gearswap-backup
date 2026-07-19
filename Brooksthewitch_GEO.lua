@@ -23,8 +23,10 @@ function job_setup()
     state.Buff['Blaze of Glory'] = buffactive['Blaze of Glory'] or false
     state.Buff['Entrust'] = buffactive['Entrust'] or false
 
-    no_swap_gear = S { "Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-        "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring" }
+    -- no_swap_gear = S { "Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
+    --     "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring" }
+
+    no_swap_gear = S {}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -331,21 +333,21 @@ function init_gear_sets()
     -- Elemental Magic
     sets.midcast['Elemental Magic'] = {
         --main="",
-        --sub="",
+        sub = gear.Ammurapi_Shield,
         --range="",
         --ammo="",
-        head = gear.Jhakri_Coronal,
+        head = gear.Azimuth_Hood,
         neck = gear.Mizu_Kubikazari,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Sortiarius_Earring,
         body = gear.Jhakri_Robe,
-        hands = gear.Jhakri_Cuffs,
+        hands = gear.Azimuth_Gloves,
         --ring1="",
         ring2 = gear.Jhakri_Ring,
         --back="",
         --waist="",
         legs = gear.Jhakri_Slops,
-        feet = gear.Jhakri_Pigaches,
+        feet = gear.Azimuth_Gaiters,
     }
 
     -- Magic Burst
@@ -455,7 +457,7 @@ function init_gear_sets()
         body = gear.Jhakri_Robe,
         hands = gear.Azimuth_Gloves,
         ring1 = gear.Murky_Ring,
-        --ring2="",
+        ring2 = gear.Shneddick_Ring,
         back = gear.Nantosuelta_Cape_Pet,
         legs = gear.Assid_Pants,
         feet = gear.Azimuth_Gaiters,

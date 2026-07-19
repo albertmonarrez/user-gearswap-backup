@@ -70,6 +70,7 @@ local equipment = {
     bagua_galero           = "Bagua Galero",
     geo_galero             = "Geo. Galero +2",
     souveran_head          = "Souveran Schaller",
+    ischkur_turban         = "Ischkur Turban",
 
     carmine_mask           = "Carmine Mask",
     sakpatas_helm          = "Sakpata's Helm",
@@ -156,7 +157,7 @@ local equipment = {
     mpacas_body             = "Mpaca's Doublet",
     dagon_breastplate       = "Dagon Breast.",
     merlinic_fastcast_body  = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+16', '"Fast Cast"+6', } },
-    azimuth_coat            = "Azimuth Coat +2",
+    azimuth_coat            = "Azimuth Coat +3",
     gyve_doublet            = "Gyve Doublet",
     bagua_tunic             = "Bagua Tunic",
     geomancy_tunic          = "Geomancy Tunic +2",
@@ -193,6 +194,7 @@ local equipment = {
     agoge_hands             = "Agoge Mufflers",
     souveran_hands          = { name = "Souv. Handsch. +1", augments = { 'HP+65', 'Shield skill +15', 'Phys. dmg. taken -4', } },
     odyssean_gauntlets      = { name = "Odyssean Gauntlets", augments = { 'Weapon skill damage +4%', 'STR+3', 'Accuracy+1', 'Attack+14', } },
+    agwus_gages             = "Agwu's gages",
 
     --legs
     carmine_legs            = { name = "Carmine Cuisses +1", augments = { 'Accuracy+20', 'Attack+12', '"Dual Wield"+6', } },
@@ -214,7 +216,7 @@ local equipment = {
     boii_legs               = "Boii Cuisses +3",
     Chasseurs_legs          = "Chas. Culottes +3",
     assimilator_legs        = "Assim. Shalwar +4",
-    azimuth_tights          = "Azimuth Tights +2",
+    azimuth_tights          = "Azimuth Tights +3",
     atrophy_tights          = "Atrophy Tights +4",
     pummler_legs            = "Pumm. Cuisses +4",
     jhakri_slops            = "Jhakri Slops +2",
@@ -487,7 +489,7 @@ local equipment = {
     demersal_degen               = { name = "Demers. Degen +1", augments = { 'Path: A', } },
     maxentius                    = "Maxentius",
     daybreak                     = "Daybreak",
-    ullr                         = "Kaja Bow",
+    ullr                         = "Ullr",
     gletis_knife                 = "Gleti's Knife",
     blurred_shield               = "Blurred Shield +1",
     crocea_mors                  = { name = "Crocea Mors", augments = { 'Path: C', } },
