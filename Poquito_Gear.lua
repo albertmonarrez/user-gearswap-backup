@@ -12,6 +12,8 @@ return {
     Ginsen             = "Ginsen",
     Relic_Horn         = "Relic Horn",
     Linos              = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+4', 'Quadruple Attack +2', } },
+    Ghastly_Tathlum    = "Ghastly Tathlum +1",
+    Hydrocera          = "Hydrocera",
 
     -- Sub
     Kali               = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -38,6 +40,8 @@ return {
     Behemoth_Masque    = "Behemoth Masque",
     Goblin_Masque      = "Goblin Masque",
     GMoogle_Masque     = "G. Moogle Masque",
+    Null_Masque        = "Null Masque",
+    Nahtirah_Hat       = "Nahtirah Hat",
 
     -- Neck
     Moonbow_Whistle    = "Mnbw. Whistle +1",
@@ -48,6 +52,7 @@ return {
     Adad_Amulet        = "Adad Amulet",
     Erra_Pendant       = "Erra Pendant",
     Mizu_Kubikazari    = "Mizu. Kubikazari",
+    Reti_Pendant       = "Reti Pendant",
 
     -- Ear
     Raising_Earring    = "Raising Earring",
@@ -63,9 +68,15 @@ return {
     Erilaz_Earring_6   = { name = "Erilaz Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Boii_Earring       = { name = "Boii Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Eabani_Earring     = "Eabani Earring",
+    Ishvara_Earring    = "Ishvara Earring",
+    Calamitous_Earring = "Calamitous Earring",
+    Bhikku_Earring     = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', '"Store TP"+4', } },
+    Hashishin_Earring  = { name = "Hashishin Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
+    Arbatel_Earring    = { name = "Arbatel Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+6', } },
+    Alabaster_Earring_2 = { name = "Alabaster Earring", augments = { 'Path: A', } },
 
     -- Body
-    Fili_Hongreline    = "Fili Hongreline +1",
+    Fili_Hongreline    = "Fili Hongreline +2",
     Inyanga_Jubbah     = "Inyanga Jubbah +2",
     Ayanmo_Corazza     = "Ayanmo Corazza +2",
     Vanya_Robe         = { name = "Vanya Robe", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
@@ -88,9 +99,10 @@ return {
     Vanya_Cuffs        = { name = "Vanya Cuffs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Bihu_Cuffs         = { name = "Bihu Cuffs", augments = { 'Enhances "Con Brio" effect', } },
     Merl_Dastanas      = "Merlinic Dastanas",
-    Brioso_Cuffs       = "Brioso Cuffs +3",
-    Viti_Gloves        = { name = "Viti. Gloves +3", augments = { 'Enhancing Magic duration', } },
+    Brioso_Cuffs       = "Brioso Cuffs +4",
+    Viti_Gloves        = { name = "Viti. Gloves +4", augments = { 'Enhancing Magic duration', } },
     Choral_Cuffs       = "Choral Cuffs",
+    Bunzi_Gloves       = "Bunzi's Gloves",
     WN_Mittens         = "WN Mittens +1",
     Gende_Gages        = "Gende. Gages +1",
     Temachtiani_Gloves = "Temachtiani Gloves",
@@ -107,8 +119,9 @@ return {
     Caliber_Ring       = "Caliber Ring",
     Kishar_Ring        = "Kishar Ring",
     Empress_Band       = "Empress Band",
-    Murky_Ring         = "Murky Ring",
+    Murky_Ring         = { name = "Murky Ring", augments = { 'Path: A', } },
     Shneddick_Ring     = "Shneddick Ring",
+    Petrov_Ring        = "Petrov Ring",
 
     -- Back
     Intarabus_Cape_DT  = { name = "Intarabus's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', '"Cure" potency +10%', 'Phys. dmg. taken-2%', } },
@@ -127,7 +140,7 @@ return {
     Harfners_Sash      = "Harfner's Sash",
 
     -- Legs
-    Fili_Rhingrave     = "Fili Rhingrave +1",
+    Fili_Rhingrave     = "Fili Rhingrave +2",
     Inyanga_Shalwar    = "Inyanga Shalwar +2",
     Aya_Cosciales      = "Aya. Cosciales +2",
     Vanya_Slops        = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
@@ -144,6 +157,7 @@ return {
     Estqr_Fuseau       = "Estqr. Fuseau +1",
     Novennial_Hose     = "Novennial Hose",
     Decennial_Tights   = "Decennial Tights",
+    Revelation_Brais   = "Revelation Brais",
 
     -- Feet
     Inyanga_Crackows   = "Inyan. Crackows +1",
@@ -168,6 +182,7 @@ return {
 
     -- Waist
     Sroda_Belt         = "Sroda Belt",
+    Null_Belt          = "Null Belt",
 
     -- Back
     Null_Shawl         = "Null Shawl",

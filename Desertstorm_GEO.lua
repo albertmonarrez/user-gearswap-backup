@@ -481,7 +481,7 @@ function get_sets()
 		legs = inv.azimuth_tights,
 		feet = inv.azimuth_feet,
 		neck = inv.sibyl_scarf,
-		waist = inv.orpheus_sash,
+		waist = inv.acuity_belt,
 		left_ear = inv.malignance_earring,
 		right_ear = inv.regal_earring,
 		left_ring = inv.metamorph_ring,

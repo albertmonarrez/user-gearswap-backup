@@ -75,7 +75,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Fili_Calot,
+        head = gear.Nahtirah_Hat,
         neck = gear.Aoidos_Matinee,
         --ear1="",
         ear2 = gear.Loquac_Earring,
@@ -90,7 +90,7 @@ function init_gear_sets()
     }
 
     -- Song precast
-    sets.precast.FC.Song = {
+    sets.precast.FC.Song = set_combine(sets.precast.FC, {
         --main="",
         --sub="",
         --range="",
@@ -107,7 +107,7 @@ function init_gear_sets()
         --waist="",
         --legs="",
         --feet="",
-    }
+    })
 
 
     ------------------------------------------------------------------------------------------------
@@ -230,11 +230,11 @@ function init_gear_sets()
         --sub="",
         range = gear.Miracle_Cheer,
         --ammo="",
-        head = gear.Fili_Calot,
+        head = gear.Null_Masque,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Eabani_Earring,
-        body = gear.WN_Kaftan,
+        body = gear.Fili_Hongreline,
         hands = gear.Fili_Manchettes,
         ring1 = gear.Murky_Ring,
         ring2 = gear.Shneddick_Ring,
@@ -300,12 +300,12 @@ function init_gear_sets()
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Brutal_Earring,
         body = gear.Ayanmo_Corazza,
-        hands = gear.WN_Mittens,
+        hands = gear.Bunzi_Gloves,
         ring1 = gear.Murky_Ring,
-        --ring2="",
+        ring2 = gear.Petrov_Ring,
         back = gear.Null_Shawl,
         waist = gear.Sailfi_Belt,
-        legs = gear.WN_Braccae,
+        legs = gear.Revelation_Brais,
         feet = gear.Battlecast_gaiters,
     }
 
@@ -578,9 +578,9 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Vanya_Hood,
-        neck = gear.Loricate_torque,
+        neck = gear.Reti_Pendant,
         ear1 = gear.Alabaster_Earring,
-        --ear2="",
+        ear2 = gear.Calamitous_Earring,
         body = gear.Vanya_Robe,
         hands = gear.Vanya_Cuffs,
         ring1 = gear.Murky_Ring,
@@ -598,9 +598,9 @@ function init_gear_sets()
     -- Default WS set
     sets.precast.WS = {
         --head="",
-        --neck="",
+        neck = gear.Bards_Charm,
         --ear1="",
-        --ear2="",
+        ear2 = gear.Ishvara_Earring,
         body = gear.Bihu_Jstcorps,
         --hands="",
         --ring1="",

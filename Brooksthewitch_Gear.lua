@@ -8,6 +8,7 @@ return {
     Kaja_Rod             = "Kaja Rod",
     Tokko_Sword          = "Tokko Sword",
     Malignance_Pole      = "Malignance Pole",
+    Bunzi_Rod            = "Bunzi's Rod",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -16,6 +17,7 @@ return {
     Yamarang             = "Yamarang",
     Knobkierrie          = "Knobkierrie",
     Ginsen               = "Ginsen",
+    Ghastly_Tathlum      = "Ghastly Tathlum +1",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -46,6 +48,7 @@ return {
 
     -- Neck
     Bagua_Charm          = "Bagua Charm +1",
+    Bagua_Charm_2        = { name = "Bagua Charm +2", augments = { 'Path: A', } },
     Erra_Pendant         = "Erra Pendant",
     Nodens_Gorget        = "Nodens Gorget",
     Jokushu_Chain        = "Jokushu Chain",
@@ -54,6 +57,7 @@ return {
     Quanpur_Necklace     = "Quanpur Necklace",
     Mizu_Kubikazari      = "Mizu. Kubikazari",
     Nicander_Necklace    = "Nicander's Necklace",
+    Reti_Pendant         = "Reti Pendant",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -71,6 +75,13 @@ return {
     Chas_Earring         = { name = "Chas. Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9', } },
     Pel_Earring          = { name = "Pel. Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3', } },
     Nourish_Earring      = "Nourish. Earring",
+    Ishvara_Earring      = "Ishvara Earring",
+    Boii_Earring         = { name = "Boii Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
+    Bhikku_Earring       = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4', } },
+    Arbatel_Earring      = { name = "Arbatel Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+10', } },
+    Erilaz_Earring       = { name = "Erilaz Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Damage taken-3%', } },
+    Alabaster_Earring_2  = { name = "Alabaster Earring", augments = { 'Path: A', } },
+    Friomisi_Earring     = "Friomisi Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -83,8 +94,8 @@ return {
     Odyss_Chestplate     = "Odyss. Chestplate",
     Councilor_Garb       = "Councilor's Garb",
     MG_Bodice            = "MG Bodice +1",
-    Azimuth_Coat         = "Azimuth Coat +1",
-    Atrophy_Tabard       = "Atrophy Tabard +3",
+    Azimuth_Coat         = "Azimuth Coat +2",
+    Atrophy_Tabard       = "Atrophy Tabard +4",
     Temachtiani_Shirt    = "Temachtiani Shirt",
     Novennial_Dress      = "Novennial Dress",
     Decennial_Dress      = "Decennial Dress",
@@ -120,13 +131,14 @@ return {
     Empress_Band         = "Empress Band",
     Facility_Ring        = "Facility Ring",
     Caliber_Ring         = "Caliber Ring",
-    Murky_Ring           = "Murky Ring",
+    Murky_Ring           = { name = "Murky Ring", augments = { 'Path: A', } },
     Shneddick_Ring       = "Shneddick Ring",
     Dcl_Grd_Ring         = "Dcl.Grd. Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
     Nantosuelta_Cape_Pet = { name = "Nantosuelta's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', 'Mag. Evasion+3', 'Pet: "Regen"+10', 'Damage taken-5%', } },
+    Nantosuelta_Cape_MAB = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10', } },
     Nantosuelta_Cape     = "Nantosuelta's Cape",
     Nexus_Cape           = "Nexus Cape",
     Alabaster_Mantle     = "Alabaster Mantle",
@@ -137,6 +149,7 @@ return {
     Sailfi_Belt          = "Sailfi Belt +1",
     Embla_Sash           = "Embla Sash",
     Isa_Belt             = "Isa Belt",
+    Null_Belt            = "Null Belt",
 
     -- Legs
     Bagua_Pants          = { name = "Bagua Pants +4", augments = { 'Enhances "Mending Halation" effect', } },
@@ -155,14 +168,14 @@ return {
     Wyrm_Brais           = "Wyrm Brais",
     Estqr_Fuseau         = "Estqr. Fuseau +1",
     Aya_Cosciales        = "Aya. Cosciales +1",
-    Azimuth_Tights       = "Azimuth Tights +1",
+    Azimuth_Tights       = "Azimuth Tights +2",
 
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
     Merl_Crackows_Pet    = { name = "Merlinic Crackows", augments = { 'Pet: Attack+21 Pet: Rng.Atk.+21', 'INT+3', '"Refresh"+1', } },
     Bagua_Sandals        = { name = "Bagua Sandals +4", augments = { 'Enhances "Radial Arcana" effect', } },
     Vanya_Clogs          = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
-    Geomancy_Sandals     = "Geo. Sandals +3",
+    Geomancy_Sandals     = "Geo. Sandals +4",
     Aya_Gambieras        = "Aya. Gambieras",
     Jhakri_Pigaches      = "Jhakri Pigaches +2",
     Odyssean_Greaves     = "Odyssean Greaves",

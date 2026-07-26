@@ -106,7 +106,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        --head="",
+        head = gear.Azimuth_Hood,
         --neck="",
         --ear1="",
         --ear2="",
@@ -206,7 +206,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        --head="",
+        head = gear.Bagua_Galero,
         --neck="",
         --ear1="",
         --ear2="",
@@ -288,7 +288,7 @@ function init_gear_sets()
     -- Enhancing Magic
     sets.midcast['Enhancing Magic'] = {
         --main="",
-        --sub="",
+        sub = gear.Ammurapi_Shield,
         --range="",
         --ammo="",
         --head="",
@@ -300,7 +300,7 @@ function init_gear_sets()
         --ring1="",
         --ring2="",
         --back="",
-        --waist="",
+        waist = gear.Embla_Sash,
         --legs="",
         --feet="",
     }
@@ -320,7 +320,7 @@ function init_gear_sets()
         --ring1="",
         --ring2="",
         --back="",
-        --waist="",
+        waist = gear.Embla_Sash,
         --legs="",
         --feet="",
     }
@@ -332,27 +332,27 @@ function init_gear_sets()
 
     -- Elemental Magic
     sets.midcast['Elemental Magic'] = {
-        --main="",
+        main = gear.Bunzi_Rod,
         sub = gear.Ammurapi_Shield,
         --range="",
-        --ammo="",
+        ammo = gear.Ghastly_Tathlum,
         head = gear.Azimuth_Hood,
         neck = gear.Mizu_Kubikazari,
-        ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Sortiarius_Earring,
-        body = gear.Jhakri_Robe,
+        ear1 = gear.Friomisi_Earring,
+        ear2 = gear.Azimuth_Earring,
+        body = gear.Azimuth_Coat,
         hands = gear.Azimuth_Gloves,
         --ring1="",
         ring2 = gear.Jhakri_Ring,
         --back="",
         --waist="",
-        legs = gear.Jhakri_Slops,
+        legs = gear.Azimuth_Tights,
         feet = gear.Azimuth_Gaiters,
     }
 
     -- Magic Burst
     sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
-        --main="",
+        main = gear.Bunzi_Rod,
         --sub="",
         --range="",
         --ammo="",
@@ -382,7 +382,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         --head="",
-        neck = gear.Nodens_Gorget,
+        neck = gear.Reti_Pendant,
         ear1 = gear.Alabaster_Earring,
         --ear2="",
         body = gear.Vanya_Robe,
@@ -459,6 +459,7 @@ function init_gear_sets()
         ring1 = gear.Murky_Ring,
         ring2 = gear.Shneddick_Ring,
         back = gear.Nantosuelta_Cape_Pet,
+        waist = gear.Null_Belt,
         legs = gear.Assid_Pants,
         feet = gear.Azimuth_Gaiters,
     }
@@ -509,18 +510,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        --head="",
+        head = gear.Azimuth_Hood,
         --neck="",
         --ear1="",
         --ear2="",
         --body="",
-        --hands="",
+        hands = gear.Geomancy_Mitaines,
         --ring1="",
         --ring2="",
-        --back="",
+        back = gear.Nantosuelta_Cape_Pet,
         --waist="",
         --legs="",
-        --feet="",
+        feet = gear.Bagua_Sandals,
     })
 
 
@@ -577,8 +578,8 @@ function init_gear_sets()
     sets.midcast['Geomancy'] = {
         --main="",
         --sub="",
-        --range="",
-        --ammo="",
+        range = gear.Dunna,
+        ammo = "",
         --head="",
         neck = gear.Bagua_Charm,
         --ear1="",
@@ -667,12 +668,12 @@ function init_gear_sets()
         --head="",
         --neck="",
         --ear1="",
-        --ear2="",
+        ear2 = gear.Ishvara_Earring,
         --body="",
         hands = gear.Jhakri_Cuffs,
         --ring1="",
         --ring2="",
-        --back="",
+        back = gear.Alabaster_Mantle,
         --waist="",
         --legs="",
         --feet="",
@@ -839,7 +840,7 @@ local function check_moving()
     end
 end
 
-windower.register_event('prerender', check_moving)
+-- windower.register_event('prerender', check_moving)
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
