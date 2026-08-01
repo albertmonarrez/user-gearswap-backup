@@ -323,6 +323,7 @@ local equipment = {
     coatl_gorget            = "Coatl Gorget +1",
     nicanders_necklace      = "Nicander's Necklace",
     duelist_torque          = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+    hoxne_torque            = "Hoxne Torque",
 
 
     --waist

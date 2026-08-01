@@ -198,7 +198,7 @@ function init_gear_sets()
 	local tp_set = {
 		ammo = inv.coiste_bodhar,
 		head = inv.malignance_chapeau,
-		body = inv.malignance_tabard,
+		body = inv.sworn_platemail,
 		hands = inv.malignance_gloves,
 		legs = inv.malignance_tights,
 		feet = inv.malignance_boots,
@@ -513,7 +513,7 @@ function init_gear_sets()
 		sub = inv.forfend_p1,
 		waist = inv.olympus_sash,
 		head = inv.befouled_crown,
-		neck = inv.incanters_torque,
+		neck = inv.hoxne_torque,
 		right_ear = inv.andoaa_earring,
 		hands = inv.vitiation_gloves,
 		left_ring = inv.stikini_ring2,

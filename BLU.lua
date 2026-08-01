@@ -348,7 +348,7 @@ function init_gear_sets()
     local dual_wield_traits_high = {
         ammo = inv.coiste_bodhar,
         head = inv.malignance_chapeau,
-        body = inv.malignance_tabard,
+        body = inv.sworn_platemail,
         hands = inv.Adhemar_A_hands,
         legs = inv.malignance_tights,
         feet = inv.Herc_TA_feet,
