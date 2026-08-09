@@ -512,6 +512,7 @@ local equipment = {
     machaera_p2                  = "Machaera +2",
     priwen                       = "Priwen",
     malevolence                  = { name = "Malevolence", augments = { 'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5', } },
+    debuchos_saber               = "Daduchos Saber",
 
     --ammo
     oshashs_treastise            = "Oshasha's Treatise",

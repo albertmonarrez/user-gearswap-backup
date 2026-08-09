@@ -128,8 +128,8 @@ function init_gear_sets()
 
 	}
 	local burst_set = set_combine(nuke_set, {
-		main = inv.bunzi_rod,
-		sub = inv.daybreak,
+		main = inv.debuchos_saber,
+		sub = inv.bunzi_rod,
 		head = inv.ea_hat,
 		neck = inv.sibyl_scarf,
 		body = inv.ea_houppe_p1,

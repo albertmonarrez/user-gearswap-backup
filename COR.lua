@@ -737,7 +737,7 @@ function init_gear_sets()
     })
 
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-        ear1 = inv.mache_earring_p1,
+        ear1 = inv.crepus_earring,
         ear2 = inv.alabaster_earring,
         hands = inv.gazu_bracelets,
         -- waist = inv.null_belt,
