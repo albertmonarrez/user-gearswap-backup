@@ -1,10 +1,19 @@
 ---@diagnostic disable: undefined-global, unused-local
 local inv = require('inventory')
+local AutoDefense = require('auto_defense')
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 
 local ATTACK_CAPPED = 3800
+
+-- Uses auto_defense's default abilities (DRG sub Super Jump + High Jump) since
+-- BLU has none of its own and this file doesn't gate on a specific subjob -
+-- harmless no-op when not subbing DRG. Pass { abilities = {...} } to override,
+-- or { abilities = {} } to disable ability auto-fire entirely.
+local auto_defense = AutoDefense.new()
+local auto_defense_event_id
+local check_auto_defense -- forward-declared so user_setup() can register it before its definition below
 
 -- Initialization function for this job file.
 function get_sets()
@@ -194,6 +203,8 @@ function user_setup()
 
     update_combat_form()
     select_default_macro_book()
+
+    auto_defense_event_id = windower.register_event('prerender', check_auto_defense)
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -201,6 +212,11 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind @`')
+
+    if auto_defense_event_id then
+        windower.unregister_event(auto_defense_event_id)
+        auto_defense_event_id = nil
+    end
 end
 
 -- Set up gear sets.
@@ -221,7 +237,7 @@ function init_gear_sets()
     sets.buff['Chain Affinity'] = { head = inv.hashishin_head, feet = assimilator_feet }
     sets.buff.Efflux = { back = store_tp_cape, legs = inv.hashishin_legs }
     sets.buff.Diffusion = { feet = inv.luhlaza_feet }
-    sets.expiacion_max_tp = { left_ear = inv.regal_earring }
+    sets.expiacion_max_tp = { left_ear = inv.alabaster_earring }
 
     local treasure_hunter = {
         ammo = "Per. Lucky Egg",
@@ -426,7 +442,7 @@ function init_gear_sets()
     local fast_cast_set = {
         head = inv.amalric_coif,
         neck = inv.baetyl_pendant,
-        body = inv.dread_jupon,
+        body = inv.sworn_platemail,
         hands = inv.leyline_gloves,
         legs = inv.psycloth_legs,
         feet = inv.carmine_feet,
@@ -434,7 +450,7 @@ function init_gear_sets()
         left_ear = inv.alabaster_earring,
         right_ear = inv.loquacious_earring,
         left_ring = inv.weatherspoon_ring,
-        right_ring = inv.lebeche_ring,
+        right_ring = inv.kishar_ring,
         back = inv.swith_cape,
         ammo = inv.sapience_orb,
     }
@@ -528,6 +544,21 @@ function init_gear_sets()
         hands = inv.gletis_hands,
     }
 
+    sets.panic = {
+        ammo = inv.staunch_tathlum,
+        head = inv.null_mask,
+        body = inv.sworn_platemail,
+        hands = inv.nyame_hands,
+        legs = inv.hashishin_legs,
+        feet = inv.nyame_feet,
+        neck = inv.warders_charm,
+        waist = inv.null_belt,
+        left_ear = inv.alabaster_earring,
+        right_ear = inv.eabani_earring,
+        left_ring = inv.wardens_ring,
+        right_ring = inv.acrchon_ring,
+        back = inv.shadow_mantle,
+    }
 
 
     -- Precast sets to enhance JAs
@@ -576,7 +607,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = fast_cast_set
 
     sets.midcast['Blue Magic'] = nuke_set
-
+    sets.midcast['Elemental Magic'] = nuke_set
     -- Physical Spells --
 
     sets.midcast['Blue Magic'].Physical = physical_set
@@ -667,7 +698,6 @@ function init_gear_sets()
 
     sets.idle.Normal = idle_set
     sets.idle.PDT = pdt_set
-
     sets.idle.Town = idle_town
 
     -- Defense sets
@@ -806,6 +836,22 @@ function update_combat_form()
         state.CombatForm:reset()
     else
         state.CombatForm:set('DW')
+    end
+end
+
+-- Polls HP once a second for auto_defense's fire_once/toggle abilities and
+-- forces on sets.idle.PDT while HP is critical.
+-- A plain equip() call here is safe outside precast/midcast/aftercast - it's
+-- superseded by the next normal gearswap cycle once HP recovers.
+local auto_defense_heartbeat = 0
+function check_auto_defense()
+    if os.time() == auto_defense_heartbeat then return end
+    auto_defense_heartbeat = os.time()
+
+    auto_defense:update()
+
+    if auto_defense:should_defend() then
+        equip(sets.panic)
     end
 end
 

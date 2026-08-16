@@ -1,0 +1,17 @@
+sets.exported = {
+    main={ name="Crocea Mors", augments={'Path: C',}},
+    sub="Daybreak",
+    ammo="Homiliary",
+    head="Viti. Chapeau +4",
+    body="Egbesu Frock",
+    hands="Leth. Ganth. +3",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet={ name="Merlinic Crackows", augments={'Crit.hit rate+1','"Mag.Atk.Bns."+12','"Refresh"+1','Accuracy+18 Attack+18','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+    neck="Null Loop",
+    waist="Reiki Yotai",
+    left_ear="Sherida Earring",
+    right_ear="Alabaster Earring",
+    left_ring="Defending Ring",
+    right_ring="Chirich Ring +1",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+}

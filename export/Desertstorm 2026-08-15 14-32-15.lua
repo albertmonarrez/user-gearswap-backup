@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Tizona",
+    sub="Machaera +2",
+    ammo="Staunch Tathlum",
+    head="Null Masque",
+    body="Sworn Platemail",
+    hands="Nyame Gauntlets",
+    legs="Hashishin Tayt +3",
+    feet="Nyame Sollerets",
+    neck="Warder's Charm +1",
+    waist="Null Belt",
+    left_ear="Alabaster Earring",
+    right_ear="Eabani Earring",
+    left_ring="Warden's Ring",
+    right_ring="Archon Ring",
+    back="Shadow Mantle",
+}

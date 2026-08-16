@@ -163,6 +163,7 @@ local equipment = {
     geomancy_tunic          = "Geomancy Tunic +2",
     odyssean_chest_phalanx  = { name = "Odyss. Chestplate", augments = { 'STR+10', 'AGI+5', 'Phalanx +4', 'Accuracy+14 Attack+14', } },
     sworn_platemail         = "Sworn Platemail",
+    egbesu_frock            = "Egbesu Frock",
 
     --hands
     leyline_gloves          = { name = "Leyline Gloves", augments = { 'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3', } },
@@ -481,6 +482,7 @@ local equipment = {
     murky_ring                   = "Murky Ring",
     asklepian_ring               = "Asklepian Ring",
     hoxne_ring                   = "Hoxne Ring",
+    wardens_ring                 = "Warden's Ring",
 
     --weapons
     naegling                     = "Naegling",
