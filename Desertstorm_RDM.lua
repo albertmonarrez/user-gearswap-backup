@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, unused-local
 local inv = require('inventory')
 local weather = require('weather')
 -------------------------------------------------------------------------------------------------------------------
@@ -54,7 +55,12 @@ local crocea_levante = {
 	sub = inv.levante_dagger
 }
 local friomisi_set = { left_ear = inv.regal_earring, neck = inv.baetyl_pendant }
-
+local elemental_ws = {
+	['Red Lotus Blade'] = true,
+	['Burning Blade'] = true,
+	['Seraph Blade'] = true,
+	['Shining Blade'] = true
+}
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	state.OffenseMode:options('None', 'Normal')
@@ -202,7 +208,7 @@ function init_gear_sets()
 		hands = inv.malignance_gloves,
 		legs = inv.malignance_tights,
 		feet = inv.malignance_boots,
-		neck = inv.anu_torque,
+		neck = inv.ainia_collar,
 		waist = inv.reiki_yotai,
 		left_ear = inv.sherida_earring,
 		right_ear = inv.dedition_earring,
@@ -268,8 +274,8 @@ function init_gear_sets()
 	local tp_0_dmg_daggers = set_combine(tp_set, {
 		main = "Ethereal Dagger",
 		sub = "Qutrub Knife",
-		-- head = inv.umuthi_hat,
-		head = inv.atrophy_chapeau,
+		head = inv.umuthi_hat,
+		-- head = inv.atrophy_chapeau,
 		hands = inv.ayanmo_hands,
 		body = inv.sworn_platemail,
 		neck = inv.null_loop,
@@ -332,6 +338,7 @@ function init_gear_sets()
 		back = inv.RDM_SAV_Cape,
 	}
 
+
 	local vorpal_blade = set_combine(savage_blade, { right_ring = "Begrudging Ring", })
 
 	local aeolian_edge = {
@@ -348,10 +355,10 @@ function init_gear_sets()
 		left_ring = cornelias_ring,
 		right_ring = inv.epaminondas_ring,
 		back = mind_cape,
-	}6
+	}
 	local eviceration = {
 		head = inv.blistering_sallet,
-		body = inv.malignance_tabard,
+		body = inv.sworn_platemail,
 		hands = inv.malignance_gloves,
 		legs = inv.ayanmo_legs,
 		feet = inv.thereoid_greaves,
@@ -450,6 +457,11 @@ function init_gear_sets()
 		back = inv.null_shawl,
 
 	}
+	sets.pdl = {
+		ammo = inv.crepuscular_pebble,
+		right_ring = inv.sroda_ring,
+	}
+
 	-- Damage Taken set	
 
 	local pdt_set = {
@@ -807,12 +819,36 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
-
-function equip_obi_matching_weather(spell, action, spellMap, eventArgs)
+---@param spell GSSpell
+---@param action any
+---@param spellMap any
+---@param eventArgs any
+local function equip_obi_matching_weather(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Elemental Magic' and spellMap ~= 'ElementalEnfeeble' then
 		if spell.element == world.weather_element then
 			equip({ waist = "Hachirin-no-Obi" })
-			-- add_to_chat('equiping obi')
+		end
+	end
+end
+
+---
+---@param spell GSSpell
+function job_precast(spell)
+end
+
+-- Runs after default_precast() has already equipped sets.precast.WS[...] - the
+-- only place a WS-specific override like this can land without getting clobbered
+-- by it (job_precast runs before default_precast, not after).
+---@param spell GSSpell
+function job_post_precast(spell)
+	if spell.type == 'WeaponSkill' and player.attack >= 3400 and not elemental_ws[spell.english] then
+		equip(sets.pdl)
+	end
+	if elemental_ws[spell.english] then
+		if player.tp > 2800 then
+			equip(friomisi_set)
+		elseif player.tp > 1250 then
+			equip({ neck = inv.baetyl_pendant })
 		end
 	end
 end
@@ -831,22 +867,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip(sets.midcast.CureSelf)
 	end
 	equip_obi_matching_weather(spell, action, spellMap, eventArgs)
-	local elemental_ws = {
-		['Red Lotus Blade'] = true,
-		['Burning Blade'] = true,
-		['Seraph Blade'] = true,
-		['Shining Blade'] = true
-	}
-	if elemental_ws[spell.english] then
-		local player = windower.ffxi.get_player()
-		if player.vitals.tp > 2800 then
-			equip(friomisi_set)
-		elseif player.vitals.tp > 1250 then
-			equip({ neck = inv.baetyl_pendant })
-		end
-	elseif spell.english == 'Sanguine Blade' then
-		-- print('sanguine')
-	end
 end
 
 -------------------------------------------------------------------------------------------------------------------

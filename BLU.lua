@@ -5,7 +5,7 @@ local AutoDefense = require('auto_defense')
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 
-local ATTACK_CAPPED = 3800
+local ATTACK_CAPPED = 3500
 
 -- Uses auto_defense's default abilities (DRG sub Super Jump + High Jump) since
 -- BLU has none of its own and this file doesn't gate on a specific subjob -
@@ -370,7 +370,7 @@ function init_gear_sets()
         feet = inv.Herc_TA_feet,
         neck = inv.mirage_stole,
         waist = inv.windbuffet_belt,
-        left_ear = inv.crepus_earring,
+        left_ear = inv.alabaster_earring,
         right_ear = inv.dedition_earring,
         left_ring = inv.eponas_ring,
         right_ring = inv.chirich_ring,
@@ -542,6 +542,7 @@ function init_gear_sets()
     local pdl_plus_items = {
         ammo = inv.crepuscular_pebble,
         hands = inv.gletis_hands,
+        right_ring = inv.sroda_ring,
     }
 
     sets.panic = {
@@ -747,6 +748,26 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
 end
 
+-- Run after default_precast() has equipped sets.precast.WS[...] - the only place
+-- WS-specific overrides can land without getting clobbered by it. WeaponSkill
+-- actions never reach midcast/job_post_midcast (no cast bar - GearSwap goes
+-- straight from precast to aftercast for them), so this can't live there.
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type ~= 'WeaponSkill' then return end
+
+    if player.attack >= ATTACK_CAPPED then
+        local ws_set = sets.precast.WS[spell.name]
+        if ws_set and ws_set.attack_capped then
+            equip(ws_set.attack_capped)
+        end
+    end
+    if spell.english == 'Expiacion' then
+        if player.vitals.tp > 1800 then
+            equip(sets.expiacion_max_tp)
+        end
+    end
+end
+
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -765,20 +786,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     -- If in learning mode, keep on gear intended to help with that, regardless of action.
     if state.OffenseMode.value == 'Learning' then
         equip(sets.Learning)
-    end
-
-    if spell.type == 'WeaponSkill' then
-        if player.attack >= ATTACK_CAPPED then
-            local ws_set = sets.precast.WS[spell.name]
-            if ws_set and ws_set.attack_capped then
-                equip(ws_set.attack_capped)
-            end
-        end
-        if spell.english == 'Expiacion' then
-            if player.vitals.tp > 1800 then
-                equip(sets.expiacion_max_tp)
-            end
-        end
     end
 end
 

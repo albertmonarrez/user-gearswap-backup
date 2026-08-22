@@ -6,7 +6,6 @@ return {
     -- Range / Ammo
     Miracle_Cheer      = "Miracle Cheer",
     Matre_Bell         = "Matre Bell",
-    Hangaku_no_Yumi    = "Hangaku-no-Yumi",
     Mavi_Tathlum       = "Mavi Tathlum",
     Knobkierrie        = "Knobkierrie",
     Ginsen             = "Ginsen",
@@ -36,7 +35,8 @@ return {
     Redeyes            = "Redeyes",
     Bards_Roundlet     = "Bard's Roundlet",
     Brioso_Roundlet    = "Brioso Roundlet +2",
-    Choral_Roundlet    = "Choral Roundlet",
+    Abyssal_Mask       = "Abyssal Mask",
+    Ruwa_Armet         = "Ruwa Armet",
     Behemoth_Masque    = "Behemoth Masque",
     Goblin_Masque      = "Goblin Masque",
     GMoogle_Masque     = "G. Moogle Masque",
@@ -60,12 +60,6 @@ return {
     Brutal_Earring     = "Brutal Earring",
     Alabaster_Earring  = "Alabaster Earring",
     Loquac_Earring     = "Loquac. Earring",
-    Skulkers_Earring   = { name = "Skulker's Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8', } },
-    Hattori_Earring    = { name = "Hattori Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8', } },
-    Nourish_Earring    = "Nourish. Earring",
-    Ebers_Earring      = { name = "Ebers Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8', } },
-    Erilaz_Earring     = { name = "Erilaz Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+7', 'Mag. Acc.+7', } },
-    Erilaz_Earring_6   = { name = "Erilaz Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Boii_Earring       = { name = "Boii Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Eabani_Earring     = "Eabani Earring",
     Ishvara_Earring    = "Ishvara Earring",
@@ -74,6 +68,7 @@ return {
     Hashishin_Earring  = { name = "Hashishin Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Arbatel_Earring    = { name = "Arbatel Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+6', } },
     Alabaster_Earring_2 = { name = "Alabaster Earring", augments = { 'Path: A', } },
+    Moonshade_Earring  = { name = "Moonshade Earring", augments = { '"Mag.Atk.Bns."+4', 'TP Bonus +250', } },
 
     -- Body
     Fili_Hongreline    = "Fili Hongreline +2",
@@ -84,13 +79,15 @@ return {
     Bihu_Jstcorps      = { name = "Bihu Just. +4", augments = { 'Enhances "Troubadour" effect', } },
     Brioso_Just        = "Brioso Justau. +2",
     WN_Kaftan          = "WN Kaftan +1",
-    Terminal_Plate     = "Terminal Plate",
     Temachtiani_Shirt  = "Temachtiani Shirt",
     Novennial_Coat     = "Novennial Coat",
     Decennial_Coat     = "Decennial Coat",
     Behemoth_Suit      = "Behemoth Suit",
     Goblin_Suit        = "Goblin Suit",
     GMoogle_Suit       = "G. Moogle Suit",
+    Perfection_Plate   = "Perfection Plate.",
+    Egbesu_Frock       = "Egbesu Frock",
+    Ruwa_Breastplate   = "Ruwa Breastplate",
 
     -- Hands
     Fili_Manchettes    = "Fili Manchettes +2",
@@ -101,7 +98,6 @@ return {
     Merl_Dastanas      = "Merlinic Dastanas",
     Brioso_Cuffs       = "Brioso Cuffs +4",
     Viti_Gloves        = { name = "Viti. Gloves +4", augments = { 'Enhancing Magic duration', } },
-    Choral_Cuffs       = "Choral Cuffs",
     Bunzi_Gloves       = "Bunzi's Gloves",
     WN_Mittens         = "WN Mittens +1",
     Gende_Gages        = "Gende. Gages +1",
@@ -122,14 +118,14 @@ return {
     Murky_Ring         = { name = "Murky Ring", augments = { 'Path: A', } },
     Shneddick_Ring     = "Shneddick Ring",
     Petrov_Ring        = "Petrov Ring",
+    Excelsis_Ring      = "Excelsis Ring",
+    Mujin_Band         = "Mujin Band",
 
     -- Back
     Intarabus_Cape_DT  = { name = "Intarabus's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', '"Cure" potency +10%', 'Phys. dmg. taken-2%', } },
     Intarabus_Cape_FC  = { name = "Intarabus's Cape", augments = { '"Fast Cast"+10', } },
     Intarabus_Cape_WS  = { name = "Intarabus's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+5', 'Weapon skill damage +10%', } },
     Nexus_Cape         = "Nexus Cape",
-    Mauler_Mantle      = "Mauler's Mantle",
-    Dispersal_Mantle   = "Dispersal Mantle",
     Alabaster_Mantle   = "Alabaster Mantle",
 
     -- Waist
@@ -145,19 +141,16 @@ return {
     Aya_Cosciales      = "Aya. Cosciales +2",
     Vanya_Slops        = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Hercl_Trousers     = "Herculean Trousers",
-    Bards_Cannions     = "Bard's Cannions",
     Brioso_Cannions    = "Brioso Cannions +2",
     Assid_Pants        = "Assid. Pants +1",
     Bihu_Cannions      = { name = "Bihu Cannions", augments = { 'Enhances "Soul Voice" effect', } },
-    Choral_Cannions    = "Choral Cannions",
     WN_Braccae         = "WN Braccae +1",
     Temachtiani_Pants  = "Temachtiani Pants",
-    Avatara_Slops      = "Avatara Slops",
-    Sorcerer_Tonban    = "Sorcerer's Tonban",
     Estqr_Fuseau       = "Estqr. Fuseau +1",
     Novennial_Hose     = "Novennial Hose",
     Decennial_Tights   = "Decennial Tights",
     Revelation_Brais   = "Revelation Brais",
+    Egbesu_Slops       = "Egbesu Slops",
 
     -- Feet
     Inyanga_Crackows   = "Inyan. Crackows +1",
@@ -166,14 +159,10 @@ return {
     Merl_Crackows      = "Merlinic Crackows",
     Brioso_Slippers    = "Brioso Slippers +3",
     Bihu_Slippers      = { name = "Bihu Slippers", augments = { 'Enhances "Nightingale" effect', } },
-    Bards_Slippers     = "Bard's Slippers",
-    Choral_Slippers    = "Choral Slippers",
     Fili_Cothurnes     = "Fili Cothurnes +2",
     WN_Clomps          = "WN Clomps +1",
     Temachtiani_Boots  = "Temachtiani Boots",
     Odyssean_Greaves   = "Odyssean Greaves",
-    Melee_Gaiters      = "Melee Gaiters",
-    Abyss_Sollerets    = "Abyss Sollerets",
     Sprinters_Shoes    = "Sprinter's Shoes",
     Battlecast_gaiters = "Battlecast Gaiters",
 
@@ -183,6 +172,7 @@ return {
     -- Waist
     Sroda_Belt         = "Sroda Belt",
     Null_Belt          = "Null Belt",
+    Goblin_Belt        = "Goblin Belt",
 
     -- Back
     Null_Shawl         = "Null Shawl",

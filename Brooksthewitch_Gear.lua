@@ -9,6 +9,8 @@ return {
     Tokko_Sword          = "Tokko Sword",
     Malignance_Pole      = "Malignance Pole",
     Bunzi_Rod            = "Bunzi's Rod",
+    Daybreak             = "Daybreak",
+    Malignance_Sword     = "Malignance Sword",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -31,14 +33,13 @@ return {
     Koboto               = "Koboto",
 
     -- Head
+    Abyssal_Mask         = "Abyssal Mask",
     Merl_Hood_FC         = { name = "Merlinic Hood", augments = { '"Fast Cast"+5', 'INT+5', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', } },
     Bagua_Galero         = { name = "Bagua Galero", augments = { 'Enhances "Primeval Zeal" effect', } },
     Geomancy_Galero      = "Geo. Galero +1",
     Azimuth_Hood         = "Azimuth Hood +2",
-    Sukeroku_Hachi       = "Sukeroku Hachi.",
     Jhakri_Coronal       = "Jhakri Coronal +2",
     Aya_Zucchetto        = "Aya. Zucchetto +2",
-    Orvail_Corona        = "Orvail Corona +1",
     Tema_Headband        = "Tema. Headband",
     Decennial_Tiara      = "Decennial Tiara",
     Redeyes              = "Redeyes",
@@ -47,7 +48,6 @@ return {
     GMoogle_Masque       = "G. Moogle Masque",
 
     -- Neck
-    Bagua_Charm          = "Bagua Charm +1",
     Bagua_Charm_2        = { name = "Bagua Charm +2", augments = { 'Path: A', } },
     Erra_Pendant         = "Erra Pendant",
     Nodens_Gorget        = "Nodens Gorget",
@@ -58,23 +58,21 @@ return {
     Mizu_Kubikazari      = "Mizu. Kubikazari",
     Nicander_Necklace    = "Nicander's Necklace",
     Reti_Pendant         = "Reti Pendant",
+    Null_Loop            = "Null Loop",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
     Raising_Earring      = "Raising Earring",
     Domin_Earring        = "Domin. Earring +1",
-    Unkai_Mimikazari     = "Unkai Mimikazari",
     Brutal_Earring       = "Brutal Earring",
     Alabaster_Earring    = "Alabaster Earring",
     Loquac_Earring       = "Loquac. Earring",
     Sortiarius_Earring   = "Sortiarius Earring",
     Lugalbanda_Earring   = "Lugalbanda Earring",
-    Kasuga_Earring       = { name = "Kasuga Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9', } },
     Azimuth_Earring      = { name = "Azimuth Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+8', } },
     Hashishin_Earring    = { name = "Hashishin Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10', } },
     Chas_Earring         = { name = "Chas. Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9', } },
     Pel_Earring          = { name = "Pel. Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3', } },
-    Nourish_Earring      = "Nourish. Earring",
     Ishvara_Earring      = "Ishvara Earring",
     Boii_Earring         = { name = "Boii Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Bhikku_Earring       = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4', } },
@@ -82,6 +80,7 @@ return {
     Erilaz_Earring       = { name = "Erilaz Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Damage taken-3%', } },
     Alabaster_Earring_2  = { name = "Alabaster Earring", augments = { 'Path: A', } },
     Friomisi_Earring     = "Friomisi Earring",
+    Moonshade_Earring    = { name = "Moonshade Earring", augments = { '"Mag.Atk.Bns."+4', 'TP Bonus +250', } },
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -90,7 +89,6 @@ return {
     Geomancy_Tunic       = "Geomancy Tunic +2",
     Jhakri_Robe          = "Jhakri Robe +2",
     Ayanmo_Corazza       = "Ayanmo Corazza +2",
-    Orvail_Robe          = "Orvail Robe +1",
     Odyss_Chestplate     = "Odyss. Chestplate",
     Councilor_Garb       = "Councilor's Garb",
     MG_Bodice            = "MG Bodice +1",
@@ -102,6 +100,9 @@ return {
     Goblin_Suit          = "Goblin Suit",
     GMoogle_Suit         = "G. Moogle Suit",
     Gyve_Doublet         = "Gyve Doublet",
+    Hjarrandi_Breast     = "Hjarrandi Breast.",
+    Egbesu_Frock         = "Egbesu Frock",
+    Ruwa_Breastplate     = "Ruwa Breastplate",
 
     -- Hands
     Bagua_Mitaines       = { name = "Bagua Mitaines", augments = { 'Enhances "Curative Recantation" effect', } },
@@ -110,7 +111,6 @@ return {
     Jhakri_Cuffs         = "Jhakri Cuffs +2",
     Aya_Manopolas        = "Aya. Manopolas +2",
     -- Vanya_Cuffs          = "Vanya Cuffs",
-    Onimusha_Kote        = "Onimusha-no-Kote",
     Merl_Dastanas        = "Merlinic Dastanas",
     MG_Gloves            = "MG Gloves +1",
     Azimuth_Gloves       = "Azimuth Gloves +2",
@@ -119,6 +119,7 @@ return {
     Councilor_Cuffs      = "Councilor's Cuffs",
     Bards_Cuffs          = "Bard's Cuffs",
     Duelists_Gloves      = "Duelist's Gloves",
+    Agwus_Gages          = "Agwu's Gages",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -130,10 +131,10 @@ return {
     Echad_Ring           = "Echad Ring",
     Empress_Band         = "Empress Band",
     Facility_Ring        = "Facility Ring",
-    Caliber_Ring         = "Caliber Ring",
     Murky_Ring           = { name = "Murky Ring", augments = { 'Path: A', } },
     Shneddick_Ring       = "Shneddick Ring",
-    Dcl_Grd_Ring         = "Dcl.Grd. Ring",
+    Barataria_Ring       = "Barataria Ring",
+    Mujin_Band           = "Mujin Band",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -156,9 +157,7 @@ return {
     Vanya_Slops          = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Pants       = "Geo. Pants +1",
     Jhakri_Slops         = "Jhakri Slops +2",
-    Ayanmo_Cosciales     = "Ayanmo Cosciales",
     Hercl_Trousers       = "Herculean Trousers",
-    Rawhide_Trousers     = "Rawhide Trousers",
     Assid_Pants          = "Assid. Pants +1",
     MGF_Chausses         = "MGF Chausses +1",
     Temachtiani_Pants    = "Temachtiani Pants",
@@ -183,7 +182,6 @@ return {
     Battlecast_Gaiters   = "Battlecast Gaiters",
     Azimuth_Gaiters      = "Azimuth Gaiters +2",
     Temachtiani_Boots    = "Temachtiani Boots",
-    Sprinters_Shoes      = "Sprinter's Shoes",
     Comm_Bottes          = "Comm. Bottes",
     Melee_Gaiters        = "Melee Gaiters",
     Abyss_Sollerets      = "Abyss Sollerets",

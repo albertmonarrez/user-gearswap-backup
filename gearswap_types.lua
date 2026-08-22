@@ -86,6 +86,12 @@
 ---@field moon string
 ---@field weather_id number Index into res.weather (res/weather.lua, ids 0-19). "Effective" weather for elemental/magic burst calc - overridden to a fixed id while a Geomancer Bolster-style weather buff is active (buff ids 178-185 for base weathers, 589-596 for the "II" tiers), regardless of the server's actual weather. Set in refresh.lua's weather_update(id).
 ---@field real_weather_id number Index into res.weather, same table as weather_id. Always the server's true ambient weather - never overridden by buffs, unlike weather_id.
+---@field weather string English weather name, e.g. "Rain" - res.weather[weather_id][language]
+---@field real_weather string English weather name for the true server weather - res.weather[real_weather_id][language]
+---@field weather_element string English element name for weather_id's weather, e.g. "Water" - res.elements[res.weather[weather_id].element][language]. Pre-computed - no need to do the res.weather/res.elements lookup yourself.
+---@field real_weather_element string Same as weather_element but for real_weather_id.
+---@field weather_intensity number 0 (none) or 1-2, matching res.weather[weather_id].intensity
+---@field real_weather_intensity number Same as weather_intensity but for real_weather_id.
 ---@field logged_in boolean
 
 -- res.weather (res/weather.lua) - what world.weather_id / world.real_weather_id index into:
@@ -100,6 +106,13 @@
 --    7  Squalls            Water       2              17  Stellar glare      Light       2
 --    8  Dust storms        Earth       1              18  Gloom              Dark        1
 --    9  Sand storms        Earth       2              19  Darkness           Dark        2
+
+---Mote-Include global (libs/Mote-Utility.lua) - only available if your job file
+---does include('Mote-Include.lua'). Equivalent to world.weather_intensity, just
+---the call site every Mote-Include job file actually uses (COR.lua,
+---Desertstorm_GEO.lua, Desertstorm_SAM.lua) instead of reading the field directly.
+---@return number intensity 0 = no weather, 1 = single weather, 2 = double weather
+function get_weather_intensity() end
 
 ---GearSwap's buffactive table. Keys are case-insensitive (internally lowercased by
 ---a __index/__newindex metatable), so buffactive['Weakness'] and buffactive['weakness']
@@ -329,6 +342,29 @@ function job_aftercast(spell, action, spellMap, eventArgs) end
 ---@param spellMap string|nil
 ---@param eventArgs GSEventArgs
 function job_pretarget(spell, action, spellMap, eventArgs) end
+
+---Runs after default_precast() has already equipped sets.precast[...] - the only
+---place to layer overrides onto that base set without them getting clobbered by
+---it. This is the one that actually fires for WeaponSkill actions - they have no
+---cast bar, so GearSwap goes straight from precast to aftercast and job_midcast/
+---job_post_midcast never run for them (see BLU.lua's job_post_precast).
+---@param spell GSSpell
+---@param action string
+---@param spellMap string|nil
+---@param eventArgs GSEventArgs
+function job_post_precast(spell, action, spellMap, eventArgs) end
+
+---@param spell GSSpell
+---@param action string
+---@param spellMap string|nil
+---@param eventArgs GSEventArgs
+function job_post_midcast(spell, action, spellMap, eventArgs) end
+
+---@param spell GSSpell
+---@param action string
+---@param spellMap string|nil
+---@param eventArgs GSEventArgs
+function job_post_aftercast(spell, action, spellMap, eventArgs) end
 
 ---@param newStatus string
 ---@param oldStatus string

@@ -370,7 +370,8 @@ function init_gear_sets()
         back = inv.WAR_SAV_WS_CAPE,
     }
     sets.pdl = {
-        body = inv.sakpatas_body
+        body = inv.sakpatas_body,
+        right_ring = inv.sroda_ring,
     }
     sets.ws["Sanguine Blade"] = {
         ammo = inv.knobkierrie,

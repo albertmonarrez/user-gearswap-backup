@@ -774,7 +774,6 @@ function get_sets()
         left_ring = inv.defending_ring,
         right_ring = inv.weatherspoon_ring,
     }
-
     -- Snapshot
     sets.snapshot = {
 

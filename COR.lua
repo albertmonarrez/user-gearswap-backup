@@ -450,14 +450,14 @@ function init_gear_sets()
     })
     sets.precast.WS['Exenterator'] = set_combine({
         ammo = inv.WSbullet,
-        head = inv.chasseurs_tricorne,
+        head = inv.malignance_chapeau,
         body = inv.malignance_tabard,
         hands = inv.Chasseurs_hands,
         legs = inv.malignance_tights,
-        feet = inv.Chasseurs_boots,
+        feet = inv.malignance_boots,
         neck = inv.null_loop,
         ear1 = inv.crepus_earring,
-        ear2 = inv.moonshade_earring,
+        ear2 = inv.alabaster_earring,
         ring1 = inv.cacoethic_ring,
         ring2 = inv.corneilias_ring,
         back = inv.null_shawl,

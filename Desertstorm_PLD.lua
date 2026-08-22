@@ -447,7 +447,7 @@ function get_sets()
 	-- NOTE: Main and Sub slots will only equip if your TP is under the number set as the KeepTPThreshold in the Advanced Options section.
 	sets.fast_cast = {
 		ammo = inv.sapience_orb, --2
-		head = inv.carmine_mask, --14
+		head = inv.c, --14
 		body = inv.reverence_body, --10
 		hands = inv.leyline_gloves, --5+1
 		legs = inv.enif_cosciales,
