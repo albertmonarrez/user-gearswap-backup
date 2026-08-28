@@ -154,7 +154,7 @@ function init_gear_sets()
         body = inv.boii_body,
         hands = inv.sakpatas_hands,
         legs = inv.pummler_legs,
-        feet = inv.pummler_feet,
+        feet = inv.hermes_sandals,
         neck = inv.null_loop,
         waist = inv.sailfi_belt,
         left_ear = inv.dedition_earring,
@@ -548,7 +548,7 @@ function job_precast(spell)
 end
 
 function job_post_precast(spell)
-    if spell.type == 'WeaponSkill' and player.attack >= 4300 then
+    if spell.type == 'WeaponSkill' and player.attack >= 4100 then
         equip(sets.pdl)
     end
     if player.tp > 1900 and spell.type == 'WeaponSkill' then

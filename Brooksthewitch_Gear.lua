@@ -11,6 +11,7 @@ return {
     Bunzi_Rod            = "Bunzi's Rod",
     Daybreak             = "Daybreak",
     Malignance_Sword     = "Malignance Sword",
+    Extinction           = "Extinction",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -46,6 +47,7 @@ return {
     Behe_Masque          = "Behe. Masque +1",
     Goblin_Masque        = "Goblin Masque",
     GMoogle_Masque       = "G. Moogle Masque",
+    Atro_Chapeau         = "Atro. Chapeau +4",
 
     -- Neck
     Bagua_Charm_2        = { name = "Bagua Charm +2", augments = { 'Path: A', } },
@@ -94,6 +96,7 @@ return {
     MG_Bodice            = "MG Bodice +1",
     Azimuth_Coat         = "Azimuth Coat +2",
     Atrophy_Tabard       = "Atrophy Tabard +4",
+    Atrophy_Tabard_3     = "Atrophy Tabard +3",
     Temachtiani_Shirt    = "Temachtiani Shirt",
     Novennial_Dress      = "Novennial Dress",
     Decennial_Dress      = "Decennial Dress",
@@ -120,6 +123,7 @@ return {
     Bards_Cuffs          = "Bard's Cuffs",
     Duelists_Gloves      = "Duelist's Gloves",
     Agwus_Gages          = "Agwu's Gages",
+    Atro_Gloves          = "Atro. Gloves +4",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -135,6 +139,7 @@ return {
     Shneddick_Ring       = "Shneddick Ring",
     Barataria_Ring       = "Barataria Ring",
     Mujin_Band           = "Mujin Band",
+    Freke_Ring           = "Freke Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -168,6 +173,7 @@ return {
     Estqr_Fuseau         = "Estqr. Fuseau +1",
     Aya_Cosciales        = "Aya. Cosciales +1",
     Azimuth_Tights       = "Azimuth Tights +2",
+    Atro_Tights          = "Atro. Tights +4",
 
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
@@ -185,4 +191,6 @@ return {
     Comm_Bottes          = "Comm. Bottes",
     Melee_Gaiters        = "Melee Gaiters",
     Abyss_Sollerets      = "Abyss Sollerets",
+    Atro_Boots           = "Atro. Boots +4",
+    Intrep_Sabots        = "Intrep. Sabots",
 }

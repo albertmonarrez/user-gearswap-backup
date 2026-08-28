@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 -- Original: Motenten / Modified: Arislan
 -- GearSwap Lua for RDM
--- Player: Poquito
--- Generated: 2026-06-20
+-- Player: Brooksthewitch
+-- Generated: 2026-08-26
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job. Generally should not be modified.
@@ -26,7 +26,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 local function set_lockstyle()
-    send_command('wait 4; input /lockstyleset 3')
+    send_command('wait 4; input /lockstyleset 1')
 end
 
 function user_setup()
@@ -51,7 +51,7 @@ function init_gear_sets()
     ---------------------------------------- Gear Variables ----------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    local gear = require('Poquito_Gear')
+    local gear = require('Brooksthewitch_Gear')
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Precast Sets ------------------------------------------
@@ -63,18 +63,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Merl_Hood,
+        head = gear.Merl_Hood_FC,
         --neck="",
         --ear1="",
         ear2 = gear.Loquac_Earring,
-        body = gear.Merl_Jubbah,
+        body = gear.Merl_Jubbah_FC,
         -- hands = gear.Merl_Dastanas,
-        ring1 = gear.Kishar_Ring,
+        --ring1="",
         --ring2="",
-        -- back = gear.Intarabus_Cape_FC,
+        --back="",
         --waist="",
         legs = gear.Aya_Cosciales,
-        feet = gear.Merl_Crackows,
+        feet = gear.Merl_Crackows_FC,
     }
 
     -- Fast Cast for spells (same as base FC for RDM)
@@ -111,25 +111,27 @@ function init_gear_sets()
         --ear1="",
         --ear2="",
         body = gear.Temachtiani_Shirt,
-        hands = gear.Temachtiani_Gloves,
+        hands = gear.Duelists_Gloves, -- RDM AF hands
         --ring1="",
         --ring2="",
         --back="",
-        waist = gear.Embla_Sash,     -- Enhancing Magic skill +10
-        legs = gear.Duelists_Tights, -- RDM AF legs
+        waist = gear.Embla_Sash, -- Enhancing Magic skill +10
+        legs = gear.Temachtiani_Pants,
         feet = gear.Temachtiani_Boots,
     }
 
-    -- Enhancing duration (Stoneskin, Protect, Shell, etc.)
-    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {
-        hands = gear.Viti_Gloves, -- "Enhancing Magic duration" augment
+    -- Enhancing duration (Stoneskin, Protect, Shell, etc.) - no duration-specific piece owned
+    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {})
+
+    -- Phalanx
+    sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+        ear1 = gear.Sortiarius_Earring, -- Enhances "Phalanx" effect
     })
 
-    -- Phalanx (no Phalanx-specific piece owned - falls back to base Enhancing)
-    sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {})
-
-    -- Refresh (self) (no dedicated Refresh piece owned - falls back to base Enhancing)
-    sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'], {})
+    -- Refresh (self)
+    sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'], {
+        neck = gear.Null_Loop, -- "Refresh"+1
+    })
 
 
     ------------------------------------------------------------------------------------------------
@@ -142,18 +144,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Atro_Chapeau,
+        head = gear.Aya_Zucchetto,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Arbatel_Earring,
-        body = gear.Atrophy_Tabard,
-        hands = gear.Atro_Gloves,
-        ring1 = gear.Kishar_Ring,
+        ear2 = gear.Erilaz_Earring,
+        body = gear.Jhakri_Robe,
+        hands = gear.Jhakri_Cuffs,
+        ring1 = gear.Jhakri_Ring,
         --ring2="",
-        back = gear.Sucellos_Cape,
-        waist = gear.Null_Belt,
-        legs = gear.Atro_Tights,
-        feet = gear.Atro_Boots,
+        --back="",
+        --waist="",
+        legs = gear.Jhakri_Slops,
+        feet = gear.Jhakri_Pigaches,
     }
 
     -- Enfeebling with Saboteur active (no Saboteur-specific piece owned)
@@ -170,23 +172,23 @@ function init_gear_sets()
         --sub="",
         --range="",
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Merl_Hood,
+        head = gear.Merl_Hood_FC,
         --neck="",
-        ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Arbatel_Earring,
-        body = gear.Jhakri_Robe,
+        ear1 = gear.Erilaz_Earring,
+        ear2 = gear.Boii_Earring,
+        body = gear.Merl_Jubbah_FC,
         hands = gear.Jhakri_Cuffs,
-        --ring1="",
+        ring1 = gear.Dingir_Ring, -- Magic Attack Bonus
         --ring2="",
-        -- back = gear.Nexus_Cape,
-        --waist="",
+        back = gear.Nantosuelta_Cape_MAB,
+        waist = gear.Isa_Belt, -- Elemental Magic skill +10, Mag.Atk.Bns.
         legs = gear.Jhakri_Slops,
-        feet = gear.Jhakri_Pigaches,
+        feet = gear.Merl_Crackows_FC,
     }
 
     -- Magic Burst
     sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
-        -- ear1 = gear.Moonshade_Earring,
+        ring2 = gear.Hetairoi_Ring, -- Magic burst damage
     })
 
 
@@ -208,7 +210,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Vanya_Hood,
+        head = gear.Merl_Hood_FC, -- no Vanya Hood owned
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
         --ear2="",
@@ -216,7 +218,7 @@ function init_gear_sets()
         hands = gear.Vanya_Cuffs,
         ring1 = gear.Murky_Ring,
         --ring2="",
-        back = gear.Sucellos_Cape, -- "Cure" potency +10%
+        --back="",
         --waist="",
         legs = gear.Vanya_Slops,
         feet = gear.Vanya_Clogs,
@@ -241,21 +243,21 @@ function init_gear_sets()
     -- Default idle
     sets.idle = {
         --main="",
-        sub = gear.Genmei_Shield,
+        sub = gear.Ammurapi_Shield, -- M.Eva/M.Def idle shield
         --range="",
         --ammo="",
-        head = gear.Atro_Chapeau,
+        head = gear.Aya_Zucchetto,
         neck = gear.Loricate_torque,
         --ear1="",
         --ear2="",
-        body = gear.WN_Kaftan,
-        hands = gear.WN_Mittens,
+        body = gear.Geomancy_Tunic,
+        hands = gear.Merl_Dastanas,
         ring1 = gear.Murky_Ring,
-        ring2 = gear.Shneddick_Ring,
-        back = gear.Sucellos_Cape,
-        waist = gear.Null_Belt,
-        legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        -- ring2 = "",
+        back = gear.Nantosuelta_Cape,
+        waist = gear.Flume_Belt,
+        legs = gear.Jhakri_Slops,
+        feet = gear.Merl_Crackows_Pet,
     }
 
     -- Idle DT
@@ -271,33 +273,32 @@ function init_gear_sets()
     ---------------------------------------- Engaged Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    -- Base engaged (sword + shield - no offhand dagger owned)
+    -- Base engaged (sword + dagger for extra hits/Store TP)
     sets.engaged = {
-        main = gear.Vitiation_Sword,
-        -- sub = gear.Choco_Shield,
+        main = gear.Tokko_Sword,
+        sub = gear.Daybreak,
         --range="",
-        ammo = gear.Ginsen,
+        ammo = gear.Ghastly_Tathlum,
         head = gear.Aya_Zucchetto,
         --neck="",
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Brutal_Earring,
         body = gear.Ayanmo_Corazza,
-        hands = gear.Aya_Manopolas,
-        ring1 = gear.Petrov_Ring,
+        hands = gear.Duelists_Gloves,
+        ring1 = gear.Barataria_Ring,
         --ring2="",
-        back = gear.Null_Shawl,
+        --back="",
         waist = gear.Sailfi_Belt,
-        legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        legs = gear.Assid_Pants,
+        feet = gear.Odyssean_Greaves,
     }
 
     -- Accuracy focus (no dedicated accuracy piece owned - falls back to base engaged)
     sets.engaged.Acc = set_combine(sets.engaged, {})
 
-    -- DT while engaged
+    -- DT while engaged (swap to sword + shield for defense)
     sets.engaged.DT = set_combine(sets.engaged, {
-        --main="",
-        --sub="",
+        sub = gear.Genmei_Shield,
         --range="",
         --ammo="",
         --head="",
@@ -308,7 +309,7 @@ function init_gear_sets()
         --hands="",
         --ring1="",
         --ring2="",
-        back = gear.Intarabus_Cape_DT,
+        --back="",
         --waist="",
         --legs="",
         --feet="",
@@ -321,13 +322,14 @@ function init_gear_sets()
 
     -- Default WS (generic physical set - fallback for anything not defined below)
     sets.precast.WS = {
+        main = gear.Malignance_Sword,
         head = gear.Atro_Chapeau,
         --neck="",
         ear1 = gear.Ishvara_Earring,
         ear2 = gear.Moonshade_Earring,
         body = gear.Egbesu_Frock,
-        hands = gear.Atrophy,
-        ring1 = gear.Atro_Gloves,
+        hands = gear.Jhakri_Cuffs,
+        ring1 = gear.Mujin_Band,
         --ring2="",
         --back="",
         waist = gear.Sailfi_Belt,
@@ -346,18 +348,19 @@ function init_gear_sets()
 
     -- Sanguine Blade: Magical (INT:50%, dark)
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
+        main = gear.Tokko_Sword,
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Atro_Chapeau,
+        head = gear.Merl_Hood_FC,
         ear1 = gear.Moonshade_Earring,
         --ear2="",
-        body = gear.Egbesu_Frock,
+        body = gear.Merl_Jubbah_FC,
         hands = gear.Jhakri_Cuffs,
-        --ring1="",
+        ring1 = gear.Dingir_Ring,
         --ring2="",
-        --back="",
+        back = gear.Nantosuelta_Cape_MAB,
         --waist="",
-        legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        legs = gear.Jhakri_Slops,
+        feet = gear.Merl_Crackows_FC,
     })
 end
 
