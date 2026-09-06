@@ -192,7 +192,7 @@ WCBind                   = '^h' --Sets the keyboard shortcut you would like to a
 AutoStanceWindow         = 60   --Time in seconds left before a Stance wears off that AutoStance will activate after another ability.
 LowHPThreshold           = 800  --Below this number is considered Low HP.
 AutoSaveThreshold        = 1000 --If your HP goes below this number, Super Jump will be used.
-AttackCapThreshold       = 4200 --Using a WS while your attack is above this number will use a high_buff WS set if available.
+AttackCapThreshold       = 4500 --Using a WS while your attack is above this number will use a high_buff WS set if available.
 --NOTE: This number is checked before WS gear is switched, base this on attack while in your TP set(s).
 DangerRepeat             = 5    --Maximum number of times the Danger Sound will repeat, once per second.
 RRReminderTimer          = 1800 --Delay in seconds between checks to see if Reraise is up (300 is 5 minutes).

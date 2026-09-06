@@ -32,6 +32,8 @@ return {
     Culminus             = "Culminus",
     Genmei_Shield        = "Genmei Shield",
     Koboto               = "Koboto",
+    Kaja_Sword           = "Kaja Sword",
+    Nusku_Shield         = "Nusku Shield",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -48,9 +50,10 @@ return {
     Goblin_Masque        = "Goblin Masque",
     GMoogle_Masque       = "G. Moogle Masque",
     Atro_Chapeau         = "Atro. Chapeau +4",
+    Viti_Chapeau         = "Viti. Chapeau +2",
 
     -- Neck
-    Bagua_Charm_2        = { name = "Bagua Charm +2", augments = { 'Path: A', } },
+    Bagua_Charm          = { name = "Bagua Charm +2", augments = { 'Path: A', } },
     Erra_Pendant         = "Erra Pendant",
     Nodens_Gorget        = "Nodens Gorget",
     Jokushu_Chain        = "Jokushu Chain",
@@ -67,7 +70,7 @@ return {
     Raising_Earring      = "Raising Earring",
     Domin_Earring        = "Domin. Earring +1",
     Brutal_Earring       = "Brutal Earring",
-    Alabaster_Earring    = "Alabaster Earring",
+    Alabaster_Earring    = { name = "Alabaster Earring", augments = { 'Path: A', } },
     Loquac_Earring       = "Loquac. Earring",
     Sortiarius_Earring   = "Sortiarius Earring",
     Lugalbanda_Earring   = "Lugalbanda Earring",
@@ -80,9 +83,10 @@ return {
     Bhikku_Earring       = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4', } },
     Arbatel_Earring      = { name = "Arbatel Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+10', } },
     Erilaz_Earring       = { name = "Erilaz Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Damage taken-3%', } },
-    Alabaster_Earring_2  = { name = "Alabaster Earring", augments = { 'Path: A', } },
     Friomisi_Earring     = "Friomisi Earring",
     Moonshade_Earring    = { name = "Moonshade Earring", augments = { '"Mag.Atk.Bns."+4', 'TP Bonus +250', } },
+    Mimir_Earring        = "Mimir Earring",
+    Snotra_Earring       = "Snotra Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -96,7 +100,6 @@ return {
     MG_Bodice            = "MG Bodice +1",
     Azimuth_Coat         = "Azimuth Coat +2",
     Atrophy_Tabard       = "Atrophy Tabard +4",
-    Atrophy_Tabard_3     = "Atrophy Tabard +3",
     Temachtiani_Shirt    = "Temachtiani Shirt",
     Novennial_Dress      = "Novennial Dress",
     Decennial_Dress      = "Decennial Dress",
@@ -124,6 +127,7 @@ return {
     Duelists_Gloves      = "Duelist's Gloves",
     Agwus_Gages          = "Agwu's Gages",
     Atro_Gloves          = "Atro. Gloves +4",
+    Bunzi_Gloves         = "Bunzi's Gloves",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -140,6 +144,7 @@ return {
     Barataria_Ring       = "Barataria Ring",
     Mujin_Band           = "Mujin Band",
     Freke_Ring           = "Freke Ring",
+    Kishar_Ring          = "Kishar Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -148,6 +153,8 @@ return {
     Nantosuelta_Cape     = "Nantosuelta's Cape",
     Nexus_Cape           = "Nexus Cape",
     Alabaster_Mantle     = "Alabaster Mantle",
+    Solemnity_Cape       = "Solemnity Cape",
+    Sucellos_Cape_STR    = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+8', 'Weapon skill damage +10%', } },
 
     -- Waist
     Olympus_Sash         = "Olympus Sash",
@@ -171,7 +178,7 @@ return {
     Sorcerer_Tonban      = "Sorcerer's Tonban",
     Wyrm_Brais           = "Wyrm Brais",
     Estqr_Fuseau         = "Estqr. Fuseau +1",
-    Aya_Cosciales        = "Aya. Cosciales +1",
+    Aya_Cosciales        = "Aya. Cosciales +2",
     Azimuth_Tights       = "Azimuth Tights +2",
     Atro_Tights          = "Atro. Tights +4",
 
@@ -181,7 +188,7 @@ return {
     Bagua_Sandals        = { name = "Bagua Sandals +4", augments = { 'Enhances "Radial Arcana" effect', } },
     Vanya_Clogs          = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Sandals     = "Geo. Sandals +4",
-    Aya_Gambieras        = "Aya. Gambieras",
+    Aya_Gambieras        = "Aya. Gambieras +1",
     Jhakri_Pigaches      = "Jhakri Pigaches +2",
     Odyssean_Greaves     = "Odyssean Greaves",
     MGF_Ledelsens        = "MGF Ledelsens +1",

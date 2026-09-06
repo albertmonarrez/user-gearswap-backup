@@ -261,7 +261,7 @@ function init_gear_sets()
 		left_ring = inv.defending_ring,
 		hands = inv.malignance_gloves,
 		head = inv.malignance_chapeau,
-		body = inv.malignance_tabard,
+		body = inv.sworn_platemail,
 		feet = inv.malignance_boots,
 		neck = inv.loricate_torque,
 		waist = inv.windbuffet_belt,

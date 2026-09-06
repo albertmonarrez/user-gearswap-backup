@@ -26,7 +26,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 local function set_lockstyle()
-    send_command('wait 4; input /lockstyleset 1')
+    send_command('wait 4; input /lockstyleset 5')
 end
 
 function user_setup()
@@ -63,16 +63,16 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Merl_Hood_FC,
-        --neck="",
+        head = gear.Atro_Chapeau,
+        neck = gear.Loricate_torque,
         --ear1="",
         ear2 = gear.Loquac_Earring,
         body = gear.Merl_Jubbah_FC,
         -- hands = gear.Merl_Dastanas,
-        --ring1="",
-        --ring2="",
-        --back="",
-        --waist="",
+        ring1 = gear.Murky_Ring,
+        ring2 = gear.Kishar_Ring,
+        back = gear.Solemnity_Cape,
+        waist = gear.Embla_Sash,
         legs = gear.Aya_Cosciales,
         feet = gear.Merl_Crackows_FC,
     }
@@ -108,29 +108,31 @@ function init_gear_sets()
         --ammo="",
         --head="",
         --neck="",
-        --ear1="",
+        ear1 = gear.Mimir_Earring,
         --ear2="",
-        body = gear.Temachtiani_Shirt,
-        hands = gear.Duelists_Gloves, -- RDM AF hands
+        --body="",
+        hands = gear.Duelists_Gloves,
         --ring1="",
         --ring2="",
         --back="",
-        waist = gear.Embla_Sash, -- Enhancing Magic skill +10
-        legs = gear.Temachtiani_Pants,
-        feet = gear.Temachtiani_Boots,
+        waist = gear.Olympus_Sash,
+        legs = gear.Atro_Tights,
+        --feet="",
     }
 
-    -- Enhancing duration (Stoneskin, Protect, Shell, etc.) - no duration-specific piece owned
-    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {})
+    -- Enhancing duration (Stoneskin, Protect, Shell, etc.)
+    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {
+        hands = gear.Atro_Gloves,
+        waist = gear.Embla_Sash,
+    })
 
     -- Phalanx
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
-        ear1 = gear.Sortiarius_Earring, -- Enhances "Phalanx" effect
     })
 
     -- Refresh (self)
-    sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'], {
-        neck = gear.Null_Loop, -- "Refresh"+1
+    sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
+        body = gear.Atrophy_Tabard,
     })
 
 
@@ -144,18 +146,18 @@ function init_gear_sets()
         --sub="",
         --range="",
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Aya_Zucchetto,
-        neck = gear.Loricate_torque,
+        head = gear.Atro_Chapeau,
+        neck = gear.Erra_Pendant,
         ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Erilaz_Earring,
-        body = gear.Jhakri_Robe,
-        hands = gear.Jhakri_Cuffs,
-        ring1 = gear.Jhakri_Ring,
-        --ring2="",
-        --back="",
-        --waist="",
-        legs = gear.Jhakri_Slops,
-        feet = gear.Jhakri_Pigaches,
+        ear2 = gear.Snotra_Earring,
+        body = gear.Atrophy_Tabard,
+        hands = gear.Atro_Gloves,
+        --ring1="",
+        ring2 = gear.Kishar_Ring,
+        back = gear.Sucellos_Cape_STR,
+        waist = gear.Null_Belt,
+        legs = gear.Atro_Tights,
+        feet = gear.Atro_Boots,
     }
 
     -- Enfeebling with Saboteur active (no Saboteur-specific piece owned)
@@ -172,23 +174,23 @@ function init_gear_sets()
         --sub="",
         --range="",
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Merl_Hood_FC,
-        --neck="",
-        ear1 = gear.Erilaz_Earring,
-        ear2 = gear.Boii_Earring,
-        body = gear.Merl_Jubbah_FC,
+        head = gear.Jhakri_Coronal,
+        neck = gear.Mizu_Kubikazari,
+        ear1 = gear.Alabaster_Earring,
+        -- ear2 = gear.Arbatel_Earring,
+        body = gear.Jhakri_Robe,
         hands = gear.Jhakri_Cuffs,
-        ring1 = gear.Dingir_Ring, -- Magic Attack Bonus
+        ring1 = gear.Freke_Ring,
         --ring2="",
-        back = gear.Nantosuelta_Cape_MAB,
-        waist = gear.Isa_Belt, -- Elemental Magic skill +10, Mag.Atk.Bns.
+        -- back = gear.Nantosuelta_Cape_MAB,
+        waist = gear.Null_Belt,
         legs = gear.Jhakri_Slops,
-        feet = gear.Merl_Crackows_FC,
+        feet = gear.Jhakri_Pigaches,
     }
 
     -- Magic Burst
     sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
-        ring2 = gear.Hetairoi_Ring, -- Magic burst damage
+        ring2 = gear.Mujin_Band,
     })
 
 
@@ -210,7 +212,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         --ammo="",
-        head = gear.Merl_Hood_FC, -- no Vanya Hood owned
+        -- head = gear.Merl_Hood_FC,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
         --ear2="",
@@ -218,11 +220,12 @@ function init_gear_sets()
         hands = gear.Vanya_Cuffs,
         ring1 = gear.Murky_Ring,
         --ring2="",
-        --back="",
+        back = gear.Solemnity_Cape,
         --waist="",
-        legs = gear.Vanya_Slops,
+        legs = gear.Atro_Tights,
         feet = gear.Vanya_Clogs,
     }
+    sets.midcast.Curaga = sets.midcast.Cure
 
 
     ------------------------------------------------------------------------------------------------
@@ -243,27 +246,25 @@ function init_gear_sets()
     -- Default idle
     sets.idle = {
         --main="",
-        sub = gear.Ammurapi_Shield, -- M.Eva/M.Def idle shield
+        sub = gear.Genmei_Shield,
         --range="",
         --ammo="",
-        head = gear.Aya_Zucchetto,
+        head = gear.Viti_Chapeau,
         neck = gear.Loricate_torque,
-        --ear1="",
-        --ear2="",
-        body = gear.Geomancy_Tunic,
-        hands = gear.Merl_Dastanas,
+        ear1 = gear.Alabaster_Earring,
+        ear2 = gear.Friomisi_Earring,
+        body = gear.Atrophy_Tabard,
+        hands = gear.Bunzi_Gloves,
         ring1 = gear.Murky_Ring,
-        -- ring2 = "",
-        back = gear.Nantosuelta_Cape,
-        waist = gear.Flume_Belt,
-        legs = gear.Jhakri_Slops,
-        feet = gear.Merl_Crackows_Pet,
+        ring2 = gear.Shneddick_Ring,
+        back = gear.Solemnity_Cape,
+        waist = gear.Null_Belt,
+        legs = gear.MGF_Chausses,
+        feet = gear.MGF_Ledelsens,
     }
 
     -- Idle DT
-    sets.idle.DT = set_combine(sets.idle, {
-        waist = gear.Null_Belt,
-    })
+    sets.idle.DT = set_combine(sets.idle, {})
 
     -- Idle Refresh (no dedicated refresh piece owned - falls back to base idle)
     sets.idle.Refresh = set_combine(sets.idle, {})
@@ -273,47 +274,31 @@ function init_gear_sets()
     ---------------------------------------- Engaged Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    -- Base engaged (sword + dagger for extra hits/Store TP)
+    -- Base engaged
     sets.engaged = {
-        main = gear.Tokko_Sword,
-        sub = gear.Daybreak,
+        -- main = gear.Tokko_Sword,
+        -- sub = gear.Daybreak,
         --range="",
-        ammo = gear.Ghastly_Tathlum,
+        ammo = gear.Ginsen,
         head = gear.Aya_Zucchetto,
-        --neck="",
-        ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Brutal_Earring,
+        neck = gear.Loricate_torque,
+        ear1 = gear.Brutal_Earring,
+        ear2 = gear.Alabaster_Earring,
         body = gear.Ayanmo_Corazza,
-        hands = gear.Duelists_Gloves,
-        ring1 = gear.Barataria_Ring,
-        --ring2="",
+        hands = gear.Bunzi_Gloves,
+        ring1 = gear.Murky_Ring,
+        -- ring2 = gear.Barataria_Ring,
         --back="",
         waist = gear.Sailfi_Belt,
-        legs = gear.Assid_Pants,
-        feet = gear.Odyssean_Greaves,
+        legs = gear.Jhakri_Slops,
+        feet = gear.Battlecast_Gaiters,
     }
 
     -- Accuracy focus (no dedicated accuracy piece owned - falls back to base engaged)
     sets.engaged.Acc = set_combine(sets.engaged, {})
 
-    -- DT while engaged (swap to sword + shield for defense)
-    sets.engaged.DT = set_combine(sets.engaged, {
-        sub = gear.Genmei_Shield,
-        --range="",
-        --ammo="",
-        --head="",
-        neck = gear.Loricate_torque,
-        --ear1="",
-        --ear2="",
-        --body="",
-        --hands="",
-        --ring1="",
-        --ring2="",
-        --back="",
-        --waist="",
-        --legs="",
-        --feet="",
-    })
+    -- DT while engaged
+    sets.engaged.DT = set_combine(sets.engaged, {})
 
 
     ------------------------------------------------------------------------------------------------
@@ -322,16 +307,15 @@ function init_gear_sets()
 
     -- Default WS (generic physical set - fallback for anything not defined below)
     sets.precast.WS = {
-        main = gear.Malignance_Sword,
-        head = gear.Atro_Chapeau,
+        head = gear.Viti_Chapeau,
         --neck="",
         ear1 = gear.Ishvara_Earring,
         ear2 = gear.Moonshade_Earring,
         body = gear.Egbesu_Frock,
-        hands = gear.Jhakri_Cuffs,
-        ring1 = gear.Mujin_Band,
+        hands = gear.Atro_Gloves,
+        --ring1="",
         --ring2="",
-        --back="",
+        back = gear.Sucellos_Cape_STR,
         waist = gear.Sailfi_Belt,
         legs = gear.Atro_Tights,
         feet = gear.Atro_Boots,
@@ -348,20 +332,20 @@ function init_gear_sets()
 
     -- Sanguine Blade: Magical (INT:50%, dark)
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
-        main = gear.Tokko_Sword,
         ammo = gear.Ghastly_Tathlum,
-        head = gear.Merl_Hood_FC,
+        head = gear.Jhakri_Coronal,
         ear1 = gear.Moonshade_Earring,
         --ear2="",
-        body = gear.Merl_Jubbah_FC,
+        body = gear.Egbesu_Frock,
         hands = gear.Jhakri_Cuffs,
         ring1 = gear.Dingir_Ring,
         --ring2="",
         back = gear.Nantosuelta_Cape_MAB,
         --waist="",
         legs = gear.Jhakri_Slops,
-        feet = gear.Merl_Crackows_FC,
+        feet = gear.Jhakri_Pigaches,
     })
+    sets.precast.WS['Seraph Blade'] = sets.precast.WS['Sanguine Blade']
 end
 
 -------------------------------------------------------------------------------------------------------------------
