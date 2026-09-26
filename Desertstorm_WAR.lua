@@ -154,7 +154,7 @@ function init_gear_sets()
         body = inv.boii_body,
         hands = inv.sakpatas_hands,
         legs = inv.pummler_legs,
-        feet = inv.hermes_sandals,
+        feet = inv.pummler_feet,
         neck = inv.null_loop,
         waist = inv.sailfi_belt,
         left_ear = inv.dedition_earring,

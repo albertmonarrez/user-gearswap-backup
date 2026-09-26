@@ -50,6 +50,8 @@ function user_setup()
     -- Additional local binds
     -- include('Global-Binds.lua') -- OK to remove this line
 
+    send_command('bind +f9 gs c toggle MagicBurst')
+
     -- Default macro book/set
     set_macro_page(1, 1)
     set_lockstyle()
@@ -57,6 +59,7 @@ end
 
 function user_unload()
     -- Unbind keys here if needed
+    send_command('unbind +f9')
 end
 
 -- Define sets and vars used by this job file.
@@ -334,20 +337,19 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
         main = gear.Bunzi_Rod,
         sub = gear.Ammurapi_Shield,
-        --range="",
         ammo = gear.Ghastly_Tathlum,
         head = gear.Azimuth_Hood,
         neck = gear.Mizu_Kubikazari,
         ear1 = gear.Friomisi_Earring,
         ear2 = gear.Azimuth_Earring,
         body = gear.Azimuth_Coat,
-        hands = gear.Azimuth_Gloves,
-        --ring1="",
+        hands = gear.Bagua_Mitaines,
+        ring1 = gear.Freke_Ring,
         ring2 = gear.Jhakri_Ring,
-        --back="",
-        --waist="",
+        back = gear.Nantosuelta_Cape_MAB,
+        waist = gear.Acuity_Belt,
         legs = gear.Azimuth_Tights,
-        feet = gear.Azimuth_Gaiters,
+        feet = gear.Intrep_Sabots,
     }
 
     -- Magic Burst
@@ -363,7 +365,7 @@ function init_gear_sets()
         --body="",
         --hands="",
         --ring1="",
-        --ring2="",
+        ring2 = gear.Mujin_Band,
         --back="",
         --waist="",
         --legs="",
@@ -388,7 +390,7 @@ function init_gear_sets()
         body = gear.Vanya_Robe,
         hands = gear.Vanya_Cuffs,
         ring1 = gear.Murky_Ring,
-        --ring2="",
+        ring2 = gear.Lebeche_Ring,
         --back="",
         --waist="",
         legs = gear.Vanya_Slops,
@@ -455,7 +457,7 @@ function init_gear_sets()
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Azimuth_Earring,
         body = gear.Jhakri_Robe,
-        hands = gear.Azimuth_Gloves,
+        hands = gear.Bagua_Mitaines,
         ring1 = gear.Murky_Ring,
         ring2 = gear.Shneddick_Ring,
         back = gear.Nantosuelta_Cape_Pet,
@@ -755,6 +757,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
         eventArgs.handled = true
     elseif spell.english:startswith('Geo-') then
         equip(sets.midcast.Geo)
+        eventArgs.handled = true
+    elseif spell.skill == 'Elemental Magic' and state.MagicBurst.value then
+        equip(sets.midcast['Elemental Magic'].MB)
         eventArgs.handled = true
     end
 end

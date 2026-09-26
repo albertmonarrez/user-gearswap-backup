@@ -30,7 +30,7 @@ local function set_lockstyle()
 end
 
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc')
+    state.OffenseMode:options('Normal', 'Enspell')
     state.HybridMode:options('Normal', 'DT')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
@@ -39,11 +39,14 @@ function user_setup()
 
     state.WeaponLock = M(false, 'Weapon Lock')
 
+    send_command('bind +f9 gs c toggle MagicBurst')
+
     set_macro_page(1, 1)
     set_lockstyle()
 end
 
 function user_unload()
+    send_command('unbind +f9')
 end
 
 function init_gear_sets()
@@ -102,15 +105,15 @@ function init_gear_sets()
 
     -- Enhancing Magic
     sets.midcast['Enhancing Magic'] = {
-        --main="",
+        main = gear.Pukulatmuj,
         --sub="",
         --range="",
         --ammo="",
-        --head="",
+        head = gear.Umuthi_Hat,
         --neck="",
         ear1 = gear.Mimir_Earring,
-        --ear2="",
-        -- body = "",
+        ear2 = gear.Andoaa_Earring,
+        body = gear.Vitiation_Tabard,
         hands = gear.Viti_Gloves,
         --ring1="",
         --ring2="",
@@ -134,6 +137,8 @@ function init_gear_sets()
     -- Refresh (self) (no dedicated Refresh piece owned - falls back to base Enhancing)
     sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
         body = gear.Atrophy_Tabard,
+        legs = gear.Leth_Fuseau,
+
     })
 
 
@@ -147,7 +152,7 @@ function init_gear_sets()
         --sub="",
         --range="",
         ammo = gear.Hydrocera,
-        head = gear.Atro_Chapeau,
+        head = gear.Viti_Chapeau,
         neck = gear.Erra_Pendant,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Snotra_Earring,
@@ -240,6 +245,17 @@ function init_gear_sets()
     -- Composure active (bonus to self-buffs) - no dedicated piece owned
     sets.buff.Composure = {}
 
+    -- Composure active, enhancing another player
+    sets.buff.ComposureOther = {
+        head = gear.Leth_Chappel,
+        body = gear.Leth_Sayon,
+        hands = gear.Leth_Gantherots,
+        legs = gear.Leth_Fuseau,
+        waist = gear.Embla_Sash,
+        ring2 = gear.Kishar_Ring,
+        back = gear.Sucellos_Cape_STR
+    }
+
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Idle Sets ------------------------------------------
@@ -248,7 +264,7 @@ function init_gear_sets()
     -- Default idle
     sets.idle = {
         --main="",
-        sub = gear.Genmei_Shield,
+        -- sub = gear.Genmei_Shield,
         --range="",
         --ammo="",
         head = gear.Viti_Chapeau,
@@ -284,12 +300,12 @@ function init_gear_sets()
         -- sub = gear.Choco_Shield,
         ammo = gear.Ginsen,
         head = gear.Aya_Zucchetto,
-        neck = gear.Loricate_torque,
+        neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
         body = gear.Ayanmo_Corazza,
         hands = gear.Bunzi_Gloves,
-        ring1 = gear.Murky_Ring,
+        ring1 = gear.Rajas_Ring,
         ring2 = gear.Petrov_Ring,
         back = gear.Null_Shawl,
         waist = gear.Sailfi_Belt,
@@ -298,8 +314,14 @@ function init_gear_sets()
     }
 
     -- Accuracy focus (no dedicated accuracy piece owned - falls back to base engaged)
-    sets.engaged.Acc = set_combine(sets.engaged, {})
-
+    sets.engaged.Enspell = set_combine(sets.engaged, {
+        head = gear.Umuthi_Hat,
+        hands = gear.Aya_Manopolas,
+        legs = gear.Atro_Tights,
+        feet = gear.Atro_Boots,
+        ear1 = gear.Eabani_Earring,
+        ammo = gear.sroda_tathlum,
+    })
     -- DT while engaged
     sets.engaged.DT = set_combine(sets.engaged, {
         --main="",
@@ -333,8 +355,8 @@ function init_gear_sets()
         ear2 = gear.Moonshade_Earring,
         body = gear.Egbesu_Frock,
         hands = gear.Atro_Gloves,
-        -- ring1 = gear.Atro_Gloves,
-        --ring2="",
+        ring1 = gear.Apate_Ring,
+        ring2 = gear.Epaminondass_Ring,
         back = gear.Sucellos_Cape_STR,
         waist = gear.Sailfi_Belt,
         legs = gear.Atro_Tights,
@@ -372,17 +394,39 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Main/sub held before an Enhancing Magic cast, re-equipped once it finishes.
+local weapon_restore = nil
+
 function job_precast(spell, action, spellMap, eventArgs)
+    if spell.skill == 'Enhancing Magic' and not weapon_restore then
+        weapon_restore = { main = player.equipment.main, sub = player.equipment.sub }
+    end
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
     if spell.skill == 'Enfeebling Magic' and state.Buff['Saboteur'] then
         equip(sets.midcast['Enfeebling Magic'].Saboteur)
         eventArgs.handled = true
+    elseif spell.skill == 'Elemental Magic' and state.MagicBurst.value then
+        equip(sets.midcast['Elemental Magic'].MB)
+        eventArgs.handled = true
+    end
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.skill == 'Enhancing Magic' and buffactive.composure and spell.target.type == 'PLAYER' then
+        equip(sets.buff.ComposureOther)
     end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+end
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    if weapon_restore then
+        equip(weapon_restore)
+        weapon_restore = nil
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------

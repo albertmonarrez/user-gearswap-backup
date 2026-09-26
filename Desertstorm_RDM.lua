@@ -47,8 +47,9 @@ local naegling_machaera = {
 	sub = { name = "Machaera +2", augments = { 'TP Bonus +1000', } },
 }
 local kaja_malevolance = {
-	main = inv.levante_dagger,
-	sub = inv.malevolence,
+	main = inv.malevolence,
+	sub = inv.levante_dagger,
+
 }
 local crocea_levante = {
 	main = inv.crocea_mors,
@@ -160,8 +161,8 @@ function init_gear_sets()
 		legs = inv.atrophy_tights,
 		feet = inv.vitiation_boots,
 		waist = inv.null_belt,
-		left_ear = inv.regal_earring,
-		right_ear = inv.snorta_earring,
+		left_ear = inv.snorta_earring,
+		right_ear = inv.regal_earring,
 		left_ring = inv.kishar_ring,
 		right_ring = inv.stikini_ring,
 		back = mind_cape,
@@ -174,13 +175,13 @@ function init_gear_sets()
 			sub = inv.daybreak,
 			range = inv.ullr,
 			head = inv.atrophy_chapeau,
-			right_ear = inv.alabaster_earring,
+			left_ear = inv.alabaster_earring,
 			back = inv.null_shawl,
 			left_ring = inv.stikini_ring2,
 			neck = inv.null_loop
 		})
 	local enfeebling_acc = set_combine(enfeebling_set,
-		{ back = inv.null_shawl, left_ring = inv.stikini_ring2, right_ear = inv.alabaster_earring,
+		{ back = inv.null_shawl, left_ring = inv.stikini_ring2, left_ear = inv.alabaster_earring,
 		})
 
 	-- Fastcast set
@@ -192,7 +193,7 @@ function init_gear_sets()
 		hands = inv.leyline_gloves,
 		legs = inv.psycloth_legs,
 		feet = inv.nyame_feet,
-		right_ear = inv.alabaster_earring,
+		left_ear = inv.alabaster_earring,
 		waist = inv.platinum_moogle_belt,
 		right_ring = inv.weatherspoon_ring,
 		left_ring = inv.defending_ring,
@@ -210,7 +211,7 @@ function init_gear_sets()
 		feet = inv.malignance_boots,
 		neck = inv.ainia_collar,
 		waist = inv.reiki_yotai,
-		left_ear = inv.sherida_earring,
+		left_ear = inv.alabaster_earring,
 		right_ear = inv.dedition_earring,
 		left_ring = inv.crepuscular_ring,
 		right_ring = inv.chirich_ring,
@@ -251,9 +252,10 @@ function init_gear_sets()
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
 		legs = inv.vitiation_tights,
+		feet = inv.sworn_sabatons,
 		left_ring = inv.metamorph_ring,
-		right_ear = inv.alabaster_earring,
-		left_ear = inv.suppanomimi,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.suppanomimi,
 		ammo = inv.sroda_tathlum
 
 	})
@@ -284,8 +286,8 @@ function init_gear_sets()
 		legs = inv.atrophy_tights,
 		left_ring = inv.murky_ring,
 		right_ring = inv.defending_ring,
-		right_ear = inv.alabaster_earring,
-		left_ear = inv.suppanomimi,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.suppanomimi,
 		feet = inv.malignance_boots,
 		ammo = inv.sroda_tathlum,
 		back = inv.RDM_DW_Cape,
@@ -486,7 +488,7 @@ function init_gear_sets()
 		hands = inv.nyame_hands,
 		legs = inv.malignance_tights,
 		feet = inv.malignance_boots,
-		right_ear = inv.alabaster_earring,
+		left_ear = inv.alabaster_earring,
 		waist = inv.platinum_moogle_belt,
 		right_ring = inv.defending_ring,
 		back = inv.RDM_DW_Cape,
@@ -556,7 +558,7 @@ function init_gear_sets()
 		body = inv.lethargy_body,
 		hands = inv.lethargy_hands,
 		neck = inv.null_loop,
-		right_ear = inv.alabaster_earring,
+		left_ear = inv.alabaster_earring,
 		-- neck = { name = "Dls. Torque +1", augments = { 'Path: A', } },
 		left_ring = inv.defending_ring,
 		legs = inv.carmine_legs,
@@ -745,6 +747,7 @@ function init_gear_sets()
 		body = inv.lethargy_body,
 		legs = inv.lethargy_legs,
 		feet = inv.lethargy_feet,
+		back = inv.RDM_ENHANCHING_DURATION_CAPE,
 	}
 
 	sets.buff.Saboteur = { hands = lethargy_hands }

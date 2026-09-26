@@ -2021,23 +2021,6 @@ end
 -------------------------------------------
 
 function precast(spell)
-	local transport_spells = S {
-		'Teleport-Holla', 'Teleport-Dem', 'Teleport-Mea', 'Teleport-Altep', 'Teleport-Yhoat', 'Teleport-Vahzl',
-		'Recall-Jugner', 'Recall-Meriph', 'Recall-Pashh',
-		'Warp', 'Warp II', 'Retrace', 'Escape'
-	}
-	if TransportLock and transport_spells:contains(spell.en) and transport_locked then
-		cancel_spell()
-		transport_locked = false
-		windower.add_to_chat(8,
-			('[Notice] '):color(39) .. (spell.name):color(1) ..
-			(' cancelled. Unlocked for 3 min or until zone.'):color(8))
-		if AlertSounds then
-			play_sound(Notification_Cancel)
-		end
-		transport_lock_timestamp = os.time() + 180
-		return
-	end
 	if buffactive['terror'] then
 		if AlertSounds then
 			play_sound(Notification_Cancel)

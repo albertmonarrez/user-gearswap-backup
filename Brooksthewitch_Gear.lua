@@ -12,6 +12,9 @@ return {
     Daybreak             = "Daybreak",
     Malignance_Sword     = "Malignance Sword",
     Extinction           = "Extinction",
+    Poison_Axe           = "Poison Axe",
+    Sha_Wujings_Lance    = "Sha Wujing's Lance",
+    Zanmato              = "Zanmato",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -21,6 +24,12 @@ return {
     Knobkierrie          = "Knobkierrie",
     Ginsen               = "Ginsen",
     Ghastly_Tathlum      = "Ghastly Tathlum +1",
+    Silver_Gun           = "Silver Gun",
+    Hangaku_no_Yumi      = "Hangaku-no-Yumi",
+    Seraphicaller        = "Seraphicaller",
+    Divinator            = "Divinator",
+    Divinator_II         = "Divinator II",
+    sroda_tathlum        = "Sroda Tathlum",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -34,6 +43,10 @@ return {
     Koboto               = "Koboto",
     Kaja_Sword           = "Kaja Sword",
     Nusku_Shield         = "Nusku Shield",
+    Bolelabunga          = "Bolelabunga",
+    Levante_Dagger       = "Levante Dagger",
+    Pukulatmuj           = "Pukulatmuj +1",
+    Vitiation_Sword      = "Vitiation Sword",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -50,7 +63,10 @@ return {
     Goblin_Masque        = "Goblin Masque",
     GMoogle_Masque       = "G. Moogle Masque",
     Atro_Chapeau         = "Atro. Chapeau +4",
-    Viti_Chapeau         = "Viti. Chapeau +2",
+    Viti_Chapeau         = "Viti. Chapeau +4",
+    Umuthi_Hat           = "Umuthi Hat",
+    Leth_Chappel         = "Lethargy Chappel",
+    Sukeroku_Hachi       = "Sukeroku Hachi.",
 
     -- Neck
     Bagua_Charm          = { name = "Bagua Charm +2", augments = { 'Path: A', } },
@@ -64,6 +80,7 @@ return {
     Nicander_Necklace    = "Nicander's Necklace",
     Reti_Pendant         = "Reti Pendant",
     Null_Loop            = "Null Loop",
+    Canto_Necklace       = "Canto Necklace",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -87,6 +104,8 @@ return {
     Moonshade_Earring    = { name = "Moonshade Earring", augments = { '"Mag.Atk.Bns."+4', 'TP Bonus +250', } },
     Mimir_Earring        = "Mimir Earring",
     Snotra_Earring       = "Snotra Earring",
+    Eabani_Earring       = "Eabani Earring",
+    Andoaa_Earring       = "Andoaa Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -109,11 +128,14 @@ return {
     Hjarrandi_Breast     = "Hjarrandi Breast.",
     Egbesu_Frock         = "Egbesu Frock",
     Ruwa_Breastplate     = "Ruwa Breastplate",
+    Leth_Sayon           = "Lethargy Sayon",
+    Vitiation_Tabard     = { name = "Vitiation Tabard", augments = { 'Enhances "Chainspell" effect', } },
+    Abyss_Cuirass        = "Abyss Cuirass",
 
     -- Hands
-    Bagua_Mitaines       = { name = "Bagua Mitaines", augments = { 'Enhances "Curative Recantation" effect', } },
+    Bagua_Mitaines       = "Bagua Mitaines +4",
     Vanya_Cuffs          = { name = "Vanya Cuffs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
-    Geomancy_Mitaines    = "Geo. Mitaines +2",
+    Geomancy_Mitaines    = "Geo. Mitaines +4",
     Jhakri_Cuffs         = "Jhakri Cuffs +2",
     Aya_Manopolas        = "Aya. Manopolas +2",
     -- Vanya_Cuffs          = "Vanya Cuffs",
@@ -128,6 +150,9 @@ return {
     Agwus_Gages          = "Agwu's Gages",
     Atro_Gloves          = "Atro. Gloves +4",
     Bunzi_Gloves         = "Bunzi's Gloves",
+    Estq_Ganthrt         = "Estq. Ganthrt. +1",
+    Viti_Gloves          = { name = "Viti. Gloves +1", augments = { 'Enhancing Magic duration', } },
+    Leth_Gantherots      = "Leth. Gantherots +1",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -145,6 +170,10 @@ return {
     Mujin_Band           = "Mujin Band",
     Freke_Ring           = "Freke Ring",
     Kishar_Ring          = "Kishar Ring",
+    Endorsement_Ring     = "Endorsement Ring",
+    Lebeche_Ring         = "Lebeche Ring",
+    Zanhi_Ring           = "Zanhi Ring",
+    Rajas_Ring           = "Rajas Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -163,12 +192,16 @@ return {
     Embla_Sash           = "Embla Sash",
     Isa_Belt             = "Isa Belt",
     Null_Belt            = "Null Belt",
+    Acuity_Belt          = "Acuity Belt +1",
+    Chaac_Belt           = "Chaac Belt",
+    Fucho_no_Obi         = "Fucho-no-Obi",
 
     -- Legs
     Bagua_Pants          = { name = "Bagua Pants +4", augments = { 'Enhances "Mending Halation" effect', } },
     Vanya_Slops          = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Pants       = "Geo. Pants +1",
     Jhakri_Slops         = "Jhakri Slops +2",
+    Leth_Fuseau          = "Leth. Fuseau +1",
     Hercl_Trousers       = "Herculean Trousers",
     Assid_Pants          = "Assid. Pants +1",
     MGF_Chausses         = "MGF Chausses +1",

@@ -71,6 +71,7 @@ local equipment = {
     geo_galero             = "Geo. Galero +2",
     souveran_head          = "Souveran Schaller",
     ischkur_turban         = "Ischkur Turban",
+    odyssean_helm_phalanx  = { name = "Odyssean Helm", augments = { 'Pet: INT+14', 'Pet: Mag. Acc.+18', 'Phalanx +4', 'Accuracy+11 Attack+11', } },
 
     carmine_mask           = "Carmine Mask",
     sakpatas_helm          = "Sakpata's Helm",
@@ -110,11 +111,11 @@ local equipment = {
     gletis_legs                  = "Gleti's Breeches",
     gletis_feet                  = "Gleti's Boots",
 
-    chevalier_head               = "Chev. Armet +2",
-    chevalier_body               = "Chev. Cuirass +2",
-    chevalier_legs               = "Chev. Cuisses +2",
-    chevalier_feet               = "Chev. Sabatons +2",
-    chevalier_hands              = "Chev. Gauntlets +2",
+    chevalier_head               = "Chev. Armet +3",
+    chevalier_body               = "Chev. Cuirass +3",
+    chevalier_legs               = "Chev. Cuisses +3",
+    chevalier_feet               = "Chev. Sabatons +3",
+    chevalier_hands              = "Chev. Gauntlets +3",
 
     reverence_head               = "Rev. Coronet +3",
     reverence_body               = "Rev. Surcoat +4",
@@ -164,6 +165,7 @@ local equipment = {
     odyssean_chest_phalanx       = { name = "Odyss. Chestplate", augments = { 'STR+10', 'AGI+5', 'Phalanx +4', 'Accuracy+14 Attack+14', } },
     sworn_platemail              = "Sworn Platemail",
     egbesu_frock                 = "Egbesu Frock",
+    ruwa_breastplate             = "Ruwa Breastplate",
 
     --hands
     leyline_gloves               = { name = "Leyline Gloves", augments = { 'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3', } },
@@ -284,6 +286,7 @@ local equipment = {
     odyssean_feet                = { name = "Odyssean Greaves", augments = { '"Mag.Atk.Bns."+22', 'Phys. dmg. taken -2%', 'DEX+7', 'Accuracy+2', } },
     souveran_feet                = { name = "Souveran Schuhs +1", augments = { 'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%', } },
     sakonji_feet                 = "Sakonji Sune. +4",
+    sworn_sabatons               = "Sworn Sabatons",
 
     --neck pieces
     elite_royal_collar           = "Elite Royal Collar",

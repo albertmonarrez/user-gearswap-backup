@@ -13,6 +13,11 @@ return {
     Linos              = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+4', 'Quadruple Attack +2', } },
     Ghastly_Tathlum    = "Ghastly Tathlum +1",
     Hydrocera          = "Hydrocera",
+    Silver_Gun         = "Silver Gun",
+    Pyf_Harp           = "Pyf Harp",
+    sroda_tathlum      = "Sroda Tathlum",
+    Hangaku_no_Yumi    = "Hangaku-no-Yumi",
+    Seraphicaller      = "Seraphicaller",
 
     -- Sub
     Kali               = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -25,8 +30,17 @@ return {
     Genmei_Shield      = "Genmei Shield",
     Nihility           = "Nihility",
     Extinction         = "Extinction",
+    Magicians_Rod      = "Magician's Rod",
+    Bolelabunga        = "Bolelabunga",
+    Bunzi_Rod          = "Bunzi's Rod",
+    Nusku_Shield       = "Nusku Shield",
+    Pukulatmuj         = "Pukulatmuj +1",
+    Levante_Dagger     = "Levante Dagger",
     Vitiation_Sword    = "Vitiation Sword",
     Malignance_Sword   = "Malignance Sword",
+    Poison_Axe         = "Poison Axe",
+    Sha_Wujings_Lance  = "Sha Wujing's Lance",
+    Zanmato            = "Zanmato",
 
     -- Head
     Fili_Calot         = "Fili Calot +2",
@@ -43,7 +57,10 @@ return {
     Ruwa_Armet         = "Ruwa Armet",
     Jhakri_Coronal     = "Jhakri Coronal +2",
     Atro_Chapeau       = "Atro. Chapeau +4",
-    Viti_Chapeau       = "Viti. Chapeau +2",
+    Viti_Chapeau       = "Viti. Chapeau +4",
+    Umuthi_Hat         = "Umuthi Hat",
+    Leth_Chappel       = "Lethargy Chappel",
+    Sukeroku_Hachi     = "Sukeroku Hachi.",
     Behemoth_Masque    = "Behemoth Masque",
     Goblin_Masque      = "Goblin Masque",
     GMoogle_Masque     = "G. Moogle Masque",
@@ -60,6 +77,8 @@ return {
     Erra_Pendant       = "Erra Pendant",
     Mizu_Kubikazari    = "Mizu. Kubikazari",
     Reti_Pendant       = "Reti Pendant",
+    Anu_Torque         = "Anu Torque",
+    Canto_Necklace     = "Canto Necklace",
 
     -- Ear
     Raising_Earring    = "Raising Earring",
@@ -69,6 +88,7 @@ return {
     Loquac_Earring     = "Loquac. Earring",
     Boii_Earring       = { name = "Boii Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
     Eabani_Earring     = "Eabani Earring",
+    Andoaa_Earring     = "Andoaa Earring",
     Ishvara_Earring    = "Ishvara Earring",
     Calamitous_Earring = "Calamitous Earring",
     Bhikku_Earring     = { name = "Bhikku Earring +1", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', '"Store TP"+4', } },
@@ -100,6 +120,9 @@ return {
     Jhakri_Robe        = "Jhakri Robe +2",
     Hjarrandi_Breast   = "Hjarrandi Breast.",
     Atrophy_Tabard     = "Atrophy Tabard +4",
+    Poroggo_Fleece     = "Poroggo Fleece",
+    Leth_Sayon         = "Lethargy Sayon",
+    Vitiation_Tabard   = { name = "Vitiation Tabard", augments = { 'Enhances "Chainspell" effect', } },
 
     -- Hands
     Fili_Manchettes    = "Fili Manchettes +2",
@@ -117,6 +140,8 @@ return {
     Leyline_Gloves     = { name = "Leyline Gloves", augments = { 'Accuracy+6', 'Mag. Acc.+2', '"Mag.Atk.Bns."+6', } },
     Jhakri_Cuffs       = "Jhakri Cuffs +2",
     Atro_Gloves        = "Atro. Gloves +4",
+    Estq_Ganthrt       = "Estq. Ganthrt. +1",
+    Leth_Gantherots    = "Leth. Gantherots +1",
 
     -- Rings
     Dim_Ring_Dem       = "Dim. Ring (Dem)",
@@ -134,6 +159,10 @@ return {
     Petrov_Ring        = "Petrov Ring",
     Excelsis_Ring      = "Excelsis Ring",
     Mujin_Band         = "Mujin Band",
+    Endorsement_Ring   = "Endorsement Ring",
+    Zanhi_Ring         = "Zanhi Ring",
+    Rajas_Ring         = "Rajas Ring",
+    Epaminondass_Ring  = "Epaminondas's Ring",
 
     -- Back
     Intarabus_Cape_DT  = { name = "Intarabus's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', '"Cure" potency +10%', 'Phys. dmg. taken-2%', } },
@@ -144,6 +173,7 @@ return {
     Sucellos_Cape_STR  = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
     Sucellos_Cape_MND  = { name = "Sucellos's Cape", augments = { 'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', } },
     Solemnity_Cape     = "Solemnity Cape",
+    Samanisi_Cape      = "Samanisi Cape",
 
     -- Waist
     Olympus_Sash       = "Olympus Sash",
@@ -164,6 +194,7 @@ return {
     WN_Braccae         = "WN Braccae +1",
     Temachtiani_Pants  = "Temachtiani Pants",
     Estqr_Fuseau       = "Estqr. Fuseau +1",
+    Leth_Fuseau        = "Leth. Fuseau +1",
     Novennial_Hose     = "Novennial Hose",
     Decennial_Tights   = "Decennial Tights",
     Revelation_Brais   = "Revelation Brais",
@@ -171,6 +202,7 @@ return {
     Duelists_Tights    = "Duelist's Tights",
     Jhakri_Slops       = "Jhakri Slops +2",
     Atro_Tights        = "Atro. Tights +4",
+    Assassins_Culottes = "Assassin's Culottes",
 
     -- Feet
     Inyanga_Crackows   = "Inyan. Crackows +2",
@@ -191,11 +223,15 @@ return {
     -- Weapons
     Lembing            = "Lembing",
     Lament             = "Lament",
+    Kiikanemitsu       = "Kiikanemitsu",
 
     -- Waist
     Sroda_Belt         = "Sroda Belt",
     Null_Belt          = "Null Belt",
     Goblin_Belt        = "Goblin Belt",
+    Chaac_Belt         = "Chaac Belt",
+    Fucho_no_Obi       = "Fucho-no-Obi",
+    Acuity_Belt        = "Acuity Belt +1",
 
     -- Back
     Null_Shawl         = "Null Shawl",

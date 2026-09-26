@@ -715,10 +715,10 @@ function init_gear_sets()
         head = inv.malignance_chapeau,
         body = inv.malignance_tabard,
         hands = inv.Adhemar_A_hands,
-        legs = inv.malignance_tights,
+        legs = inv.Chasseurs_legs,
         feet = inv.malignance_boots,
         neck = inv.iskur_gorget,
-        ear1 = inv.suppanomimi, --5
+        ear1 = inv.alabaster_earring, --5
         ear2 = inv.dedition_earring,
         ring1 = inv.chirich_ring,
         ring2 = inv.eponas_ring,

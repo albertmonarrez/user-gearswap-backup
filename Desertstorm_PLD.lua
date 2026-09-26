@@ -157,7 +157,7 @@ ModeBind         = '^g' --Sets the keyboard shortcut you would like to cycle bet
 WCBind           = '^h' --Sets the keyboard shortcut you would like to activate the Weapon Cycle. CTRL+H (^h) is default.
 --    ^ = CTRL    ! = ALT    @ = WIN    # = APPS    ~ = SHIFT
 AutoMajWindow    = 60   --Time in seconds left before Majesty wears off that AutoMajesty will activate after a cure/protect.
-KeepTPThreshold  = 300  --Main/Sub slots in specific sets will not equip when TP is above this number (set to 3000 to always switch).
+KeepTPThreshold  = 400  --Main/Sub slots in specific sets will not equip when TP is above this number (set to 3000 to always switch).
 MaxHPThreshold   = 75   --If your HP% is above this number when you cure yourself, your Max HP gear set will activate.
 --Once it is activated, going below this will deactivate it.
 LowHPThreshold   = 1000 --Below this number is considered Low HP.
@@ -320,7 +320,7 @@ function get_sets()
 	sets.tank = {
 		ammo = inv.staunch_tathlum, --3 DT
 		head = inv.chevalier_head, --11 DT
-		body = inv.sakpatas_body, --10 DT
+		body = inv.sworn_platemail, --10 DT
 		hands = inv.chevalier_hands, --11 DT
 		legs = inv.chevalier_legs, --13 DT
 		feet = inv.chevalier_feet,
@@ -338,7 +338,7 @@ function get_sets()
 	sets.tank_mdt = {
 		ammo = inv.staunch_tathlum,
 		head = inv.sakpatas_helm,
-		body = inv.sakpatas_body,
+		body = inv.sworn_platemail,
 		hands = inv.sakpatas_hands,
 		legs = inv.sakpatas_legs,
 		feet = inv.sakpatas_feet,
@@ -391,10 +391,10 @@ function get_sets()
 	sets.dps = set_combine(sets.tank, {
 		ammo = inv.coiste_bodhar,
 		head = inv.hjarrandi_helm,
-		body = inv.sakpatas_body,
+		body = inv.sworn_platemail,
 		hands = inv.sakpatas_hands,
 		legs = inv.sakpatas_legs,
-		feet = inv.sakpatas_feet,
+		feet = inv.sworn_sabatons,
 		neck = inv.null_loop,
 		waist = inv.sailfi_belt,
 		left_ear = inv.alabaster_earring,
@@ -413,7 +413,8 @@ function get_sets()
 		legs = inv.chevalier_legs,
 		feet = inv.chevalier_feet,
 		neck = inv.warders_charm,
-		left_ring = "Shadow Ring",
+		left_ring = inv.murky_ring,
+		right_ring = inv.acrchon_ring,
 		back = inv.shadow_mantle
 	}
 
@@ -447,7 +448,7 @@ function get_sets()
 	-- NOTE: Main and Sub slots will only equip if your TP is under the number set as the KeepTPThreshold in the Advanced Options section.
 	sets.fast_cast = {
 		ammo = inv.sapience_orb, --2
-		head = inv.c, --14
+		head = inv.chevalier_head, --14
 		body = inv.reverence_body, --10
 		hands = inv.leyline_gloves, --5+1
 		legs = inv.enif_cosciales,
@@ -568,9 +569,9 @@ function get_sets()
 	sets.phalanx = {
 		main = inv.sakpatas_sword,
 		sub = inv.priwen,
-		head = { name = "Odyssean Helm", augments = { 'AGI+15', 'Accuracy+8', 'Phalanx +4', 'Accuracy+10 Attack+10', 'Mag. Acc.+20 "Mag.Atk.Bns."+20', } },
-		neck = inv.incanters_torque,
-		body = inv.odyssean_chest_phalanx,
+		head = inv.odyssean_helm_phalanx,
+		neck = inv.hoxne_torque,
+		body = inv.sworn_platemail,
 		hands = inv.souveran_hands,
 		legs = inv.sakpatas_legs,
 		feet = inv.souveran_feet,
@@ -590,7 +591,7 @@ function get_sets()
 		sub = inv.priwen,
 		ammo = inv.staunch_tathlum, --11 SIRD
 		head = inv.souveran_head, --20 SIRD
-		body = inv.odyssean_chest_phalanx,
+		body = inv.sworn_platemail,
 		hands = inv.souveran_hands, --10 SIRD
 		legs = inv.founders_hose, --30 SIRD
 		feet = inv.souveran_feet,
@@ -661,8 +662,8 @@ function get_sets()
 	sets.weapon_skill = {
 		ammo = inv.oshashs_treastise,
 		head = inv.nyame_helm,
-		body = inv.nyame_mail,
-		hands = inv.odyssean_gauntlets,
+		body = inv.ruwa_breastplate,
+		hands = inv.nyame_hands,
 		legs = inv.nyame_legs,
 		feet = inv.nyame_feet,
 		neck = inv.republican_medal,
