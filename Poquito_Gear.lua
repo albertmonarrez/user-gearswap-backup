@@ -18,6 +18,9 @@ return {
     sroda_tathlum      = "Sroda Tathlum",
     Hangaku_no_Yumi    = "Hangaku-no-Yumi",
     Seraphicaller      = "Seraphicaller",
+    Divinator          = "Divinator",
+    Divinator_II       = "Divinator II",
+    Malison            = "Malison",
 
     -- Sub
     Kali               = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -79,6 +82,8 @@ return {
     Reti_Pendant       = "Reti Pendant",
     Anu_Torque         = "Anu Torque",
     Canto_Necklace     = "Canto Necklace",
+    Unmoving_Collar    = "Unmoving Collar",
+    Dls_Torque         = { name = "Dls. Torque +1", augments = { 'Path: A', } },
 
     -- Ear
     Raising_Earring    = "Raising Earring",
@@ -163,6 +168,7 @@ return {
     Zanhi_Ring         = "Zanhi Ring",
     Rajas_Ring         = "Rajas Ring",
     Epaminondass_Ring  = "Epaminondas's Ring",
+    Metamor_Ring       = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
 
     -- Back
     Intarabus_Cape_DT  = { name = "Intarabus's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', '"Cure" potency +10%', 'Phys. dmg. taken-2%', } },

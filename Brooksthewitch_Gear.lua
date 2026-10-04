@@ -30,6 +30,7 @@ return {
     Divinator            = "Divinator",
     Divinator_II         = "Divinator II",
     sroda_tathlum        = "Sroda Tathlum",
+    Malison              = "Malison",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -47,6 +48,7 @@ return {
     Levante_Dagger       = "Levante Dagger",
     Pukulatmuj           = "Pukulatmuj +1",
     Vitiation_Sword      = "Vitiation Sword",
+    Forfend              = "Forfend",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -81,6 +83,9 @@ return {
     Reti_Pendant         = "Reti Pendant",
     Null_Loop            = "Null Loop",
     Canto_Necklace       = "Canto Necklace",
+    Anu_Torque           = "Anu Torque",
+    Unmoving_Collar      = "Unmoving Collar",
+    Dls_Torque           = { name = "Dls. Torque +1", augments = { 'Path: A', } },
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -106,6 +111,7 @@ return {
     Snotra_Earring       = "Snotra Earring",
     Eabani_Earring       = "Eabani Earring",
     Andoaa_Earring       = "Andoaa Earring",
+    Sanare_Earring       = "Sanare Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -174,6 +180,8 @@ return {
     Lebeche_Ring         = "Lebeche Ring",
     Zanhi_Ring           = "Zanhi Ring",
     Rajas_Ring           = "Rajas Ring",
+    Hoxne_Ring           = "Hoxne Ring",
+    Metamor_Ring         = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },

@@ -110,7 +110,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Umuthi_Hat,
-        --neck="",
+        neck = gear.Dls_Torque,
         ear1 = gear.Mimir_Earring,
         ear2 = gear.Andoaa_Earring,
         body = gear.Vitiation_Tabard,
@@ -128,6 +128,7 @@ function init_gear_sets()
         hands = gear.Atro_Gloves,
         waist = gear.Embla_Sash,
         back = gear.Sucellos_Cape_STR,
+        neck = gear.Dls_Torque
 
     })
 
@@ -153,15 +154,15 @@ function init_gear_sets()
         --range="",
         ammo = gear.Ghastly_Tathlum,
         head = gear.Viti_Chapeau,
-        neck = gear.Null_Loop,
+        neck = gear.Dls_Torque,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Snotra_Earring,
         body = gear.Atrophy_Tabard,
         hands = gear.Atro_Gloves,
-        --ring1="",
+        ring1 = gear.Metamor_Ring,
         ring2 = gear.Kishar_Ring,
         back = gear.Sucellos_Cape_STR,
-        -- waist = gear.Null_Belt,
+        waist = gear.Null_Belt,
         legs = gear.Atro_Tights,
         feet = gear.Atro_Boots,
     }
@@ -297,7 +298,7 @@ function init_gear_sets()
         --range="",
         ammo = gear.Ginsen,
         head = gear.Aya_Zucchetto,
-        neck = gear.Null_Loop,
+        neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Alabaster_Earring,
         body = gear.Ayanmo_Corazza,
@@ -463,6 +464,18 @@ function check_rings()
 end
 
 function check_moving()
+end
+
+-- //gs c enspell: Tenzen enspell build - Enspell offense mode with its weapons.
+function job_self_command(cmdParams, eventArgs)
+    if cmdParams[1] == 'enspell' then
+        local gear = require('Brooksthewitch_Gear')
+        equip({ main = gear.Vitiation_Sword, sub = gear.Levante_Dagger })
+        state.OffenseMode:set('Enspell')
+        add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
+        send_command('wait 0.3; gs c update')
+        eventArgs.handled = true
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------

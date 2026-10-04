@@ -487,6 +487,7 @@ local equipment = {
     hoxne_ring             = "Hoxne Ring",
     wardens_ring           = "Warden's Ring",
     sroda_ring             = "Sroda Ring",
+    Hetairoi_ring          = "Hetairoi Ring",
 
     --weapons
     naegling               = "Naegling",

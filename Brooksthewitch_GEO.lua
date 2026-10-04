@@ -513,7 +513,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Azimuth_Hood,
-        --neck="",
+        neck = gear.Bagua_Charm,
         --ear1="",
         --ear2="",
         --body="",
@@ -521,7 +521,7 @@ function init_gear_sets()
         --ring1="",
         --ring2="",
         back = gear.Nantosuelta_Cape_Pet,
-        --waist="",
+        waist = gear.Isa_Belt,
         --legs="",
         feet = gear.Bagua_Sandals,
     })

@@ -110,7 +110,7 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Umuthi_Hat,
-        --neck="",
+        neck = gear.Dls_Torque,
         ear1 = gear.Mimir_Earring,
         ear2 = gear.Andoaa_Earring,
         body = gear.Vitiation_Tabard,
@@ -128,7 +128,7 @@ function init_gear_sets()
         -- sub=gear.e,
         hands = gear.Atro_Gloves, -- "Enhancing Magic duration" augment
         waist = gear.Embla_Sash,
-
+        neck = gear.Dls_Torque,
     })
 
     -- Phalanx (no Phalanx-specific piece owned - falls back to base Enhancing)
@@ -153,7 +153,7 @@ function init_gear_sets()
         --range="",
         ammo = gear.Hydrocera,
         head = gear.Viti_Chapeau,
-        neck = gear.Erra_Pendant,
+        neck = gear.Dls_Torque,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Snotra_Earring,
         body = gear.Atrophy_Tabard,
@@ -481,6 +481,18 @@ function check_rings()
 end
 
 function check_moving()
+end
+
+-- //gs c enspell: Tenzen enspell build - Enspell offense mode with its weapons.
+function job_self_command(cmdParams, eventArgs)
+    if cmdParams[1] == 'enspell' then
+        local gear = require('Poquito_Gear')
+        equip({ main = gear.Vitiation_Sword, sub = gear.Levante_Dagger })
+        state.OffenseMode:set('Enspell')
+        add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
+        send_command('wait 0.3; gs c update')
+        eventArgs.handled = true
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------

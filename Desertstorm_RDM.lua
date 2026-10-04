@@ -254,6 +254,7 @@ function init_gear_sets()
 		legs = inv.vitiation_tights,
 		feet = inv.sworn_sabatons,
 		left_ring = inv.metamorph_ring,
+		right_ring = inv.Hetairoi_ring,
 		left_ear = inv.alabaster_earring,
 		right_ear = inv.suppanomimi,
 		ammo = inv.sroda_tathlum
@@ -285,10 +286,10 @@ function init_gear_sets()
 		-- legs = inv.vitiation_tights,
 		legs = inv.atrophy_tights,
 		left_ring = inv.murky_ring,
-		right_ring = inv.defending_ring,
+		right_ring = inv.Hetairoi_ring,
 		left_ear = inv.alabaster_earring,
 		right_ear = inv.suppanomimi,
-		feet = inv.malignance_boots,
+		feet = inv.sworn_sabatons,
 		ammo = inv.sroda_tathlum,
 		back = inv.RDM_DW_Cape,
 	})
@@ -576,10 +577,11 @@ function init_gear_sets()
 	local high_accuracy = set_combine(tp_set, {
 		neck = inv.null_loop,
 		hands = inv.gazu_bracelets,
-		left_ear = inv.sherida_earring,
+		left_ear = inv.alabaster_earring,
 		right_ear = inv.crepus_earring,
 		left_ring = inv.cacoethic_ring,
-		waist = inv.null_belt,
+		-- waist = inv.null_belt,
+		feet = inv.sworn_sabatons,
 		back = inv.null_shawl,
 		ammo = inv.aurgelmir_orb
 	})
@@ -942,6 +944,10 @@ function job_self_command(cmdParams, eventArgs)
 		send_command('wait 0.3; gs c equip_weapons')
 	elseif arg1 == '-weaponmode' then
 		state.WeaponMode:cycleback()
+		add_to_chat(122, 'Weapon Mode: ' .. state.WeaponMode.value)
+		send_command('wait 0.3; gs c equip_weapons')
+	elseif arg1 == 'enspell' then
+		state.WeaponMode:set('Tenzen')
 		add_to_chat(122, 'Weapon Mode: ' .. state.WeaponMode.value)
 		send_command('wait 0.3; gs c equip_weapons')
 	elseif cmdParams[1] == 'equip_weapons' then
