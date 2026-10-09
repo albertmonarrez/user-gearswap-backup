@@ -208,7 +208,7 @@ function init_gear_sets()
 		body = inv.sworn_platemail,
 		hands = inv.malignance_gloves,
 		legs = inv.malignance_tights,
-		feet = inv.malignance_boots,
+		feet = inv.sworn_sabatons,
 		neck = inv.ainia_collar,
 		waist = inv.reiki_yotai,
 		left_ear = inv.alabaster_earring,
@@ -264,12 +264,8 @@ function init_gear_sets()
 		left_ring = inv.defending_ring,
 		hands = inv.malignance_gloves,
 		head = inv.malignance_chapeau,
-		body = inv.sworn_platemail,
-		feet = inv.malignance_boots,
 		neck = inv.loricate_torque,
 		waist = inv.windbuffet_belt,
-		left_ear = inv.sherida_earring,
-		right_ear = inv.dedition_earring,
 		back = inv.RDM_DW_Cape,
 
 	}, kaja_malevolance)
@@ -640,6 +636,7 @@ function init_gear_sets()
 	sets.precast.WS['Black Halo'] = black_halo
 	sets.precast.WS['Empyreal Arrow'] = empyreal_arrow
 	sets.precast.WS['Flat Blade'] = savage_blade
+	sets.precast.WS['Circle Blade'] = savage_blade
 
 
 	-- Midcast Sets
@@ -948,6 +945,10 @@ function job_self_command(cmdParams, eventArgs)
 		send_command('wait 0.3; gs c equip_weapons')
 	elseif arg1 == 'enspell' then
 		state.WeaponMode:set('Tenzen')
+		add_to_chat(122, 'Weapon Mode: ' .. state.WeaponMode.value)
+		send_command('wait 0.3; gs c equip_weapons')
+	elseif arg1 == 'naegling' then
+		state.WeaponMode:set('Naegling+Machera')
 		add_to_chat(122, 'Weapon Mode: ' .. state.WeaponMode.value)
 		send_command('wait 0.3; gs c equip_weapons')
 	elseif cmdParams[1] == 'equip_weapons' then

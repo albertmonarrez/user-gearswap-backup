@@ -20,7 +20,6 @@ return {
     Seraphicaller      = "Seraphicaller",
     Divinator          = "Divinator",
     Divinator_II       = "Divinator II",
-    Malison            = "Malison",
 
     -- Sub
     Kali               = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -41,9 +40,13 @@ return {
     Levante_Dagger     = "Levante Dagger",
     Vitiation_Sword    = "Vitiation Sword",
     Malignance_Sword   = "Malignance Sword",
+    Forfend            = "Forfend +1",
+    Zanmato            = "Zanmato",
     Poison_Axe         = "Poison Axe",
     Sha_Wujings_Lance  = "Sha Wujing's Lance",
-    Zanmato            = "Zanmato",
+    Colibri_Scythe     = "Colibri Scythe",
+    Wind_Knife         = "Wind Knife",
+    Yagyu_Shortblade   = "Yagyu Shortblade",
 
     -- Head
     Fili_Calot         = "Fili Calot +2",
@@ -103,6 +106,7 @@ return {
     Sherida_Earring    = "Sherida Earring",
     Mimir_Earring      = "Mimir Earring",
     Snotra_Earring     = "Snotra Earring",
+    Leth_Earring       = { name = "Lethargy Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
 
     -- Body
     Fili_Hongreline    = "Fili Hongreline +2",
@@ -167,6 +171,7 @@ return {
     Endorsement_Ring   = "Endorsement Ring",
     Zanhi_Ring         = "Zanhi Ring",
     Rajas_Ring         = "Rajas Ring",
+    Hoxne_Ring         = "Hoxne Ring",
     Epaminondass_Ring  = "Epaminondas's Ring",
     Metamor_Ring       = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
 

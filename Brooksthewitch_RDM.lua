@@ -54,14 +54,14 @@ function init_gear_sets()
     ---------------------------------------- Gear Variables ----------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    local gear = require('Brooksthewitch_Gear')
+    local gear                      = require('Brooksthewitch_Gear')
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
     -- Fast Cast
-    sets.precast.FC = {
+    sets.precast.FC                 = {
         --main="",
         --sub="",
         --range="",
@@ -81,32 +81,33 @@ function init_gear_sets()
     }
 
     -- Fast Cast for spells (same as base FC for RDM)
-    sets.precast.FC['Red Mage'] = sets.precast.FC
+    sets.precast.FC['Red Mage']     = sets.precast.FC
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- JA Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
     -- Chainspell (no dedicated Chainspell-cost piece owned)
-    sets.precast.JA['Chainspell'] = {}
+    sets.precast.JA['Chainspell']   = {}
 
     -- Convert (no dedicated MP-return piece owned)
-    sets.precast.JA['Convert'] = {}
+    sets.precast.JA['Convert']      = {}
 
     -- Composure (no dedicated Composure-boosting piece owned)
-    sets.precast.JA['Composure'] = {}
+    sets.precast.JA['Composure']    = {}
 
     -- Saboteur (no dedicated enfeebling-potency hands owned)
-    sets.precast.JA['Saboteur'] = {}
+    sets.precast.JA['Saboteur']     = {}
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Enhancing Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    -- Enhancing Magic
-    sets.midcast['Enhancing Magic'] = {
+    -- Enhancing Magic skill-scaling gear - only spells whose potency actually
+    -- scales with Enhancing Magic skill (Enspells, Gain-x, Temper) want this.
+    local enhancing_skill_set       = {
         main = gear.Pukulatmuj,
-        --sub="",
+        sub = gear.Forfend,
         --range="",
         --ammo="",
         head = gear.Umuthi_Hat,
@@ -123,24 +124,55 @@ function init_gear_sets()
         --feet="",
     }
 
-    -- Enhancing duration (Stoneskin, Protect, Shell, etc.)
-    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {
+    -- Enhancing Magic (default - duration/fixed-potency spells: Protect, Shell, Blink, Stoneskin, Haste, Bar-spells, etc.)
+    -- No main/sub here - these spells don't scale with Enhancing Magic skill, so don't swap weapons for them.
+    sets.midcast['Enhancing Magic'] = {
+        --main="",
+        --sub="",
+        --range="",
+        --ammo="",
+        head = gear.Umuthi_Hat,
+        neck = gear.Dls_Torque,
+        ear1 = gear.Mimir_Earring,
+        ear2 = gear.Andoaa_Earring,
+        body = gear.Vitiation_Tabard,
         hands = gear.Atro_Gloves,
-        waist = gear.Embla_Sash,
+        --ring1="",
+        --ring2="",
         back = gear.Sucellos_Cape_STR,
-        neck = gear.Dls_Torque
+        waist = gear.Embla_Sash,
+        legs = gear.Atro_Tights,
+        --feet="",
+    }
 
-    })
+    sets.midcast.EnhancingDuration  = sets.midcast['Enhancing Magic']
 
     -- Phalanx
-    sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+    sets.midcast['Phalanx']         = set_combine(sets.midcast['Enhancing Magic'], {
     })
 
     -- Refresh (self)
-    sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
+    sets.midcast['Refresh']         = set_combine(sets.midcast.EnhancingDuration, {
         body = gear.Atrophy_Tabard,
         legs = gear.Leth_Fuseau,
     })
+
+    -- Enspells and stat/attack-boost spells scale potency with Enhancing Magic skill
+    sets.midcast['Enfire']          = enhancing_skill_set
+    sets.midcast['Enblizzard']      = enhancing_skill_set
+    sets.midcast['Enaero']          = enhancing_skill_set
+    sets.midcast['Enstone']         = enhancing_skill_set
+    sets.midcast['Enthunder']       = enhancing_skill_set
+    sets.midcast['Enwater']         = enhancing_skill_set
+    sets.midcast['Gain-STR']        = enhancing_skill_set
+    sets.midcast['Gain-DEX']        = enhancing_skill_set
+    sets.midcast['Gain-VIT']        = enhancing_skill_set
+    sets.midcast['Gain-AGI']        = enhancing_skill_set
+    sets.midcast['Gain-INT']        = enhancing_skill_set
+    sets.midcast['Gain-MND']        = enhancing_skill_set
+    sets.midcast['Gain-CHR']        = enhancing_skill_set
+    sets.midcast['Temper']          = enhancing_skill_set
+    sets.midcast['Temper II']       = enhancing_skill_set
 
 
     ------------------------------------------------------------------------------------------------
@@ -169,6 +201,13 @@ function init_gear_sets()
 
     -- Enfeebling with Saboteur active (no Saboteur-specific piece owned)
     sets.midcast['Enfeebling Magic'].Saboteur = set_combine(sets.midcast['Enfeebling Magic'], {})
+
+    -- Inundation (Treasure Hunter) - no Hoxne Ring owned, so ring2 stays as-is
+    sets.midcast['Inundation'] = set_combine(sets.midcast['Enfeebling Magic'], {
+        hands = gear.Merl_Dastanas_TH,
+        waist = gear.Chaac_Belt,
+        feet = gear.Merl_Crackows_TH,
+    })
 
 
     ------------------------------------------------------------------------------------------------
@@ -300,7 +339,7 @@ function init_gear_sets()
         head = gear.Aya_Zucchetto,
         neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
-        ear2 = gear.Alabaster_Earring,
+        ear2 = gear.Sherida_Earring,
         body = gear.Ayanmo_Corazza,
         hands = gear.Bunzi_Gloves,
         ring1 = gear.Murky_Ring,
@@ -357,20 +396,21 @@ function init_gear_sets()
 
     -- Sanguine Blade: Magical (INT:50%, dark)
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
-        ammo = gear.Ghastly_Tathlum,
+        ammo = gear.sroda_tathlum,
         head = gear.Jhakri_Coronal,
         ear1 = gear.Moonshade_Earring,
         --ear2="",
         body = gear.Egbesu_Frock,
         hands = gear.Jhakri_Cuffs,
-        ring1 = gear.Dingir_Ring,
-        --ring2="",
-        back = gear.Nantosuelta_Cape_MAB,
+        ring1 = gear.Freke_Ring,
+        ring2 = gear.Jhakri_Ring,
+        back = gear.Sucellos_Cape_STR,
         --waist="",
         legs = gear.Jhakri_Slops,
         feet = gear.Jhakri_Pigaches,
     })
     sets.precast.WS['Seraph Blade'] = sets.precast.WS['Sanguine Blade']
+    sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Sanguine Blade']
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -467,11 +507,27 @@ function check_moving()
 end
 
 -- //gs c enspell: Tenzen enspell build - Enspell offense mode with its weapons.
+-- //gs c naegling: physical melee build - Normal offense mode with its weapons.
+-- //gs c cleave: Aeolian Edge cleave build - dagger main for the AoE weaponskill.
 function job_self_command(cmdParams, eventArgs)
     if cmdParams[1] == 'enspell' then
         local gear = require('Brooksthewitch_Gear')
         equip({ main = gear.Vitiation_Sword, sub = gear.Levante_Dagger })
         state.OffenseMode:set('Enspell')
+        add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
+        send_command('wait 0.3; gs c update')
+        eventArgs.handled = true
+    elseif cmdParams[1] == 'cleave' then
+        local gear = require('Brooksthewitch_Gear')
+        equip({ main = gear.Levante_Dagger, sub = gear.Bunzi_Rod })
+        state.OffenseMode:set('Normal')
+        add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
+        send_command('wait 0.3; gs c update')
+        eventArgs.handled = true
+    elseif cmdParams[1] == 'naegling' then
+        local gear = require('Brooksthewitch_Gear')
+        equip({ main = gear.Kaja_Sword, sub = gear.Levante_Dagger })
+        state.OffenseMode:set('Normal')
         add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
         send_command('wait 0.3; gs c update')
         eventArgs.handled = true

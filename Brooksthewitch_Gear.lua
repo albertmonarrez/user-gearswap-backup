@@ -15,6 +15,7 @@ return {
     Poison_Axe           = "Poison Axe",
     Sha_Wujings_Lance    = "Sha Wujing's Lance",
     Zanmato              = "Zanmato",
+    Colibri_Scythe       = "Colibri Scythe",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -48,7 +49,9 @@ return {
     Levante_Dagger       = "Levante Dagger",
     Pukulatmuj           = "Pukulatmuj +1",
     Vitiation_Sword      = "Vitiation Sword",
-    Forfend              = "Forfend",
+    Forfend              = "Forfend +1",
+    Wind_Knife           = "Wind Knife",
+    Yagyu_Shortblade     = "Yagyu Shortblade",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -112,6 +115,7 @@ return {
     Eabani_Earring       = "Eabani Earring",
     Andoaa_Earring       = "Andoaa Earring",
     Sanare_Earring       = "Sanare Earring",
+    Sherida_Earring      = "Sherida Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -146,6 +150,7 @@ return {
     Aya_Manopolas        = "Aya. Manopolas +2",
     -- Vanya_Cuffs          = "Vanya Cuffs",
     Merl_Dastanas        = "Merlinic Dastanas",
+    Merl_Dastanas_TH     = { name = "Merlinic Dastanas", augments = { 'Pet: Haste+1', '"Dual Wield"+1', '"Treasure Hunter"+2', 'Mag. Acc.+6 "Mag.Atk.Bns."+6', } },
     MG_Gloves            = "MG Gloves +1",
     Azimuth_Gloves       = "Azimuth Gloves +2",
     Leyline_Gloves       = { name = "Leyline Gloves", augments = { 'Accuracy+6', 'Mag. Acc.+2', '"Mag.Atk.Bns."+6', } },
@@ -180,7 +185,6 @@ return {
     Lebeche_Ring         = "Lebeche Ring",
     Zanhi_Ring           = "Zanhi Ring",
     Rajas_Ring           = "Rajas Ring",
-    Hoxne_Ring           = "Hoxne Ring",
     Metamor_Ring         = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
 
     -- Back
@@ -226,6 +230,7 @@ return {
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
     Merl_Crackows_Pet    = { name = "Merlinic Crackows", augments = { 'Pet: Attack+21 Pet: Rng.Atk.+21', 'INT+3', '"Refresh"+1', } },
+    Merl_Crackows_TH     = { name = "Merlinic Crackows", augments = { 'AGI+11', 'INT+7', '"Treasure Hunter"+2', 'Mag. Acc.+7 "Mag.Atk.Bns."+7', } },
     Bagua_Sandals        = { name = "Bagua Sandals +4", augments = { 'Enhances "Radial Arcana" effect', } },
     Vanya_Clogs          = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Sandals     = "Geo. Sandals +4",
