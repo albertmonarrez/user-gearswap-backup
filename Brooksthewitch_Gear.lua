@@ -52,6 +52,7 @@ return {
     Forfend              = "Forfend +1",
     Wind_Knife           = "Wind Knife",
     Yagyu_Shortblade     = "Yagyu Shortblade",
+    Nodal_Wand           = "Nodal Wand",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -72,6 +73,7 @@ return {
     Umuthi_Hat           = "Umuthi Hat",
     Leth_Chappel         = "Lethargy Chappel",
     Sukeroku_Hachi       = "Sukeroku Hachi.",
+    Adorned_Helm         = "Adorned Helm",
 
     -- Neck
     Bagua_Charm          = { name = "Bagua Charm +2", augments = { 'Path: A', } },
@@ -141,6 +143,7 @@ return {
     Leth_Sayon           = "Lethargy Sayon",
     Vitiation_Tabard     = { name = "Vitiation Tabard", augments = { 'Enhances "Chainspell" effect', } },
     Abyss_Cuirass        = "Abyss Cuirass",
+    Malignance_Tabard    = "Malignance Tabard",
 
     -- Hands
     Bagua_Mitaines       = "Bagua Mitaines +4",

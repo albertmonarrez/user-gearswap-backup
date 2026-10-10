@@ -342,7 +342,7 @@ function init_gear_sets()
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
         body = gear.Ayanmo_Corazza,
-        hands = gear.Bunzi_Gloves,
+        hands = gear.Malignance_Gloves,
         ring1 = gear.Rajas_Ring,
         ring2 = gear.Petrov_Ring,
         back = gear.Null_Shawl,
