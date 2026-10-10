@@ -223,7 +223,7 @@ function init_gear_sets()
         head = gear.Jhakri_Coronal,
         neck = gear.Mizu_Kubikazari,
         ear1 = gear.Alabaster_Earring,
-        -- ear2 = gear.Arbatel_Earring,
+        ear2 = gear.Malignance_Earring,
         body = gear.Jhakri_Robe,
         hands = gear.Jhakri_Cuffs,
         ring1 = gear.Freke_Ring,
@@ -308,7 +308,7 @@ function init_gear_sets()
         head = gear.Viti_Chapeau,
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Friomisi_Earring,
+        ear2 = gear.Malignance_Earring,
         body = gear.Atrophy_Tabard,
         hands = gear.Bunzi_Gloves,
         ring1 = gear.Murky_Ring,
@@ -316,7 +316,7 @@ function init_gear_sets()
         back = gear.Solemnity_Cape,
         waist = gear.Null_Belt,
         legs = gear.MGF_Chausses,
-        feet = gear.MGF_Ledelsens,
+        feet = gear.Malignance_Boots,
     }
 
     -- Idle DT
@@ -347,7 +347,7 @@ function init_gear_sets()
         --back="",
         waist = gear.Sailfi_Belt,
         legs = gear.Jhakri_Slops,
-        feet = gear.Battlecast_Gaiters,
+        feet = gear.Malignance_Boots,
     }
 
     -- Accuracy focus (no dedicated accuracy piece owned - falls back to base engaged)
@@ -355,7 +355,6 @@ function init_gear_sets()
         head = gear.Umuthi_Hat,
         hands = gear.Aya_Manopolas,
         legs = gear.Atro_Tights,
-        feet = gear.Atro_Boots,
         ear1 = gear.Eabani_Earring,
         ring2 = gear.Hetairoi_Ring,
         ammo = gear.sroda_tathlum,

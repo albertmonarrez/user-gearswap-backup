@@ -341,7 +341,7 @@ function init_gear_sets()
         head = gear.Azimuth_Hood,
         neck = gear.Mizu_Kubikazari,
         ear1 = gear.Friomisi_Earring,
-        ear2 = gear.Azimuth_Earring,
+        ear2 = gear.Malignance_Earring,
         body = gear.Azimuth_Coat,
         hands = gear.Bagua_Mitaines,
         ring1 = gear.Freke_Ring,
