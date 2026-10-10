@@ -130,7 +130,7 @@ return {
     Odyss_Chestplate     = "Odyss. Chestplate",
     Councilor_Garb       = "Councilor's Garb",
     MG_Bodice            = "MG Bodice +1",
-    Azimuth_Coat         = "Azimuth Coat +2",
+    Azimuth_Coat         = "Azimuth Coat +3",
     Atrophy_Tabard       = "Atrophy Tabard +4",
     Temachtiani_Shirt    = "Temachtiani Shirt",
     Novennial_Dress      = "Novennial Dress",
@@ -228,7 +228,7 @@ return {
     Wyrm_Brais           = "Wyrm Brais",
     Estqr_Fuseau         = "Estqr. Fuseau +1",
     Aya_Cosciales        = "Aya. Cosciales +2",
-    Azimuth_Tights       = "Azimuth Tights +2",
+    Azimuth_Tights       = "Azimuth Tights +3",
     Atro_Tights          = "Atro. Tights +4",
 
     -- Feet

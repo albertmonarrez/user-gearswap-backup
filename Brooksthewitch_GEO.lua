@@ -456,7 +456,7 @@ function init_gear_sets()
         neck = gear.Loricate_torque,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Azimuth_Earring,
-        body = gear.Jhakri_Robe,
+        body = gear.Azimuth_Coat,
         hands = gear.Bagua_Mitaines,
         ring1 = gear.Murky_Ring,
         ring2 = gear.Shneddick_Ring,
