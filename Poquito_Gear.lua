@@ -109,6 +109,7 @@ return {
     Sherida_Earring    = "Sherida Earring",
     Mimir_Earring      = "Mimir Earring",
     Snotra_Earring     = "Snotra Earring",
+    Malignance_Earring = "Malignance Earring",
     Leth_Earring       = { name = "Lethargy Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
 
     -- Body
@@ -135,6 +136,7 @@ return {
     Poroggo_Fleece     = "Poroggo Fleece",
     Leth_Sayon         = "Lethargy Sayon",
     Vitiation_Tabard   = { name = "Vitiation Tabard", augments = { 'Enhances "Chainspell" effect', } },
+    Malignance_Tabard  = "Malignance Tabard",
 
     -- Hands
     Fili_Manchettes    = "Fili Manchettes +2",
@@ -199,6 +201,7 @@ return {
     Harfners_Sash      = "Harfner's Sash",
 
     -- Legs
+    Malignance_Tights  = "Malignance Tights",
     Fili_Rhingrave     = "Fili Rhingrave +2",
     Inyanga_Shalwar    = "Inyanga Shalwar +2",
     Aya_Cosciales      = "Aya. Cosciales +2",

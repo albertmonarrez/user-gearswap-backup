@@ -342,13 +342,13 @@ function init_gear_sets()
         neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
-        body = gear.Ayanmo_Corazza,
+        body = gear.Malignance_Tabard,
         hands = gear.Malignance_Gloves,
         ring1 = gear.Rajas_Ring,
         ring2 = gear.Petrov_Ring,
         back = gear.Null_Shawl,
         waist = gear.Sailfi_Belt,
-        legs = gear.Jhakri_Slops,
+        legs = gear.Malignance_Tights,
         feet = gear.Malignance_Boots,
     }
 

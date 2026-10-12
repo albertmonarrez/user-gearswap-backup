@@ -341,12 +341,12 @@ function init_gear_sets()
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
         body = gear.Malignance_Tabard,
-        hands = gear.Bunzi_Gloves,
+        hands = gear.Malignance_Gloves,
         ring1 = gear.Murky_Ring,
         ring2 = gear.Rajas_Ring,
         --back="",
         waist = gear.Sailfi_Belt,
-        legs = gear.Jhakri_Slops,
+        legs = gear.Malignance_Tights,
         feet = gear.Malignance_Boots,
     }
 
