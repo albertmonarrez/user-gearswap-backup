@@ -205,6 +205,7 @@ function init_gear_sets()
     sets.midcast['Inundation'] = set_combine(sets.midcast['Enfeebling Magic'], {
         waist = gear.Chaac_Belt,
         ring2 = gear.Hoxne_Ring,
+        hands = gear.merlinic_hands_treasure
     })
 
 

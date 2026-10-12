@@ -155,6 +155,7 @@ return {
     Atro_Gloves        = "Atro. Gloves +4",
     Estq_Ganthrt       = "Estq. Ganthrt. +1",
     Leth_Gantherots    = "Leth. Gantherots +1",
+    merlinic_hands_treasure = { name="Merlinic Dastanas", augments={'Pet: DEX+5','Rng.Acc.+30','"Treasure Hunter"+1',}},
 
     -- Rings
     Dim_Ring_Dem       = "Dim. Ring (Dem)",
