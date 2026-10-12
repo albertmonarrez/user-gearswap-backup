@@ -69,6 +69,7 @@ return {
     Umuthi_Hat         = "Umuthi Hat",
     Leth_Chappel       = "Lethargy Chappel",
     Sukeroku_Hachi     = "Sukeroku Hachi.",
+    Malignance_Chapeau = "Malignance Chapeau",
     Behemoth_Masque    = "Behemoth Masque",
     Goblin_Masque      = "Goblin Masque",
     GMoogle_Masque     = "G. Moogle Masque",
@@ -219,6 +220,7 @@ return {
     Assassins_Culottes = "Assassin's Culottes",
 
     -- Feet
+    Malignance_Boots   = "Malignance Boots",
     Inyanga_Crackows   = "Inyan. Crackows +2",
     Aya_Gambieras      = "Aya. Gambieras +2",
     Vanya_Clogs        = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },

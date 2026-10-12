@@ -337,7 +337,7 @@ function init_gear_sets()
         -- main = gear.Vitiation_Sword,
         -- sub = gear.Choco_Shield,
         ammo = gear.Ginsen,
-        head = gear.Aya_Zucchetto,
+        head = gear.Malignance_Chapeau,
         neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
@@ -348,7 +348,7 @@ function init_gear_sets()
         back = gear.Null_Shawl,
         waist = gear.Sailfi_Belt,
         legs = gear.Jhakri_Slops,
-        feet = gear.Battlecast_gaiters,
+        feet = gear.Malignance_Boots,
     }
 
     -- Accuracy focus (no dedicated accuracy piece owned - falls back to base engaged)
@@ -356,7 +356,7 @@ function init_gear_sets()
         head = gear.Umuthi_Hat,
         hands = gear.Aya_Manopolas,
         legs = gear.Atro_Tights,
-        feet = gear.Atro_Boots,
+        feet = gear.Malignance_Boots,
         ear1 = gear.Eabani_Earring,
         ammo = gear.sroda_tathlum,
     })

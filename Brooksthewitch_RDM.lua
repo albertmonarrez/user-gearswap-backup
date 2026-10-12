@@ -336,7 +336,7 @@ function init_gear_sets()
         -- sub = gear.Daybreak,
         --range="",
         ammo = gear.Ginsen,
-        head = gear.Aya_Zucchetto,
+        head = gear.Malignance_Chapeau,
         neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
         ear2 = gear.Sherida_Earring,
@@ -354,6 +354,7 @@ function init_gear_sets()
     sets.engaged.Enspell = set_combine(sets.engaged, {
         head = gear.Umuthi_Hat,
         hands = gear.Aya_Manopolas,
+        neck = gear.Null_Loop,
         legs = gear.Atro_Tights,
         ear1 = gear.Eabani_Earring,
         ring2 = gear.Hetairoi_Ring,

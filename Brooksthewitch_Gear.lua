@@ -73,6 +73,7 @@ return {
     Umuthi_Hat           = "Umuthi Hat",
     Leth_Chappel         = "Lethargy Chappel",
     Sukeroku_Hachi       = "Sukeroku Hachi.",
+    Malignance_Chapeau   = "Malignance Chapeau",
     Adorned_Helm         = "Adorned Helm",
 
     -- Neck
