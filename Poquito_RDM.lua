@@ -222,7 +222,7 @@ function init_gear_sets()
         head = gear.Jhakri_Coronal,
         neck = gear.Mizu_Kubikazari,
         ear1 = gear.Alabaster_Earring,
-        ear2 = gear.Arbatel_Earring,
+        ear2 = gear.Malignance_Earring,
         body = gear.Jhakri_Robe,
         hands = gear.Jhakri_Cuffs,
         --ring1="",
@@ -311,13 +311,13 @@ function init_gear_sets()
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Sherida_Earring,
         body = gear.Atrophy_Tabard,
-        hands = gear.Bunzi_Gloves,
+        hands = gear.Malignance_Gloves,
         ring1 = gear.Murky_Ring,
         ring2 = gear.Shneddick_Ring,
         back = gear.Sucellos_Cape_MND,
         waist = gear.Null_Belt,
-        legs = gear.WN_Braccae,
-        feet = gear.WN_Clomps,
+        legs = gear.Malignance_Tights,
+        feet = gear.Malignance_Boots,
     }
 
     -- Idle DT

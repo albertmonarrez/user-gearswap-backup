@@ -449,7 +449,7 @@ function init_gear_sets()
 
     -- Default idle
     sets.idle = {
-        --main="",
+        -- main = gear.Idris,
         sub = gear.Genmei_Shield,
         range = gear.Dunna,
         head = gear.Azimuth_Hood,
@@ -508,7 +508,7 @@ function init_gear_sets()
 
     -- Idle with Luopan
     sets.idle.Pet = set_combine(sets.idle, {
-        --main="",
+        main = gear.idris,
         --sub="",
         --range="",
         --ammo="",
@@ -538,13 +538,13 @@ function init_gear_sets()
         --range="",
         --ammo="",
         head = gear.Jhakri_Coronal,
-        neck = gear.Loricate_torque,
+        neck = gear.Asperity_Necklace,
         ear1 = gear.Alabaster_Earring,
         ear2 = gear.Brutal_Earring,
         body = gear.MG_Bodice,
         hands = gear.MG_Gloves,
         ring1 = gear.Murky_Ring,
-        --ring2="",
+        ring2 = gear.Rajas_Ring,
         --back="",
         --waist="",
         legs = gear.Jhakri_Slops,
@@ -578,7 +578,7 @@ function init_gear_sets()
 
     -- Geomancy base
     sets.midcast['Geomancy'] = {
-        --main="",
+        main = gear.idris,
         --sub="",
         range = gear.Dunna,
         ammo = "",
@@ -618,7 +618,7 @@ function init_gear_sets()
 
     -- Indi- spells
     sets.midcast.Indi = {
-        --main="",
+        main = gear.idris,
         --sub="",
         --range="",
         --ammo="",

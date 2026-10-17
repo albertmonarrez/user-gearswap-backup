@@ -540,7 +540,7 @@ function get_sets()
         ammo = inv.staunch_tathlum,
         head = inv.wakido_kabuto,
         hands = inv.nyame_hands,
-        feet = "Danzo Sune-ate",
+        feet = inv.danzo_feet,
         neck = inv.null_loop,
         waist = inv.sailfi_belt,
         left_ring = inv.murky_ring,

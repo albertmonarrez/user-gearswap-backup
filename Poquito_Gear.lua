@@ -109,6 +109,8 @@ return {
     Sherida_Earring    = "Sherida Earring",
     Mimir_Earring      = "Mimir Earring",
     Snotra_Earring     = "Snotra Earring",
+    Lifestorm_Earring  = "Lifestorm Earring",
+    Kuwunga_Earring    = "Kuwunga Earring",
     Malignance_Earring = "Malignance Earring",
     Leth_Earring       = { name = "Lethargy Earring", augments = { 'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6', } },
 
@@ -192,6 +194,8 @@ return {
     Sucellos_Cape_MND  = { name = "Sucellos's Cape", augments = { 'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', } },
     Solemnity_Cape     = "Solemnity Cape",
     Samanisi_Cape      = "Samanisi Cape",
+    Bane_Cape          = "Bane Cape",
+    Takaha_Mantle      = "Takaha Mantle",
 
     -- Waist
     Olympus_Sash       = "Olympus Sash",
@@ -199,6 +203,7 @@ return {
     Embla_Sash         = "Embla Sash",
     Sailfi_Belt        = "Sailfi Belt +1",
     Harfners_Sash      = "Harfner's Sash",
+    Isa_Belt           = "Isa Belt",
 
     -- Legs
     Malignance_Tights  = "Malignance Tights",

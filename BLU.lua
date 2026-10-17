@@ -434,7 +434,7 @@ function init_gear_sets()
         hands = inv.gletis_hands,
         left_ear = inv.alabaster_earring,
         legs = { name = "Carmine Cuisses +1", augments = { 'Accuracy+20', 'Attack+12', '"Dual Wield"+6', } },
-        feet = inv.gletis_feet,
+        feet = inv.sworn_sabatons,
     })
     local idle_town = idle_set
 

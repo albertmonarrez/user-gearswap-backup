@@ -32,6 +32,7 @@ return {
     Divinator_II         = "Divinator II",
     sroda_tathlum        = "Sroda Tathlum",
     Malison              = "Malison",
+    Inlamvuyeso          = "Inlamvuyeso",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -53,6 +54,8 @@ return {
     Wind_Knife           = "Wind Knife",
     Yagyu_Shortblade     = "Yagyu Shortblade",
     Nodal_Wand           = "Nodal Wand",
+    Naegling             = "Naegling",
+    Idris                = "Idris",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -73,6 +76,7 @@ return {
     Umuthi_Hat           = "Umuthi Hat",
     Leth_Chappel         = "Lethargy Chappel",
     Sukeroku_Hachi       = "Sukeroku Hachi.",
+    Manibozho_Beret      = "Manibozho Beret",
     Malignance_Chapeau   = "Malignance Chapeau",
     Adorned_Helm         = "Adorned Helm",
 
@@ -92,6 +96,7 @@ return {
     Anu_Torque           = "Anu Torque",
     Unmoving_Collar      = "Unmoving Collar",
     Dls_Torque           = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+    Asperity_Necklace    = "Asperity Necklace",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -116,6 +121,7 @@ return {
     Malignance_Earring   = "Malignance Earring",
     Mimir_Earring        = "Mimir Earring",
     Snotra_Earring       = "Snotra Earring",
+    Lifestorm_Earring    = "Lifestorm Earring",
     Eabani_Earring       = "Eabani Earring",
     Andoaa_Earring       = "Andoaa Earring",
     Sanare_Earring       = "Sanare Earring",
@@ -162,6 +168,7 @@ return {
     Temachtiani_Gloves   = "Temachtiani Gloves",
     Councilor_Cuffs      = "Councilor's Cuffs",
     Bards_Cuffs          = "Bard's Cuffs",
+    Umuthi_Gloves        = "Umuthi Gloves",
     Duelists_Gloves      = "Duelist's Gloves",
     Agwus_Gages          = "Agwu's Gages",
     Atro_Gloves          = "Atro. Gloves +4",
@@ -195,13 +202,16 @@ return {
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
-    Nantosuelta_Cape_Pet = { name = "Nantosuelta's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', 'Mag. Evasion+3', 'Pet: "Regen"+10', 'Damage taken-5%', } },
+    Nantosuelta_Cape_Pet = { name = "Nantosuelta's Cape", augments = { 'HP+30', 'Eva.+10 /Mag. Eva.+10', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
     Nantosuelta_Cape_MAB = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10', } },
     Nantosuelta_Cape     = "Nantosuelta's Cape",
     Nexus_Cape           = "Nexus Cape",
     Alabaster_Mantle     = "Alabaster Mantle",
     Solemnity_Cape       = "Solemnity Cape",
-    Sucellos_Cape_STR    = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+8', 'Weapon skill damage +10%', } },
+    Sucellos_Cape_STR    = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
+    Sucellos_Cape_TP     = { name = "Sucellos's Cape", augments = { 'Accuracy+20 Attack+20', 'Accuracy+5', '"Store TP"+10', } },
+    Sucellos_Cape_MND    = { name = "Sucellos's Cape", augments = { 'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +6', 'Weapon skill damage +10%', } },
+    Samanisi_Cape        = "Samanisi Cape",
 
     -- Waist
     Olympus_Sash         = "Olympus Sash",
@@ -213,6 +223,7 @@ return {
     Acuity_Belt          = "Acuity Belt +1",
     Chaac_Belt           = "Chaac Belt",
     Fucho_no_Obi         = "Fucho-no-Obi",
+    Zorans_Belt          = "Zoran's Belt",
 
     -- Legs
     Bagua_Pants          = { name = "Bagua Pants +4", augments = { 'Enhances "Mending Halation" effect', } },

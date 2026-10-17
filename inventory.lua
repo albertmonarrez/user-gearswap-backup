@@ -105,6 +105,8 @@ local equipment = {
     kasuga_legs                  = "Kasuga Haidate +3",
     kasuga_feet                  = "Kas. Sune-Ate +3",
 
+    danzo_feet                   = "Danzo Sune-Ate",
+
     gletis_mask                  = "Gleti's Mask",
     gletis_body                  = "Gleti's Cuirass",
     gletis_hands                 = "Gleti's Gauntlets",
