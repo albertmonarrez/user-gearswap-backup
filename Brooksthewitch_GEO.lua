@@ -345,7 +345,7 @@ function init_gear_sets()
         body = gear.Azimuth_Coat,
         hands = gear.Bagua_Mitaines,
         ring1 = gear.Freke_Ring,
-        ring2 = gear.Jhakri_Ring,
+        ring2 = gear.Metamor_Ring,
         back = gear.Nantosuelta_Cape_MAB,
         waist = gear.Acuity_Belt,
         legs = gear.Azimuth_Tights,
@@ -396,6 +396,9 @@ function init_gear_sets()
         legs = gear.Vanya_Slops,
         feet = gear.Vanya_Clogs,
     }
+    sets.midcast.Curaga = sets.midcast.Cure
+
+
 
 
     ------------------------------------------------------------------------------------------------
@@ -449,7 +452,7 @@ function init_gear_sets()
 
     -- Default idle
     sets.idle = {
-        -- main = gear.Idris,
+        main = gear.Idris,
         sub = gear.Genmei_Shield,
         range = gear.Dunna,
         head = gear.Azimuth_Hood,

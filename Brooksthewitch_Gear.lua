@@ -33,6 +33,8 @@ return {
     sroda_tathlum        = "Sroda Tathlum",
     Malison              = "Malison",
     Inlamvuyeso          = "Inlamvuyeso",
+    Compensator          = "Compensator",
+    Coiste_Bodhar        = "Coiste Bodhar",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -44,7 +46,6 @@ return {
     Culminus             = "Culminus",
     Genmei_Shield        = "Genmei Shield",
     Koboto               = "Koboto",
-    Kaja_Sword           = "Kaja Sword",
     Nusku_Shield         = "Nusku Shield",
     Bolelabunga          = "Bolelabunga",
     Levante_Dagger       = "Levante Dagger",
@@ -53,7 +54,6 @@ return {
     Forfend              = "Forfend +1",
     Wind_Knife           = "Wind Knife",
     Yagyu_Shortblade     = "Yagyu Shortblade",
-    Nodal_Wand           = "Nodal Wand",
     Naegling             = "Naegling",
     Idris                = "Idris",
 
@@ -176,7 +176,7 @@ return {
     Bunzi_Gloves         = "Bunzi's Gloves",
     Estq_Ganthrt         = "Estq. Ganthrt. +1",
     Viti_Gloves          = { name = "Viti. Gloves +1", augments = { 'Enhancing Magic duration', } },
-    Leth_Gantherots      = "Leth. Gantherots +1",
+    Leth_Gantherots      = "Leth. Gantherots +2",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -193,6 +193,7 @@ return {
     Barataria_Ring       = "Barataria Ring",
     Mujin_Band           = "Mujin Band",
     Freke_Ring           = "Freke Ring",
+    Wardens_Ring         = "Warden's Ring",
     Kishar_Ring          = "Kishar Ring",
     Endorsement_Ring     = "Endorsement Ring",
     Lebeche_Ring         = "Lebeche Ring",
@@ -209,7 +210,7 @@ return {
     Alabaster_Mantle     = "Alabaster Mantle",
     Solemnity_Cape       = "Solemnity Cape",
     Sucellos_Cape_STR    = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
-    Sucellos_Cape_TP     = { name = "Sucellos's Cape", augments = { 'Accuracy+20 Attack+20', 'Accuracy+5', '"Store TP"+10', } },
+    Sucellos_Cape_TP     = { name = "Sucellos's Cape", augments = { 'DEX+10', 'Accuracy+20 Attack+20', 'Accuracy+5', '"Store TP"+10', } },
     Sucellos_Cape_MND    = { name = "Sucellos's Cape", augments = { 'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +6', 'Weapon skill damage +10%', } },
     Samanisi_Cape        = "Samanisi Cape",
 
@@ -230,7 +231,7 @@ return {
     Vanya_Slops          = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Pants       = "Geo. Pants +1",
     Jhakri_Slops         = "Jhakri Slops +2",
-    Leth_Fuseau          = "Leth. Fuseau +1",
+    Leth_Fuseau          = "Leth. Fuseau +2",
     Malignance_Tights    = "Malignance Tights",
     Hercl_Trousers       = "Herculean Trousers",
     Assid_Pants          = "Assid. Pants +1",

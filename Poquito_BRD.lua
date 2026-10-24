@@ -562,10 +562,11 @@ function init_gear_sets()
     sets.midcast.Lullaby = set_combine(sets.midcast.Singing, {
         head = gear.Brioso_Roundlet,
         body = gear.Brioso_Just,
-        hands = gear.Inyanga_Dastanas,
+        hands = gear.Brioso_Cuffs,
         waist = gear.Harfners_Sash,
         legs = gear.Inyanga_Shalwar,
         feet = gear.Brioso_Slippers,
+        back = gear.Null_Shawl,
     })
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Healing Sets ------------------------------------------
@@ -604,7 +605,8 @@ function init_gear_sets()
         body = gear.Bihu_Jstcorps,
         --hands="",
         --ring1="",
-        --ring2="",
+        range = gear.Linos,
+        ring2 = gear.Epaminondass_Ring,
         back = gear.Intarabus_Cape_WS,
         waist = gear.Sailfi_Belt,
         --legs="",

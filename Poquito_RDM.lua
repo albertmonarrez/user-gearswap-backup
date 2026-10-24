@@ -142,7 +142,7 @@ function init_gear_sets()
         back = gear.Sucellos_Cape_MND,
         waist = gear.Embla_Sash,
         legs = gear.Atro_Tights,
-        --feet="",
+        feet = gear.Leth_Houseaux,
     }
 
     sets.midcast.EnhancingDuration  = sets.midcast['Enhancing Magic']
@@ -230,11 +230,13 @@ function init_gear_sets()
         -- back = gear.Nexus_Cape,
         --waist="",
         legs = gear.Jhakri_Slops,
-        feet = gear.Jhakri_Pigaches,
+        feet = gear.Leth_Houseaux,
     }
 
     -- Magic Burst
     sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
+        main = gear.Bunzi_Rod,
+        sub = gear.Daybreak,
         ring2 = gear.Mujin_Band,
         legs = gear.Egbesu_Slops,
     })
@@ -292,7 +294,8 @@ function init_gear_sets()
         legs = gear.Leth_Fuseau,
         waist = gear.Embla_Sash,
         ring2 = gear.Kishar_Ring,
-        back = gear.Sucellos_Cape_STR
+        back = gear.Sucellos_Cape_STR,
+        feet = gear.Leth_Houseaux,
     }
 
 
@@ -337,7 +340,7 @@ function init_gear_sets()
     sets.engaged = {
         -- main = gear.Vitiation_Sword,
         -- sub = gear.Choco_Shield,
-        ammo = gear.Ginsen,
+        ammo = gear.Coiste_Bodhar,
         head = gear.Malignance_Chapeau,
         neck = gear.Anu_Torque,
         ear1 = gear.Brutal_Earring,
@@ -399,7 +402,7 @@ function init_gear_sets()
         back = gear.Sucellos_Cape_STR,
         waist = gear.Sailfi_Belt,
         legs = gear.Atro_Tights,
-        feet = gear.Atro_Boots,
+        feet = gear.Leth_Houseaux,
     }
 
     -- Savage Blade: Physical (STR:50%, MND:50%)
@@ -413,7 +416,7 @@ function init_gear_sets()
 
     -- Sanguine Blade: Magical (INT:50%, dark)
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
-        ammo = gear.Ghastly_Tathlum,
+        ammo = gear.sroda_tathlum,
         head = gear.Jhakri_Coronal,
         ear1 = gear.Moonshade_Earring,
         --ear2="",
@@ -424,7 +427,7 @@ function init_gear_sets()
         back = gear.Sucellos_Cape_MND,
         --waist="",
         legs = gear.Jhakri_Slops,
-        feet = gear.Jhakri_Pigaches,
+        feet = gear.Leth_Houseaux,
     })
     sets.precast.WS['Seraph Blade'] = sets.precast.WS['Sanguine Blade']
     sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Sanguine Blade']
