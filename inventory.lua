@@ -243,6 +243,7 @@ local equipment = {
     Lanun_trews                  = "Lanun Trews +1",
     founders_hose                = "Founder's Hose", --30 SIRD
     enif_cosciales               = "Enif Cosciales",
+    chironic_legs_enfeebling     = { name = "Chironic Hose", augments = { 'Mag. Acc.+23 "Mag.Atk.Bns."+23', '"Cure" potency +10%', 'MND+15', 'Mag. Acc.+15', } },
 
     --feet
     malignance_boots             = "Malignance Boots",
@@ -318,6 +319,7 @@ local equipment = {
     sams_nodowa                  = "Sam. Nodowa +2",
     warders_charm                = "Warder's Charm +1",
     malison_medallion            = "Malison Medallion",
+    bathy_choker                 = { name = "Bathy Choker +1", augments = { 'Path: A', } },
     regal_necklace               = "Regal Necklace",
     mnk_nodowa                   = { name = "Mnk. Nodowa +1", augments = { 'Path: A', } },
     argute_stole                 = { name = "Argute Stole +2", augments = { 'Path: A', } },
@@ -328,7 +330,7 @@ local equipment = {
     moonbeam_necklace            = "Moonbeam Necklace",
     coatl_gorget                 = "Coatl Gorget +1",
     nicanders_necklace           = "Nicander's Necklace",
-    duelist_torque               = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+    duelist_torque               = { name = "Dls. Torque +2", augments = { 'Path: A', } },
     hoxne_torque                 = "Hoxne Torque",
 
     --waist
@@ -364,7 +366,7 @@ local equipment = {
     audumbla_sash                = "Audumbla Sash",
 
     --back
-    COR_TP_Cape                  = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', '"Store TP"+10', } },
+    COR_TP_Cape                  = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', } },
     COR_WS1_Cape                 = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', } },
     COR_WS2_Cape                 = { name = "Camulus's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
     THF_TP_Cape                  = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', } },
@@ -374,6 +376,7 @@ local equipment = {
     RDM_Crit_Cape                = { name = "Sucellos's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Crit.hit rate+10', } },
     RDM_MAB_Cape                 = { name = "Sucellos's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', } },
     RDM_ENHANCHING_DURATION_CAPE = { name = "Ghostfyre Cape", augments = { 'Enfb.mag. skill +1', 'Enha.mag. skill +8', 'Enh. Mag. eff. dur. +20', } },
+    RDM_ENFEEBLING_CAPE          = { name = "Ghostfyre Cape", augments = { 'Enfb.mag. skill +5', 'Enha.mag. skill +10', 'Mag. Acc.+6', } },
     RDM_STORE_TP_Cape            = { name = "Sucellos's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%', } },
 
     exp_back                     = { name = "Mecisto. Mantle", augments = { 'Cap. Point+35%', 'HP+16', 'Mag. Acc.+3', 'DEF+5', } },
@@ -383,16 +386,16 @@ local equipment = {
     BLU_CURE_CAPE                = { name = "Rosmerta's Cape", augments = { 'MND+20', '"Cure" potency +10%', 'Phys. dmg. taken-10%', } },
     BLU_SKILL_CAPE               = { name = "Cornflower Cape", augments = { 'MP+24', 'DEX+3', 'Accuracy+3', 'Blue Magic skill +10', } },
     toro_cape                    = "Toro Cape",
-    NIN_WSD_Cape                 = { name = "Andartia's Mantle", augments = { 'Weapon skill damage +7%', } },
+    NIN_WSD_Cape                 = { name = "Andartia's Mantle", augments = { 'AGI+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', } },
     null_shawl                   = "Null Shawl",
     WAR_SAV_WS_CAPE              = { name = "Cichol's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
     WAR_TP_DT_CAPE               = { name = "Cichol's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%', } },
     swith_cape                   = "Swith Cape",
     SCH_MAB_CAPE                 = { name = "Lugh's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', } },
     SCH_FASTCAST_CAPE            = { name = "Lugh's Cape", augments = { '"Fast Cast"+10', } },
-    SAM_WS_CAPE                  = { name = "Smertrios's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', } },
+    SAM_WS_CAPE                  = { name = "Smertrios's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%', } },
     SAM_TP_CAPE_DT               = { name = "Smertrios's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%', } },
-    MNK_TP_CAPE                  = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+3', '"Dbl.Atk."+10', 'Damage taken-5%', } },
+    MNK_TP_CAPE                  = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%', } },
     oretan_cape                  = "Oretan. Cape +1",
     SCH_HELX_REGEN_CAPE          = { name = "Bookworm's Cape", augments = { 'INT+4', 'MND+2', '"Regen" potency+10', } },
     MNK_CRT_CAPE                 = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', } },
@@ -400,12 +403,19 @@ local equipment = {
     argocham_mantle              = "Argocham. Mantle",
     GEO_CAPE                     = { name = "Nantosuelta's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5', } },
     lifestream_cape              = { name = "Lifestream Cape", augments = { 'Geomancy Skill +10', 'Indi. eff. dur. +13', 'Pet: Damage taken -2%', } },
-    GEO_MAB_CAPE                 = { name = "Nantosuelta's Cape", augments = { 'INT+8', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10', } },
+    GEO_MAB_CAPE                 = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', } },
     alabaster_mantle             = "Alabaster Mantle",
     shadow_mantle                = "Shadow Mantle",
-    PLD_TANK_BACK                = { name = "Rudianos's Mantle", augments = { 'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+5', 'Enmity+10', 'Phys. dmg. taken-10%', } },
+    PLD_TANK_BACK                = { name = "Rudianos's Mantle", augments = { 'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Phys. dmg. taken-10%', } },
     PLD_PHALANX_BACK             = { name = "Weard Mantle", augments = { 'VIT+1', 'DEX+2', 'Enmity+2', 'Phalanx +3', } },
     PLD_WS_BACK                  = { name = "Rudianos's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%', } },
+    artios_mantle                = "Artio's Mantle",
+    takaha_mantle_aug            = { name = "Takaha Mantle", augments = { 'STR+1', '"Zanshin"+1', '"Store TP"+3', } },
+    tantalic_cape                = "Tantalic Cape",
+    evasionists_cape             = "Evasionist's Cape",
+    scintillating_cape           = "Scintillating Cape",
+    canny_cape                   = "Canny Cape",
+    aurists_cape                 = "Aurist's Cape +1",
 
     -- earrings
     suppanomimi                  = "Suppanomimi",
@@ -522,22 +532,24 @@ local equipment = {
     priwen                 = "Priwen",
     malevolence            = { name = "Malevolence", augments = { 'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5', } },
     debuchos_saber         = "Daduchos Saber",
+    excalibur              = "Excalibur",
+    sacro_bulwark          = "Sacro bulwark",
 
     --ammo
     oshashs_treastise      = "Oshasha's Treatise",
     sroda_tathlum          = "Sroda Tathlum",
-    aurgelmir_orb          = "Aurgelmir Orb",
+    aurgelmir_orb          = "Aurgelmir Orb +1",
     staunch_tathlum        = "Staunch Tathlum",
     ghastly_tathlum        = { name = "Ghastly Tathlum +1", augments = { 'Path: A', } },
     sapience_orb           = "Sapience Orb", --2% fast cast
     coiste_bodhar          = { name = "Coiste Bodhar", augments = { 'Path: A', } },
     knobkierrie            = "Knobkierrie",
     yetshila               = "Yetshila",
-    hydrocera              = "Hydrocera",
     crepuscular_pebble     = "Crepuscular Pebble",
     homiliary              = "Homiliary",
     amar_cluster           = "Amar Cluster",
     perfect_lucky_egg      = "Per. Lucky Egg",
-    dunna                  = "Dunna"
+    dunna                  = "Dunna",
+    pemphredo_tathlum      = "Pemphredo Tathlum",
 }
 return equipment

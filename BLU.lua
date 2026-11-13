@@ -332,7 +332,7 @@ function init_gear_sets()
 
     --TP set
     local tp_set = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         head = inv.malignance_chapeau,
         body = inv.Adhemar_A_body,
         hands = inv.Adhemar_A_hands,
@@ -362,7 +362,7 @@ function init_gear_sets()
         back = inv.null_shawl
     }
     local dual_wield_traits_high = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         head = inv.malignance_chapeau,
         body = inv.sworn_platemail,
         hands = inv.Adhemar_A_hands,
@@ -377,7 +377,7 @@ function init_gear_sets()
         back = inv.null_shawl
     }
     local tp_hybrid_mevasion_set = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         head = inv.malignance_chapeau,
         body = inv.hashishin_mintan,
         hands = inv.malignance_gloves,
@@ -394,7 +394,7 @@ function init_gear_sets()
 
 
     local tp_set_acc = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         head = inv.malignance_chapeau,
         body = inv.Adhemar_A_body,
         hands = inv.gazu_bracelets,
@@ -498,7 +498,7 @@ function init_gear_sets()
 
     -- Damage taken set
     local pdt_set = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         head = inv.malignance_chapeau,
         neck = inv.mirage_stole,
         body = inv.hashishin_mintan,
@@ -525,7 +525,7 @@ function init_gear_sets()
     })
 
     local magic_accuracy = {
-        ammo = inv.hydrocera,
+        ammo = inv.pemphredo_tathlum,
         head = inv.hashishin_head,
         body = inv.hashishin_mintan,
         hands = inv.hashishin_hands,

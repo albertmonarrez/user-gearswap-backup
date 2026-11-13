@@ -16,6 +16,7 @@ return {
     Sha_Wujings_Lance    = "Sha Wujing's Lance",
     Zanmato              = "Zanmato",
     Colibri_Scythe       = "Colibri Scythe",
+    Marin_Staff          = "Marin Staff",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -24,7 +25,7 @@ return {
     Yamarang             = "Yamarang",
     Knobkierrie          = "Knobkierrie",
     Ginsen               = "Ginsen",
-    Ghastly_Tathlum      = "Ghastly Tathlum +1",
+    Ghastly_Tathlum      = { name = "Ghastly Tathlum +1", augments = { 'Path: A', } },
     Silver_Gun           = "Silver Gun",
     Hangaku_no_Yumi      = "Hangaku-no-Yumi",
     Seraphicaller        = "Seraphicaller",
@@ -50,18 +51,20 @@ return {
     Bolelabunga          = "Bolelabunga",
     Levante_Dagger       = "Levante Dagger",
     Pukulatmuj           = "Pukulatmuj +1",
-    Vitiation_Sword      = "Vitiation Sword",
-    Forfend              = "Forfend +1",
+    Vitiation_Sword      = { name = "Vitiation Sword", augments = { 'Path: C', } },
+    Forfend              = { name = "Forfend +1", augments = { 'Path: A', } },
     Wind_Knife           = "Wind Knife",
     Yagyu_Shortblade     = "Yagyu Shortblade",
     Naegling             = "Naegling",
     Idris                = "Idris",
+    Deacon_Saber         = "Deacon Saber",
+    Reikiko              = "Reikiko",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
     Merl_Hood_FC         = { name = "Merlinic Hood", augments = { '"Fast Cast"+5', 'INT+5', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', } },
     Bagua_Galero         = { name = "Bagua Galero", augments = { 'Enhances "Primeval Zeal" effect', } },
-    Geomancy_Galero      = "Geo. Galero +1",
+    Geomancy_Galero      = "Geo. Galero +2",
     Azimuth_Hood         = "Azimuth Hood +2",
     Jhakri_Coronal       = "Jhakri Coronal +2",
     Aya_Zucchetto        = "Aya. Zucchetto +2",
@@ -149,7 +152,7 @@ return {
     Egbesu_Frock         = "Egbesu Frock",
     Ruwa_Breastplate     = "Ruwa Breastplate",
     Leth_Sayon           = "Lethargy Sayon",
-    Vitiation_Tabard     = { name = "Vitiation Tabard", augments = { 'Enhances "Chainspell" effect', } },
+    Vitiation_Tabard     = { name = "Viti. Tabard +2", augments = { 'Enhances "Chainspell" effect', } },
     Abyss_Cuirass        = "Abyss Cuirass",
     Malignance_Tabard    = "Malignance Tabard",
 
@@ -176,7 +179,7 @@ return {
     Bunzi_Gloves         = "Bunzi's Gloves",
     Estq_Ganthrt         = "Estq. Ganthrt. +1",
     Viti_Gloves          = { name = "Viti. Gloves +1", augments = { 'Enhancing Magic duration', } },
-    Leth_Gantherots      = "Leth. Gantherots +2",
+    Leth_Gantherots      = "Leth. Ganth. +2",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -194,12 +197,14 @@ return {
     Mujin_Band           = "Mujin Band",
     Freke_Ring           = "Freke Ring",
     Wardens_Ring         = "Warden's Ring",
+    Epaminondass_Ring    = "Epaminondas's Ring",
     Kishar_Ring          = "Kishar Ring",
     Endorsement_Ring     = "Endorsement Ring",
     Lebeche_Ring         = "Lebeche Ring",
     Zanhi_Ring           = "Zanhi Ring",
     Rajas_Ring           = "Rajas Ring",
     Metamor_Ring         = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
+    Fortified_Ring       = "Fortified Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -217,7 +222,7 @@ return {
     -- Waist
     Olympus_Sash         = "Olympus Sash",
     Flume_Belt           = "Flume Belt",
-    Sailfi_Belt          = "Sailfi Belt +1",
+    Sailfi_Belt          = { name = "Sailfi Belt +1", augments = { 'Path: A', } },
     Embla_Sash           = "Embla Sash",
     Isa_Belt             = "Isa Belt",
     Null_Belt            = "Null Belt",
@@ -229,7 +234,7 @@ return {
     -- Legs
     Bagua_Pants          = { name = "Bagua Pants +4", augments = { 'Enhances "Mending Halation" effect', } },
     Vanya_Slops          = { name = "Vanya Slops", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
-    Geomancy_Pants       = "Geo. Pants +1",
+    Geomancy_Pants       = "Geomancy Pants +2",
     Jhakri_Slops         = "Jhakri Slops +2",
     Leth_Fuseau          = "Leth. Fuseau +2",
     Malignance_Tights    = "Malignance Tights",
@@ -245,12 +250,15 @@ return {
     Aya_Cosciales        = "Aya. Cosciales +2",
     Azimuth_Tights       = "Azimuth Tights +3",
     Atro_Tights          = "Atro. Tights +4",
+    Byakkos_Haidate      = "Byakko's Haidate",
+    Intrep_Tonban        = { name = "Intrep. Tonban", augments = { 'Path: A', } },
 
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
     Merl_Crackows_Pet    = { name = "Merlinic Crackows", augments = { 'Pet: Attack+21 Pet: Rng.Atk.+21', 'INT+3', '"Refresh"+1', } },
     Merl_Crackows_TH     = { name = "Merlinic Crackows", augments = { 'AGI+11', 'INT+7', '"Treasure Hunter"+2', 'Mag. Acc.+7 "Mag.Atk.Bns."+7', } },
     Malignance_Boots     = "Malignance Boots",
+    Leth_Houseaux        = "Leth. Houseaux +2",
     Bagua_Sandals        = { name = "Bagua Sandals +4", augments = { 'Enhances "Radial Arcana" effect', } },
     Vanya_Clogs          = { name = "Vanya Clogs", augments = { 'MP+50', '"Cure" potency +7%', 'Enmity-6', } },
     Geomancy_Sandals     = "Geo. Sandals +4",
@@ -265,5 +273,5 @@ return {
     Melee_Gaiters        = "Melee Gaiters",
     Abyss_Sollerets      = "Abyss Sollerets",
     Atro_Boots           = "Atro. Boots +4",
-    Intrep_Sabots        = "Intrep. Sabots",
+    Intrep_Sabots        = { name = "Intrep. Sabots", augments = { 'Path: A', } },
 }

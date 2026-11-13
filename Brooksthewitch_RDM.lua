@@ -121,7 +121,7 @@ function init_gear_sets()
         back = gear.Sucellos_Cape_STR,
         waist = gear.Olympus_Sash,
         legs = gear.Atro_Tights,
-        --feet="",
+        feet = gear.Leth_Houseaux,
     }
 
     -- Enhancing Magic (default - duration/fixed-potency spells: Protect, Shell, Blink, Stoneskin, Haste, Bar-spells, etc.)
@@ -292,7 +292,9 @@ function init_gear_sets()
         legs = gear.Leth_Fuseau,
         waist = gear.Embla_Sash,
         ring2 = gear.Kishar_Ring,
-        back = gear.Sucellos_Cape_STR
+        back = gear.Sucellos_Cape_STR,
+        feet = gear.Leth_Houseaux,
+
     }
 
     ------------------------------------------------------------------------------------------------
@@ -355,7 +357,6 @@ function init_gear_sets()
         head = gear.Umuthi_Hat,
         hands = gear.Aya_Manopolas,
         neck = gear.Null_Loop,
-        legs = gear.Atro_Tights,
         ear1 = gear.Eabani_Earring,
         ring2 = gear.Hetairoi_Ring,
         ammo = gear.sroda_tathlum,
@@ -378,11 +379,11 @@ function init_gear_sets()
         body = gear.Egbesu_Frock,
         hands = gear.Atro_Gloves,
         --ring1="",
-        --ring2="",
+        ring2 = gear.Epaminondass_Ring,
         back = gear.Sucellos_Cape_STR,
         waist = gear.Sailfi_Belt,
         legs = gear.Atro_Tights,
-        feet = gear.Atro_Boots,
+        feet = gear.Leth_Houseaux,
     }
 
     -- Savage Blade: Physical (STR:50%, MND:50%)

@@ -502,7 +502,6 @@ function get_sets()
 
     -- Hasso Mode 4 (Example: Hasso+, with a focus on Subtle Blow, then filling in the rest with Multi-Attack, Zanshin, Store TP, and DT)
     sets.hasso.Mode4 = set_combine(sets.hasso.Mode1, {
-        ammo = inv.staunch_tathlum,
         head = inv.kasuga_head,       --SB+8
         body = inv.dagon_breastplate, --SBII+10
         hands = inv.tatenashi_hands,
@@ -520,13 +519,12 @@ function get_sets()
     -- Seigan (Seigan+, Third Eye+, Counter, DT)
     -- NOTE: Intended as a more defense oriented set for when you have to put Seigan up.
     sets.seigan = set_combine(sets.hasso.Mode1, {
-        ammo = inv.staunch_tathlum,
         head = inv.kasuga_head,
         body = inv.mpacas_body,
         hands = inv.mpacas_gloves,
         legs = inv.sakonji_legs,
         feet = inv.mpacas_boots,
-        neck = inv.sams_nodowa,
+        neck = inv.bathy_choker,
         waist = inv.sailfi_belt,
         left_ear = inv.alabaster_earring,
         right_ear = inv.kasuga_earring,

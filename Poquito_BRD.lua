@@ -51,10 +51,12 @@ function user_setup()
     -- Default macro book/set
     set_macro_page(1, 1)
     set_lockstyle()
+    -- Swapping to Linos when engaging blinks the model, which drops target lock mid-movement
+    send_command('lua load dressup')
 end
 
 function user_unload()
-    -- Unbind keys here if needed
+    send_command('lua unload dressup')
 end
 
 -- Define sets and vars used by this job file.

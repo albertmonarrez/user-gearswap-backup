@@ -121,7 +121,7 @@ function init_gear_sets()
         back = gear.Sucellos_Cape_MND,
         waist = gear.Olympus_Sash,
         legs = gear.Atro_Tights,
-        --feet="",
+        feet = gear.Leth_Houseaux,
     }
 
     -- Enhancing Magic (default - duration/fixed-potency spells: Protect, Shell, Blink, Stoneskin, Haste, Bar-spells, etc.)
@@ -350,7 +350,7 @@ function init_gear_sets()
         ring1 = gear.Rajas_Ring,
         ring2 = gear.Petrov_Ring,
         back = gear.Null_Shawl,
-        waist = gear.Sailfi_Belt,
+        waist = gear.Reiki_Yotai,
         legs = gear.Malignance_Tights,
         feet = gear.Malignance_Boots,
     }
@@ -359,8 +359,6 @@ function init_gear_sets()
     sets.engaged.Enspell = set_combine(sets.engaged, {
         head = gear.Umuthi_Hat,
         hands = gear.Aya_Manopolas,
-        legs = gear.Atro_Tights,
-        feet = gear.Malignance_Boots,
         ear1 = gear.Eabani_Earring,
         ammo = gear.sroda_tathlum,
     })

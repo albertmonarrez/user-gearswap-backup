@@ -1,9 +1,20 @@
 ---@diagnostic disable: undefined-global, unused-local
 local inv = require('inventory')
 local weather = require('weather')
+local AutoDefense = require('auto_defense')
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
+---
+-- Uses auto_defense's default abilities (DRG sub Super Jump + High Jump) since
+-- BLU has none of its own and this file doesn't gate on a specific subjob -
+-- harmless no-op when not subbing DRG. Pass { abilities = {...} } to override,
+-- or { abilities = {} } to disable ability auto-fire entirely.
+local auto_defense = AutoDefense.new()
+local auto_defense_event_id
+local check_auto_defense -- forward-declared so user_setup() can register it before its definition below
+
+
 
 -- Initialization function for this job file.
 function get_sets()
@@ -36,9 +47,14 @@ local crocea_gletis = {
 	sub = inv.gletis_knife,
 
 }
-local naegling_gletis = {
-	main = "Naegling",
+local excalibur_gletis = {
+	main = inv.excalibur,
 	sub = inv.gletis_knife,
+
+}
+local naegling_gletis = {
+	main = inv.excalibur,
+	sub = inv.sacro_bulwark,
 	-- sub = inv.demersal_degen,
 
 }
@@ -82,6 +98,8 @@ function user_setup()
 
 	select_default_macro_book()
 	set_lockstyle()
+
+	auto_defense_event_id = windower.register_event('prerender', check_auto_defense)
 end
 
 -- Define sets and vars used by this job file.
@@ -149,20 +167,20 @@ function init_gear_sets()
 		body = inv.sworn_platemail,
 		hands = inv.phalanx_hands,
 		legs = inv.phalanx_legs,
-		feet = inv.merlin_feet_phalanx
+		feet = inv.sworn_sabatons
 	}
 	--Enfeebling set
 	local enfeebling_set = {
-		ammo = "Hydrocera",
+		ammo = inv.pemphredo_tathlum,
 		head = vitiation_chapeau,
-		neck = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+		neck = inv.duelist_torque,
 		body = inv.atrophy_tabard,
 		hands = lethargy_hands,
-		legs = inv.atrophy_tights,
+		legs = inv.chironic_legs_enfeebling,
 		feet = inv.vitiation_boots,
 		waist = inv.null_belt,
-		left_ear = inv.snorta_earring,
-		right_ear = inv.regal_earring,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.snorta_earring,
 		left_ring = inv.kishar_ring,
 		right_ring = inv.stikini_ring,
 		back = mind_cape,
@@ -176,6 +194,7 @@ function init_gear_sets()
 			range = inv.ullr,
 			head = inv.atrophy_chapeau,
 			left_ear = inv.alabaster_earring,
+			right_ear = inv.regal_earring,
 			back = inv.null_shawl,
 			left_ring = inv.stikini_ring2,
 			neck = inv.null_loop
@@ -203,7 +222,7 @@ function init_gear_sets()
 	--TP sets
 	-- Base TP set
 	local tp_set = {
-		ammo = inv.coiste_bodhar,
+		ammo = inv.aurgelmir_orb,
 		head = inv.malignance_chapeau,
 		body = inv.sworn_platemail,
 		hands = inv.malignance_gloves,
@@ -217,6 +236,22 @@ function init_gear_sets()
 		right_ring = inv.chirich_ring,
 		back = inv.RDM_STORE_TP_Cape,
 		-- back = inv.null_shawl,
+
+	}
+	local defense_tp_set = {
+		ammo = inv.aurgelmir_orb,
+		head = inv.malignance_chapeau,
+		body = inv.sworn_platemail,
+		hands = inv.malignance_gloves,
+		legs = inv.malignance_tights,
+		feet = inv.sworn_sabatons,
+		neck = inv.bathy_choker,
+		waist = inv.windbuffet_belt,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.dedition_earring,
+		left_ring = inv.murky_ring,
+		right_ring = inv.acrchon_ring,
+		back = inv.shadow_mantle,
 
 	}
 	local resist_stun_tp = {
@@ -237,11 +272,11 @@ function init_gear_sets()
 
 	local tp_crocea_daybreak = set_combine(tp_set, crocea_daybreak)
 
-	local tp_naegling_gletis = set_combine(tp_set, naegling_gletis)
+	local tp_naegling_gletis = set_combine(defense_tp_set, naegling_gletis)
 
 
 	-- TP set for Excalibur + Gleti's Knife
-	local tp_excalibur_gletis = set_combine(tp_set, crocea_gletis)
+	local tp_excalibur_gletis = set_combine(defense_tp_set, excalibur_gletis)
 
 	-- TP set for Malevolence Aeolian edge
 	local tenzen = set_combine(crocea_levante, tp_set, {
@@ -500,7 +535,7 @@ function init_gear_sets()
 		legs = atrophy_tights,
 		feet = inv.lethargy_feet,
 		waist = inv.embla_sash,
-		neck = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+		neck = inv.duelist_torque,
 		left_ear = inv.mimir_earring,
 		right_ear = inv.lethargy_earring,
 		left_ring = inv.defending_ring,
@@ -578,12 +613,12 @@ function init_gear_sets()
 		left_ring = inv.cacoethic_ring,
 		-- waist = inv.null_belt,
 		feet = inv.sworn_sabatons,
-		back = inv.null_shawl,
+		back = inv.RDM_STORE_TP_Cape,
 		ammo = inv.aurgelmir_orb
 	})
 	local war_accuracy = set_combine(tp_set, {
 		-- left_ring = inv.defending_ring,
-		back = inv.null_shawl,
+		back = inv.RDM_STORE_TP_Cape,
 		-- waist = inv.null_belt,
 
 	})
@@ -789,13 +824,26 @@ function init_gear_sets()
 
 
 	-- Defense sets
-	sets.defense.PDT = pdt_set
+	sets.defense.PDT                 = pdt_set
+	sets.defense.MDT                 = pdt_set2
+	sets.panic                       = {
+		head = inv.lethargy_chappel,
+		neck = inv.warders_charm,
+		body = inv.sworn_platemail,
+		hands = inv.lethargy_hands,
+		legs = inv.nyame_legs,
+		feet = inv.sworn_sabatons,
+		waist = inv.null_belt,
+		left_ring = inv.murky_ring,
+		right_ring = inv.acrchon_ring,
+		left_ear = inv.alabaster_earring,
+		right_ear = inv.static_earring,
+		back = inv.shadow_mantle,
+	}
 
-	sets.defense.MDT = pdt_set2
+	sets.Kiting                      = { legs = "Crimson Cuisses" }
 
-	sets.Kiting = { legs = "Crimson Cuisses" }
-
-	sets.latent_refresh = { waist = "Fucho-no-obi" }
+	sets.latent_refresh              = { waist = "Fucho-no-obi" }
 
 	-- Engaged sets
 
@@ -807,15 +855,15 @@ function init_gear_sets()
 	-- Normal melee group
 	-- Set up engaged sets based on weapon mode
 	-- sets.engaged = {}
-	sets.engaged['Crocea+Daybreak'] = tp_crocea_daybreak
+	sets.engaged['Crocea+Daybreak']  = tp_crocea_daybreak
 	sets.engaged['Excalibur+Gletis'] = tp_excalibur_gletis
-	sets.engaged['Naegling+Gletis'] = tp_naegling_gletis
+	sets.engaged['Naegling+Gletis']  = tp_naegling_gletis
 	sets.engaged['Naegling+Machera'] = tp_naegling_machaera
-	sets.engaged['Aeolian Cleave'] = aeolian_edge_cleave
-	sets.engaged['Tenzen'] = tenzen
-	sets.engaged['0 tp daggers'] = tp_0_dmg_daggers
+	sets.engaged['Aeolian Cleave']   = aeolian_edge_cleave
+	sets.engaged['Tenzen']           = tenzen
+	sets.engaged['0 tp daggers']     = tp_0_dmg_daggers
 
-	sets.engaged.Defense = pdt_set
+	sets.engaged.Defense             = pdt_set
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -961,7 +1009,7 @@ function job_self_command(cmdParams, eventArgs)
 		elseif state.WeaponMode.value == 'Naegling+Machera' then
 			equip(naegling_machaera)
 		elseif state.WeaponMode.value == 'Excalibur+Gletis' then
-			equip(crocea_gletis)
+			equip(excalibur_gletis)
 		elseif state.WeaponMode.value == 'Aeolian Cleave' then
 			equip(kaja_malevolance)
 		elseif state.WeaponMode.value == 'Tenzen' then
@@ -1009,5 +1057,21 @@ function self_command(command)
 	if command == 'weather' then
 		windower.add_to_chat(122, weather.debug_weather())
 		windower.add_to_chat(122, weather.debug_day())
+	end
+end
+
+-- Polls HP once a second for auto_defense's fire_once/toggle abilities and
+-- forces on sets.idle.PDT while HP is critical.
+-- A plain equip() call here is safe outside precast/midcast/aftercast - it's
+-- superseded by the next normal gearswap cycle once HP recovers.
+local auto_defense_heartbeat = 0
+function check_auto_defense()
+	if os.time() == auto_defense_heartbeat then return end
+	auto_defense_heartbeat = os.time()
+
+	auto_defense:update()
+
+	if auto_defense:should_defend() then
+		equip(sets.panic)
 	end
 end
