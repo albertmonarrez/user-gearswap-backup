@@ -17,6 +17,7 @@ return {
     Zanmato              = "Zanmato",
     Colibri_Scythe       = "Colibri Scythe",
     Marin_Staff          = "Marin Staff",
+    Habile_Mazrak        = "Habile Mazrak",
 
     -- Range / Ammo
     Filiae_Bell          = "Filiae Bell",
@@ -36,6 +37,7 @@ return {
     Inlamvuyeso          = "Inlamvuyeso",
     Compensator          = "Compensator",
     Coiste_Bodhar        = "Coiste Bodhar",
+    Nibiru_Gun           = "Nibiru Gun",
 
     -- Sub
     Niobid_Strap         = "Niobid Strap",
@@ -59,6 +61,9 @@ return {
     Idris                = "Idris",
     Deacon_Saber         = "Deacon Saber",
     Reikiko              = "Reikiko",
+    Machaera             = "Machaera",
+    Alber_Strap          = "Alber Strap",
+    Gada                 = "Gada",
 
     -- Head
     Abyssal_Mask         = "Abyssal Mask",
@@ -82,6 +87,7 @@ return {
     Manibozho_Beret      = "Manibozho Beret",
     Malignance_Chapeau   = "Malignance Chapeau",
     Adorned_Helm         = "Adorned Helm",
+    Nyame_Helm           = "Nyame Helm",
 
     -- Neck
     Bagua_Charm          = { name = "Bagua Charm +2", augments = { 'Path: A', } },
@@ -100,6 +106,7 @@ return {
     Unmoving_Collar      = "Unmoving Collar",
     Dls_Torque           = { name = "Dls. Torque +1", augments = { 'Path: A', } },
     Asperity_Necklace    = "Asperity Necklace",
+    Clotharius_Torque    = "Clotharius Torque",
 
     -- Ears
     Kyrenes_Earring      = "Kyrene's Earring",
@@ -129,6 +136,8 @@ return {
     Andoaa_Earring       = "Andoaa Earring",
     Sanare_Earring       = "Sanare Earring",
     Sherida_Earring      = "Sherida Earring",
+    Novia_Earring        = "Novia Earring",
+    Digni_Earring        = "Digni. Earring",
 
     -- Body
     Merl_Jubbah_FC       = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+15', '"Fast Cast"+5', 'CHR+5', } },
@@ -155,6 +164,11 @@ return {
     Vitiation_Tabard     = { name = "Viti. Tabard +2", augments = { 'Enhances "Chainspell" effect', } },
     Abyss_Cuirass        = "Abyss Cuirass",
     Malignance_Tabard    = "Malignance Tabard",
+    Botulus_Suit         = "Botulus Suit",
+    Merl_Jubbah          = "Merlinic Jubbah",
+    Nyame_Mail           = "Nyame Mail",
+    Vedic_Coat           = "Vedic Coat",
+    Kubira_Meikogai      = "Kubira Meikogai",
 
     -- Hands
     Bagua_Mitaines       = "Bagua Mitaines +4",
@@ -180,6 +194,7 @@ return {
     Estq_Ganthrt         = "Estq. Ganthrt. +1",
     Viti_Gloves          = { name = "Viti. Gloves +1", augments = { 'Enhancing Magic duration', } },
     Leth_Gantherots      = "Leth. Ganth. +2",
+    Nyame_Gauntlets      = "Nyame Gauntlets",
 
     -- Rings
     Dim_Ring_Dem         = "Dim. Ring (Dem)",
@@ -205,6 +220,7 @@ return {
     Rajas_Ring           = "Rajas Ring",
     Metamor_Ring         = { name = "Metamor. Ring +1", augments = { 'Path: A', } },
     Fortified_Ring       = "Fortified Ring",
+    Begrudging_Ring      = "Begrudging Ring",
 
     -- Back
     Nantosuelta_Cape_FC  = { name = "Nantosuelta's Cape", augments = { '"Fast Cast"+10', } },
@@ -252,6 +268,8 @@ return {
     Atro_Tights          = "Atro. Tights +4",
     Byakkos_Haidate      = "Byakko's Haidate",
     Intrep_Tonban        = { name = "Intrep. Tonban", augments = { 'Path: A', } },
+    Chironic_Hose        = "Chironic Hose",
+    Nyame_Flanchard      = { name = "Nyame Flanchard", augments = { 'Path: B', } },
 
     -- Feet
     Merl_Crackows_FC     = { name = "Merlinic Crackows", augments = { 'Mag. Acc.+15', '"Fast Cast"+6', 'CHR+15', } },
@@ -274,4 +292,5 @@ return {
     Abyss_Sollerets      = "Abyss Sollerets",
     Atro_Boots           = "Atro. Boots +4",
     Intrep_Sabots        = { name = "Intrep. Sabots", augments = { 'Path: A', } },
+    Nyame_Sollerets      = "Nyame Sollerets",
 }

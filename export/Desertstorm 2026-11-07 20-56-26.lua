@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Kusanagi",
+    sub="Telopanos Grip",
+    ammo="Aurgelmir Orb +1",
+    head="Wakido Kabuto +4",
+    body="Kasuga Domaru +3",
+    hands="Nyame Gauntlets",
+    legs="Kasuga Haidate +3",
+    feet="Danzo Sune-Ate",
+    neck="Null Loop",
+    waist="Sailfi Belt +1",
+    left_ear="Dedition Earring",
+    right_ear={ name="Kasuga Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','Weapon skill damage +3%',}},
+    left_ring="Murky Ring",
+    right_ring="Niqmaddu Ring",
+    back="Null Shawl",
+}

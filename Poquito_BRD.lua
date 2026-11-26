@@ -75,7 +75,7 @@ function init_gear_sets()
     sets.precast.FC = {
         --main="",
         --sub="",
-        --range="",
+        -- range = gear.Miracle_Cheer,
         --ammo="",
         head = gear.Nahtirah_Hat,
         neck = gear.Aoidos_Matinee,
@@ -92,10 +92,10 @@ function init_gear_sets()
     }
 
     -- Song precast
-    sets.precast.FC.Song = set_combine(sets.precast.FC, {
+    sets.precast.FC.Singing = set_combine(sets.precast.FC, {
         --main="",
         --sub="",
-        --range="",
+        range = gear.Miracle_Cheer,
         --ammo="",
         head = gear.Fili_Calot,
         neck = gear.Aoidos_Matinee,
@@ -461,6 +461,8 @@ function init_gear_sets()
     ---------------------------------------- Song Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
+    -- sets.precast.S
+
     -- Base singing (shared slots across all songs)
     sets.midcast.Singing = {
         --main="",
@@ -594,25 +596,46 @@ function init_gear_sets()
         feet = gear.Vanya_Clogs,
     }
     sets.midcast.Curaga = sets.midcast.Cure
+
+
+    sets.midcast['Enhancing Magic'] = {
+        --main="",
+        -- sub = gear.Ammurapi_Shield,
+        --range="",
+        --ammo="",
+        --head="",
+        --neck="",
+        --ear1="",
+        --ear2="",
+        --body="",
+        --hands="",
+        --ring1="",
+        --ring2="",
+        --back="",
+        waist = gear.Embla_Sash,
+        --legs="",
+        --feet="",
+    }
+
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
     ------------------------------------------------------------------------------------------------
 
     -- Default WS set
     sets.precast.WS = {
-        --head="",
+        head = gear.Nyame_Helm,
         neck = gear.Bards_Charm,
-        --ear1="",
+        ear1 = gear.Moonshade_Earring,
         ear2 = gear.Ishvara_Earring,
         body = gear.Bihu_Jstcorps,
-        --hands="",
-        --ring1="",
+        hands = gear.Nyame_Gauntlets,
+        ring1 = gear.Apate_Ring,
         range = gear.Linos,
         ring2 = gear.Epaminondass_Ring,
         back = gear.Intarabus_Cape_WS,
         waist = gear.Sailfi_Belt,
-        --legs="",
-        --feet="",
+        legs = gear.Nyame_Flanchard,
+        feet = gear.Nyame_Sollerets,
     }
 
     -- Aeolian Edge: Magical (DEX:40%, INT:40%)

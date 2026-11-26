@@ -78,14 +78,14 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
     local tp_set = {
-        ammo = inv.coiste_bodhar,
+        ammo = inv.aurgelmir_orb,
         -- range = "Tokko Bow",
         -- ammo = "Antlion Arrow",
         head = inv.malignance_chapeau,
         body = inv.pillagers_vest,
         hands = inv.Adhemar_A_hands,
         legs = inv.Herc_TA_legs,
-        feet = inv.Herc_TA_feet,
+        feet = inv.malignance_boots,
         neck = inv.iskur_gorget,
         waist = inv.reiki_yotai,
         left_ear = inv.sherida_earring,
@@ -256,6 +256,21 @@ function init_gear_sets()
         back = inv.alabaster_mantle,
     }
 
+    sets.precast.WS['Savage Blade'] = {
+        ammo = inv.oshashs_treastise,
+        head = inv.nyame_helm,
+        body = inv.nyame_mail,
+        hands = inv.nyame_hands,
+        legs = inv.nyame_legs,
+        feet = inv.nyame_feet,
+        neck = inv.republican_medal,
+        waist = inv.sailfi_belt,
+        left_ear = inv.ishvara,
+        right_ear = inv.moonshade_earring,
+        left_ring = inv.corneilias_ring,
+        right_ring = inv.epaminondas_ring,
+        back = inv.alabaster_mantle,
+    }
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.

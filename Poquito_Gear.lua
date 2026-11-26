@@ -21,6 +21,7 @@ return {
     Seraphicaller           = "Seraphicaller",
     Divinator               = "Divinator",
     Divinator_II            = "Divinator II",
+    Aurgelmir_Orb           = "Aurgelmir Orb",
 
     -- Sub
     Kali                    = { name = "Kali", augments = { 'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10', } },
@@ -50,6 +51,9 @@ return {
     Colibri_Scythe          = "Colibri Scythe",
     Wind_Knife              = "Wind Knife",
     Yagyu_Shortblade        = "Yagyu Shortblade",
+    Misanthropy             = "Misanthropy",
+    Habile_Mazrak           = "Habile Mazrak",
+    Machaera                = "Machaera",
 
     -- Head
     Fili_Calot              = "Fili Calot +2",
@@ -76,6 +80,7 @@ return {
     GMoogle_Masque          = "G. Moogle Masque",
     Null_Masque             = "Null Masque",
     Nahtirah_Hat            = "Nahtirah Hat",
+    Nyame_Helm              = "Nyame Helm",
 
     -- Neck
     Moonbow_Whistle         = "Mnbw. Whistle +1",
@@ -91,6 +96,7 @@ return {
     Canto_Necklace          = "Canto Necklace",
     Unmoving_Collar         = "Unmoving Collar",
     Dls_Torque              = { name = "Dls. Torque +1", augments = { 'Path: A', } },
+    Carnal_Torque           = "Carnal Torque",
 
     -- Ear
     Raising_Earring         = "Raising Earring",
@@ -141,6 +147,8 @@ return {
     Leth_Sayon              = "Lethargy Sayon",
     Vitiation_Tabard        = { name = "Viti. Tabard +2", augments = { 'Enhances "Chainspell" effect', } },
     Malignance_Tabard       = "Malignance Tabard",
+    Botulus_Suit            = "Botulus Suit",
+    Nyame_Mail              = "Nyame Mail",
 
     -- Hands
     Fili_Manchettes         = "Fili Manchettes +2",
@@ -162,6 +170,8 @@ return {
     Estq_Ganthrt            = "Estq. Ganthrt. +1",
     Leth_Gantherots         = "Leth. Gantherots +1",
     merlinic_hands_treasure = { name = "Merlinic Dastanas", augments = { 'Pet: DEX+5', 'Rng.Acc.+30', '"Treasure Hunter"+1', } },
+    Chironic_Gloves         = "Chironic Gloves",
+    Nyame_Gauntlets         = "Nyame Gauntlets",
 
     -- Rings
     Dim_Ring_Dem            = "Dim. Ring (Dem)",
@@ -229,6 +239,7 @@ return {
     Jhakri_Slops            = "Jhakri Slops +2",
     Atro_Tights             = "Atro. Tights +4",
     Assassins_Culottes      = "Assassin's Culottes",
+    Nyame_Flanchard         = { name = "Nyame Flanchard", augments = { 'Path: B', } },
 
     -- Feet
     Malignance_Boots        = "Malignance Boots",
@@ -247,6 +258,7 @@ return {
     Battlecast_gaiters      = "Battlecast Gaiters",
     Jhakri_Pigaches         = "Jhakri Pigaches +2",
     Atro_Boots              = "Atro. Boots +4",
+    Nyame_Sollerets         = "Nyame Sollerets",
 
     -- Weapons
     Lembing                 = "Lembing",

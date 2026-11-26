@@ -244,6 +244,7 @@ local equipment = {
     founders_hose                = "Founder's Hose", --30 SIRD
     enif_cosciales               = "Enif Cosciales",
     chironic_legs_enfeebling     = { name = "Chironic Hose", augments = { 'Mag. Acc.+23 "Mag.Atk.Bns."+23', '"Cure" potency +10%', 'MND+15', 'Mag. Acc.+15', } },
+    sworn_brais                  = "Sworn Brais",
 
     --feet
     malignance_boots             = "Malignance Boots",
@@ -252,7 +253,7 @@ local equipment = {
     Herc_WS_feet                 = { name = "Herculean Boots", augments = { 'Accuracy+25 Attack+25', 'Weapon skill damage +4%', 'Accuracy+14', } },
     mummu_feet                   = "Mummu Gamash. +2",
     Lanun_bottes                 = { name = "Lanun Bottes +4", augments = { 'Enhances "Wild Card" effect', } },
-    pillagers_feet               = "Pill. Poulaines +2",
+    pillagers_feet               = "Pill. Poulaines +3",
     Chasseurs_boots              = "Chass. Bottes +2",
     merlin_feet_burst            = { name = "Merlinic Crackows", augments = { 'Magic dmg. taken -5%', 'Pet: Haste+3', 'Magic burst dmg.+11%', 'Accuracy+1 Attack+1', 'Mag. Acc.+19 "Mag.Atk.Bns."+19', } },
     hashishin_feet               = "Hashi. Basmak +3",

@@ -286,7 +286,7 @@ function init_gear_sets()
 		back = inv.RDM_DW_Cape,
 		neck = inv.null_loop,
 		waist = inv.orpheus_sash,
-		legs = inv.vitiation_tights,
+		legs = inv.sworn_brais,
 		feet = inv.sworn_sabatons,
 		left_ring = inv.metamorph_ring,
 		right_ring = inv.Hetairoi_ring,

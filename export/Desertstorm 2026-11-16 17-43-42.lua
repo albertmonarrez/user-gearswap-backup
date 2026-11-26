@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Tizona",
+    sub="Machaera +2",
+    ammo="Aurgelmir Orb +1",
+    head="Null Masque",
+    body="Hashishin Mintan +3",
+    hands="Gleti's Gauntlets",
+    legs="Sworn Brais",
+    feet="Sworn Sabatons",
+    neck="Null Loop",
+    waist="Null Belt",
+    left_ear="Alabaster Earring",
+    right_ear="Dedition Earring",
+    left_ring="Epona's Ring",
+    right_ring="Defending Ring",
+    back="Null Shawl",
+}

@@ -298,7 +298,7 @@ function init_gear_sets()
         --neck="",
         --ear1="",
         --ear2="",
-        --body="",
+        body = gear.Azimuth_Coat,
         --hands="",
         --ring1="",
         --ring2="",
@@ -308,6 +308,24 @@ function init_gear_sets()
         --feet="",
     }
 
+    sets.midcast['Haste'] = {
+        --main="",
+        sub = gear.Ammurapi_Shield,
+        --range="",
+        --ammo="",
+        --head="",
+        --neck="",
+        --ear1="",
+        --ear2="",
+        body = gear.Azimuth_Coat,
+        --hands="",
+        --ring1="",
+        --ring2="",
+        --back="",
+        waist = gear.Embla_Sash,
+        --legs="",
+        --feet="",
+    }
     -- Enhancing duration
     sets.midcast.EnhancingDuration = {
         --main="",
@@ -672,15 +690,15 @@ function init_gear_sets()
     sets.precast.WS = {
         --head="",
         --neck="",
-        --ear1="",
+        ear1 = gear.Moonshade_Earring,
         ear2 = gear.Ishvara_Earring,
         --body="",
         hands = gear.Jhakri_Cuffs,
-        --ring1="",
-        --ring2="",
+        ring1 = gear.Metamor_Ring,
+        ring2 = gear.Epaminondass_Ring,
         back = gear.Alabaster_Mantle,
         --waist="",
-        --legs="",
+        legs = gear.Nyame_Flanchard,
         --feet="",
     }
 

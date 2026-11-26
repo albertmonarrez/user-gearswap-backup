@@ -390,7 +390,7 @@ function init_gear_sets()
     -- Default WS (generic physical set - fallback for anything not defined below)
     sets.precast.WS = {
         head = gear.Viti_Chapeau,
-        --neck="",
+        neck = gear.Dls_Torque,
         ear1 = gear.Ishvara_Earring,
         ear2 = gear.Moonshade_Earring,
         body = gear.Egbesu_Frock,
@@ -399,7 +399,7 @@ function init_gear_sets()
         ring2 = gear.Epaminondass_Ring,
         back = gear.Sucellos_Cape_STR,
         waist = gear.Sailfi_Belt,
-        legs = gear.Atro_Tights,
+        legs = gear.Nyame_Flanchard,
         feet = gear.Leth_Houseaux,
     }
 
@@ -441,6 +441,21 @@ local weapon_restore = nil
 function job_precast(spell, action, spellMap, eventArgs)
     if spell.skill == 'Enhancing Magic' and not weapon_restore then
         weapon_restore = { main = player.equipment.main, sub = player.equipment.sub }
+    end
+end
+
+-- Magian trial weapons: their trials count weapon skills on mobs that should live through as many as they can.
+-- Except Trial 1961, which only counts weapon skills that kill.
+local function weak_ws()
+    if not S{ 'Machaera', 'Machaera +1' }:contains(player.equipment.main) then return false end
+    local equipment = windower.ffxi.get_items().equipment
+    local ok, data = pcall(gearswap.extdata.decode, windower.ffxi.get_items(equipment.main_bag, equipment.main))
+    return not (ok and data.trial_number == 1961)
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' and weak_ws() then
+        equip(sets.engaged)
     end
 end
 
@@ -527,6 +542,7 @@ end
 -- //gs c enspell: Tenzen enspell build - Enspell offense mode with its weapons.
 -- //gs c naegling: physical melee build - Normal offense mode with its weapons.
 -- //gs c cleave: Aeolian Edge cleave build - dagger main for the AoE weaponskill.
+-- //gs c magian <weapon name>: that weapon in the main hand, for a Trial of the Magians.
 function job_self_command(cmdParams, eventArgs)
     if cmdParams[1] == 'enspell' then
         local gear = require('Poquito_Gear')
@@ -547,6 +563,13 @@ function job_self_command(cmdParams, eventArgs)
         equip({ main = gear.Naegling, sub = gear.Levante_Dagger })
         state.OffenseMode:set('Normal')
         add_to_chat(122, 'Offense Mode: ' .. state.OffenseMode.value)
+        send_command('wait 0.3; gs c update')
+        eventArgs.handled = true
+    elseif cmdParams[1] == 'magian' then
+        local gear = require('Poquito_Gear')
+        equip({ main = table.concat(cmdParams, ' ', 2), sub = gear.Levante_Dagger })
+        state.OffenseMode:set('Normal')
+        add_to_chat(122, 'Magian weapon: ' .. table.concat(cmdParams, ' ', 2))
         send_command('wait 0.3; gs c update')
         eventArgs.handled = true
     end

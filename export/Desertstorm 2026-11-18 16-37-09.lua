@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Tauret",
+    sub="Gleti's Knife",
+    ammo="Aurgelmir Orb +1",
+    head="Null Masque",
+    body="Gleti's Cuirass",
+    hands="Gleti's Gauntlets",
+    legs="Gleti's Breeches",
+    feet="Pill. Poulaines +3",
+    neck="Iskur Gorget",
+    waist="Reiki Yotai",
+    left_ear="Sherida Earring",
+    right_ear={ name="Skulk. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+20','Mag. Acc.+20','"Store TP"+8','DEX+15 AGI+15',}},
+    left_ring="Gere Ring",
+    right_ring="Epona's Ring",
+    back="Null Shawl",
+}
